@@ -23,6 +23,9 @@
     "android": {
       "package": "app.fusion3333.neighborhoodsafety"
     },
+    "web": {
+      "bundler": "metro"
+    },
     "experiments": {
       "typedRoutes": true
     }
