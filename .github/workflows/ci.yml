@@ -13,10 +13,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22.13.0'
-          cache: npm
-      - run: npm install
+      - run: npm install --no-audit --no-fund
       - run: npm run typecheck
       - run: npm run doctor
+      - run: node --check scripts/import-gyeonggi-north-crime.mjs
+      - run: node --check scripts/normalize-crime-data.mjs
 
   server:
     runs-on: ubuntu-latest
@@ -28,7 +29,5 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22.13.0'
-          cache: npm
-          cache-dependency-path: server/package.json
-      - run: npm install
+      - run: npm install --no-audit --no-fund
       - run: npm run typecheck
