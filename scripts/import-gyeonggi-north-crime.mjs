@@ -1,0 +1,95 @@
+import fs from 'node:fs';
+
+const [input, output = 'crime-normalized.json'] = process.argv.slice(2);
+if (!input) {
+  console.error('사용법: node scripts/import-gyeonggi-north-crime.mjs <official.csv> [output.json]');
+  process.exit(1);
+}
+
+const CATEGORY_MAP = new Map([
+  ['살인', 'murder'],
+  ['강도', 'robbery'],
+  ['성범죄', 'sexual_violence'],
+  ['절도', 'theft'],
+  ['폭력', 'violence'],
+]);
+
+const STATION_MAP = new Map([
+  ['의정부서', '의정부경찰서'], ['고양서', '고양경찰서'], ['일산동부서', '일산동부경찰서'],
+  ['일산서부서', '일산서부경찰서'], ['남양주남부서', '남양주남부경찰서'], ['남양주북부서', '남양주북부경찰서'],
+  ['파주서', '파주경찰서'], ['양주서', '양주경찰서'], ['동두천서', '동두천경찰서'], ['구리서', '구리경찰서'],
+  ['포천서', '포천경찰서'], ['가평서', '가평경찰서'], ['연천서', '연천경찰서'],
+]);
+
+function parseCsv(text) {
+  const rows = [];
+  let row = [], field = '', quoted = false;
+  for (let i = 0; i < text.length; i++) {
+    const ch = text[i];
+    if (quoted) {
+      if (ch === '"' && text[i + 1] === '"') { field += '"'; i++; }
+      else if (ch === '"') quoted = false;
+      else field += ch;
+    } else if (ch === '"') quoted = true;
+    else if (ch === ',') { row.push(field); field = ''; }
+    else if (ch === '\n') { row.push(field.replace(/\r$/, '')); rows.push(row); row = []; field = ''; }
+    else field += ch;
+  }
+  if (field.length || row.length) { row.push(field.replace(/\r$/, '')); rows.push(row); }
+  return rows.filter((r) => r.some((v) => v.trim() !== ''));
+}
+
+const sourceText = fs.readFileSync(input, 'utf8').replace(/^\uFEFF/, '');
+const table = parseCsv(sourceText);
+if (table.length < 2) throw new Error('CSV에 데이터가 없습니다.');
+
+const header = table[0].map((v) => v.trim());
+const required = ['연도', '범죄유형', '구분', ...STATION_MAP.keys()];
+for (const col of required) if (!header.includes(col)) throw new Error(`공식 CSV 필수 컬럼 누락: ${col}`);
+
+const idx = Object.fromEntries(header.map((name, i) => [name, i]));
+const grouped = new Map();
+for (const cells of table.slice(1)) {
+  const year = cells[idx['연도']]?.trim();
+  const categoryKo = cells[idx['범죄유형']]?.trim();
+  const kind = cells[idx['구분']]?.trim();
+  const category = CATEGORY_MAP.get(categoryKo);
+  if (!/^20\d{2}$/.test(year ?? '') || !category || !['발생건수', '검거건수', '검거인원'].includes(kind)) continue;
+
+  for (const [column, policeStation] of STATION_MAP) {
+    const raw = cells[idx[column]]?.replaceAll(',', '').trim();
+    const value = Number(raw);
+    if (!Number.isFinite(value) || value < 0) throw new Error(`${year} ${categoryKo} ${kind} ${column}: 잘못된 수치 ${raw}`);
+    const key = `${year}|${policeStation}|${category}`;
+    const entry = grouped.get(key) ?? { period: year, policeStation, category, incidents: undefined, arrests: undefined, arrestees: undefined };
+    if (kind === '발생건수') entry.incidents = value;
+    if (kind === '검거건수') entry.arrests = value;
+    if (kind === '검거인원') entry.arrestees = value;
+    grouped.set(key, entry);
+  }
+}
+
+const byStationYear = new Map();
+for (const entry of grouped.values()) {
+  if (entry.incidents === undefined) throw new Error(`${entry.period} ${entry.policeStation} ${entry.category}: 발생건수 누락`);
+  const key = `${entry.period}|${entry.policeStation}`;
+  const block = byStationYear.get(key) ?? {
+    policeStation: entry.policeStation,
+    period: entry.period,
+    status: entry.period === '2025' ? 'provisional' : 'published',
+    source: '경찰청 경기도북부경찰청_경찰서별 5대범죄 발생 및 검거현황_20251231',
+    rows: [],
+  };
+  block.rows.push({ category: entry.category, incidents: entry.incidents, arrests: entry.arrests, arrestees: entry.arrestees });
+  byStationYear.set(key, block);
+}
+
+const normalized = [...byStationYear.values()]
+  .filter((block) => block.rows.length === 5)
+  .sort((a, b) => Number(a.period) - Number(b.period) || a.policeStation.localeCompare(b.policeStation, 'ko'));
+
+const expectedBlocks = 10 * 13;
+if (normalized.length !== expectedBlocks) throw new Error(`정규화 블록 ${normalized.length}개. 공식 구조상 ${expectedBlocks}개(2016~2025 × 13개서)를 예상합니다.`);
+
+fs.writeFileSync(output, JSON.stringify(normalized, null, 2));
+console.log(`완료: ${normalized.length}개 경찰서/연도 블록 → ${output}`);
