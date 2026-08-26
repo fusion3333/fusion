@@ -5,6 +5,8 @@ export type CrimeCategory =
   | 'theft'
   | 'violence';
 
+export type DataStatus = 'published' | 'provisional';
+
 export interface CrimeStat {
   regionCode: string;
   regionName: string;
@@ -15,16 +17,19 @@ export interface CrimeStat {
   arrests?: number;
   source: string;
   sourceUpdatedAt?: string;
+  status?: DataStatus;
 }
 
 export interface PopulationStat {
   regionCode: string;
   regionName: string;
   period: string;
-  totalPopulation: number;
+  totalPopulation?: number;
   foreignResidents: number;
-  foreignResidentRatio: number;
+  foreignResidentRatio?: number;
   source: string;
+  populationSource?: string;
+  denominatorPeriodMismatch?: boolean;
   sourceUpdatedAt?: string;
 }
 
@@ -39,8 +44,8 @@ export interface NeighborhoodSafetySnapshot {
 
 export function calculateForeignResidentRatio(
   foreignResidents: number,
-  totalPopulation: number,
-): number {
-  if (totalPopulation <= 0) return 0;
+  totalPopulation?: number,
+): number | undefined {
+  if (!totalPopulation || totalPopulation <= 0) return undefined;
   return (foreignResidents / totalPopulation) * 100;
 }
