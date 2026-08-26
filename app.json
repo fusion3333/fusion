@@ -1,0 +1,30 @@
+{
+  "expo": {
+    "name": "우리동네 안전알림",
+    "slug": "neighborhood-safety",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "scheme": "neighborhoodsafety",
+    "userInterfaceStyle": "automatic",
+    "plugins": [
+      "expo-router",
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "현재 위치를 기준으로 지역 안전정보를 찾기 위해 위치 권한이 필요합니다."
+        }
+      ],
+      "expo-notifications"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "app.fusion3333.neighborhoodsafety"
+    },
+    "android": {
+      "package": "app.fusion3333.neighborhoodsafety"
+    },
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
