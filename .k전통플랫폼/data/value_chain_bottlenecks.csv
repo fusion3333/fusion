@@ -1,0 +1,11 @@
+id,stage,bottleneck,customer_pain,supplier_pain,severity,existing_solution,gap,platform_solution,revenue_opportunity,regulatory_risk,status
+VC-001,Discover,한국문화 상품이 여러 사이트에 분산,검색시간과 비교비용 증가,글로벌 노출 부족,5,Google/Instagram/OTA,통합된 한국문화 중심 탐색 부족,통합 Discover + 지역/취향 큐레이션,affiliate/commission,low,HYPOTHESIS
+VC-002,Trust,리뷰와 품질정보가 플랫폼별로 분절,어떤 정보를 믿어야 할지 불확실,좋은 소형 공급자가 신뢰를 얻기 어려움,5,Google/Booking/Agoda,단일 평점 왜곡/표본차,다중플랫폼 Review Confidence + 검증배지,commission/premium listing,medium,HYPOTHESIS
+VC-003,Bundle,숙박·한복·공예·음식·웰니스가 별도 상품,직접 일정 조합 부담,교차판매 채널 부족,5,Klook/KKday 일부 투어,공급자 간 연결과 개인화 약함,Journey Builder/패키지,package margin/commission,medium,HYPOTHESIS
+VC-004,Book,공급자별 예약방식 상이,예약 실패/확정 불안,예약관리 역량 부족,4,OTA/개별예약,소규모 체험 통합재고 부족,통합 예약/확정,booking fee/commission,medium,HYPOTHESIS
+VC-005,Pay,해외카드/가격표시/현장결제 마찰,결제 불안과 환율/수수료 불명확,글로벌 결제 인프라 부족,5,OTA/PG,여러 공급자 결제를 한 번에 처리하기 어려움,통합 결제/최종가격/분배정산,take rate/payment fee,high,HYPOTHESIS
+VC-006,Navigate,Google Maps 제약과 이동정보 분절,현장에서 길찾기·교통 스트레스,고객 노쇼/지각,4,Naver Map/Kakao Map,외국인에게 앱 전환 필요,Door-to-door itinerary + 지도연동,package margin,low,HYPOTHESIS
+VC-007,Language,공급자 영어·중국어·일본어 대응 편차,의사소통 불안,번역/CS 비용,4,Papago/Google Translate,상품 맥락 설명과 현장대응 부족,다국어 표준상품페이지+CS,SaaS/commission,low,HYPOTHESIS
+VC-008,Experience,광고와 실제 품질 편차,실망·환불·리뷰 리스크,품질관리 표준 부족,5,OTA review,전통성/시설/외국인친화도 검증 부족,K-Tradition Score + QA,premium commission,medium,HYPOTHESIS
+VC-009,Wellness,의료와 비의료 웰니스의 경계 복잡,안전/합법성 불확실,유치규제·광고규제 부담,5,Medical Korea/개별기관,여행상품과 의료유치 규제가 분리,비의료 Wellness와 의료 Referral 구조 분리,commission/referral subject to law,very_high,VALIDATING
+VC-010,Retain,체험 후 관계가 끊김,다시 찾을 이유 부족,재구매 데이터 손실,3,OTA email,문화상품/다음 지역 연결 약함,상품 구매·재방문·추천 Journey,commerce/repeat booking,medium,HYPOTHESIS
