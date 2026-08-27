@@ -1,0 +1,12 @@
+source_id,tier,failure_stage,source,measurement_role
+FJ-O-001,O,complaint_report,Seoul Metropolitan Government taxi complaint system,reported and verified mobility pain
+FJ-O-002,O,transport_booking_payment,MOLIT intercity bus policy,documents prior booking/payment accessibility gaps and rule changes
+FJ-O-003,O,transport_payment,KTO public transportation guide,stage-specific foreign-card availability and ineligibility conditions
+FJ-O-004,O,tourism_complaint,KTO/DataLab tourism complaint sources,reported tourism friction taxonomy and cases
+FJ-E-001,E,search_to_book,OTA and platform partner dashboards,impression click detail book-start abandon booking denominators
+FJ-E-002,E,payment,PG/acquirer/issuer dashboards,authentication authorization decline refund and dispute denominators
+FJ-E-003,E,mobility,transport operator and app logs,route search ticketing boarding dispatch and trip-completion denominators
+FJ-S-001,S,reported_workaround,Reddit and multilingual social/VOC,workaround and unreported-failure hypothesis discovery
+FJ-R-001,R,behavioral_research,abandonment conversion and service-friction research,methodology and candidate mechanisms
+FJ-G-001,G,attempted_failed,traveler and supplier interviews,failed attempts substitutions workarounds and latent barriers
+FJ-N-001,N,end_to_end,owned event telemetry,attempt denominators failure codes substitution recovery and completion
