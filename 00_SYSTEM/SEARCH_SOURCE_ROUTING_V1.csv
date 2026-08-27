@@ -1,0 +1,13 @@
+priority,sensor,class,measurement,role,limitations,status
+1,KTO Foreign Tourist Survey,O,"pre-trip information source, Korea-interest trigger, consideration",canonical Korea inbound survey,"stated/recall data; not behavioral logs",VERIFIED
+1,KTO Potential Korea Traveler Survey,O,"pre-visit intent, consideration, barriers",canonical potential-demand survey,"intent != search/booking",VERIFIED
+1,KTO Data Lab Google Korea Travel Interest,O/E,"origin x month relative Korea travel search interest",temporal search proxy,"relative index; not absolute query volume",VERIFIED
+2,Google Trends,E,"destination/topic query interest by geography/time",independent search-demand sensor,"normalized index; query/topic ambiguity",VERIFIED
+2,Expedia Group,E,"inspiration/research/purchase-path survey + first-party platform signals",enterprise journey benchmark,"not Korea-population denominator",VERIFIED
+2,Booking.com,E,"travel planning technology/social research + platform demand signals",enterprise planning benchmark,"survey/platform population differs",VERIFIED
+3,Google Maps/Business,E,"place discoverability, reviews, map presence, action links",local discovery sensor,"impressions/clicks unavailable publicly for most suppliers",PARTIAL
+3,OTA search surfaces,E,"ranking, availability, review, price, bookability",commercial comparison/booking bridge,"full impressions/click/abandon logs proprietary",PARTIAL
+4,Instagram/YouTube/TikTok/Reddit,S,"inspiration, query vocabulary, recommendation, friction narratives",VOC/discovery taxonomy,"not representative denominator",PARTIAL
+4,Academic travel information-search research,R,"search funnel, information source, choice-set theory",construct validation,"context/time heterogeneity",VERIFIED
+5,Supplier/user interview,G,"actual discovery path, search terms, channel switching, failed discovery",ground validation,"requires fieldwork",REQUIRED
+5,Product event telemetry,N,"query -> result -> click -> map/OTA -> booking attempt -> abandon",behavioral conversion denominator,"does not exist until product instrumentation",REQUIRED
