@@ -1,0 +1,3 @@
+observation_id,observed_at,supplier_id,product_id,location,category,platform,market,language,listing_present,price_visible,inventory_visible,bookable,foreign_payment_path,rating,review_count,search_surface,discovery_evidence,voc_stage,voc_code,source_tier,source_ref,confidence
+,,,,,,,,,,,,,,,,,,,,,,,
+# Rules: missing != zero; listing != exposure; review_count != customer_count; public search/social evidence has no conversion denominator unless explicitly disclosed.
