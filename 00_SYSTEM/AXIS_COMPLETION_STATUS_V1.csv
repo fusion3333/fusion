@@ -1,26 +1,26 @@
-sequence,axis,decision,public_evidence_readiness,engine_ready,primary_blocker,next_action,last_updated
-1,WHO,PUBLIC_SOURCE_DISCOVERY_LOCKED_RAW_INGESTION_PARTIAL,0.86,0.72,"bulk raw ingestion + survey harmonization + planner/payer/influencer Ground/N","reopen WHO on new material evidence",2026-08-27
-2,WHY_HUMAN_PSYCHOLOGY,PUBLIC_SOURCE_DISCOVERY_LOCKED_CAUSAL_CONVERSION_PARTIAL,0.84,0.68,"historical raw harmonization + individual exposure→search→booking→arrival telemetry + Ground causal validation","reopen on material new evidence",2026-08-28
-3,WHEN,PUBLIC_SOURCE_DISCOVERY_LOCKED_RAW_PANEL_EVENT_LEDGER_PARTIAL,0.88,0.70,"2015-2025 origin×month ingestion + origin calendars + route/seat history + policy/event ledger + individual lead-time telemetry","reopen on material new evidence",2026-08-28
-4,ORIGIN_TOP15,PUBLIC_SOURCE_DISCOVERY_LOCKED_MULTI_COUNTRY_RAW_HARMONIZATION_PARTIAL,0.78,0.58,"exact TOP15 computation + origin raw ingestion/harmonization + destination-resolved monthly series + G/N conversion chain","reopen on material new evidence",2026-08-28
-5,COMPETITIVE_DESTINATION,PUBLIC_SOURCE_DISCOVERY_LOCKED_PANEL_HARMONIZATION_PARTIAL,0.82,0.61,"monthly comparator ingestion + airfare/seat/visa/hotel ledgers + choice/switching evidence","reopen on material new evidence",2026-08-28
-6,SEARCH,PUBLIC_SOURCE_DISCOVERY_LOCKED_BEHAVIORAL_FUNNEL_PARTIAL,0.81,0.57,"query volume + impressions/CTR/ranking + cross-platform paths + abandon denominators + N","reopen on material new evidence",2026-08-28
-7,BOOK_PAY,PUBLIC_SOURCE_DISCOVERY_LOCKED_TRANSACTION_FUNNEL_PARTIAL,0.84,0.60,"abandonment + authorization/decline + authentication + fee/FX/DCC + refund/chargeback + Ground/N","reopen on material new evidence",2026-08-28
-8,MOVE,PUBLIC_SOURCE_DISCOVERY_LOCKED_OD_LAST_MILE_TELEMETRY_PARTIAL,0.85,0.62,"foreign-tourist OD + operator use + route-to-arrival conversion + last-mile denominators + Ground/N","reopen on material new evidence",2026-08-28
-9,STAY,PUBLIC_SOURCE_DISCOVERY_LOCKED_NIGHT_ALLOCATION_TELEMETRY_PARTIAL,0.87,0.65,"10Y harmonization + region-night allocation + property price/channel/availability + cancel/no-show + Ground/N","reopen on material new evidence",2026-08-28
-10,DO,PUBLIC_SOURCE_DISCOVERY_LOCKED_ACTIVITY_CONVERSION_TELEMETRY_PARTIAL,0.85,0.64,"10Y activity harmonization + planned-vs-completed denominator + capacity/sellability + attendance + Ground/N","reopen on material new evidence",2026-08-28
-11,SPEND,PUBLIC_SOURCE_DISCOVERY_LOCKED_TRANSACTION_CUBE_HARMONIZATION_PARTIAL,0.88,0.66,"10Y harmonization + monthly origin×region×industry + payment calibration + unique denominator + Ground/N","reopen on material new evidence",2026-08-28
-12,PAIN_VOC,PUBLIC_SOURCE_DISCOVERY_LOCKED_DENOMINATOR_TELEMETRY_PARTIAL,0.86,0.63,"10Y complaints + multilingual VOC + attempted-failed telemetry + Ground","reopen on material new evidence",2026-08-28
-13,SATISFACTION,PUBLIC_SOURCE_DISCOVERY_LOCKED_REVEALED_LOYALTY_TELEMETRY_PARTIAL,0.89,0.69,"expectation baseline + actual referral/review/repeat + recovery outcomes","reopen on material new evidence",2026-08-28
-14,SUPPLY,PUBLIC_SOURCE_DISCOVERY_LOCKED_ENTITY_RESOLUTION_SELLABILITY_PARTIAL,0.90,0.68,"nationwide ingestion/dedup + hidden supply union + platform/Ground validation","reopen on material new evidence",2026-08-28
-15,REAL_SELLABLE_SUPPLY,PUBLIC_SOURCE_DISCOVERY_LOCKED_GROUND_TRANSACTION_VALIDATION_PARTIAL,0.83,0.59,"sellability audit + inventory/price + payment success + capacity/willingness + Ground/N","reopen on material new evidence",2026-08-28
-16,PLATFORM,PUBLIC_SOURCE_DISCOVERY_LOCKED_PLATFORM_INTERNALS_PARTIAL,0.84,0.60,"impressions/ranking/CTR + channel share + effective cost + parity + customer ownership + Ground/N","reopen on material new disclosure",2026-08-28
-17,MONEY_FLOW,PUBLIC_SOURCE_DISCOVERY_LOCKED_REALIZED_UNIT_ECONOMICS_PARTIAL,0.82,0.55,"realized commissions/PG/FX/tax/refund/payout/cost/margin/local retention + Ground/N","reopen on material change",2026-08-28
-18,TEMPORAL_10Y12M,PUBLIC_SOURCE_DISCOVERY_LOCKED_RAGGED_PANEL_INGESTION_PARTIAL,0.91,0.63,"bulk monthly ingestion + survey harmonization + mirrors + event ledgers + lag estimation","reopen only high-sensitivity gaps",2026-08-28
-19,FAILURE_JOURNEY,PUBLIC_SOURCE_DISCOVERY_LOCKED_ATTEMPT_DENOMINATOR_PARTIAL,0.80,0.48,"attempt denominators + reason attribution + substitution/recovery + Ground/N","reopen on denominator evidence",2026-08-28
-20,GROUND_INTELLIGENCE,PROTOCOL_LOCKED_FIELD_COLLECTION_PENDING,0.93,0.66,"supplier/traveler field execution and reliability sample","run Seoul/Gyeonggi 100 supplier pilot; deep interview 20",2026-08-28
-21,N_TELEMETRY,EVENT_SCHEMA_LOCKED_INSTRUMENTATION_PENDING,0.95,0.52,"live product instrumentation and transaction reconciliation","implement consent-aware event schema and QA",2026-08-28
-22,ISLAND_BOTTLENECK_ASYMMETRY,DIAGNOSTIC_ENGINE_SPEC_LOCKED_EMPIRICAL_CALIBRATION_PENDING,0.96,0.67,"denominators + causal validation + resolution-cost evidence","materialize GapObjects after Ground/N ingestion",2026-08-28
-23,OPPORTUNITY,RANKING_ARCHITECTURE_LOCKED_WEIGHTS_NOT_FROZEN,0.96,0.62,"validated GapObjects + unit economics + pilot outcomes","use explainable Pareto diagnostics; launch pilots",2026-08-28
-24,L7,END_TO_END_ARCHITECTURE_LOCKED_OPERATIONAL_DATA_PENDING,0.97,0.64,"bulk ingestion + Ground + N + private transaction data + pilots","operate research-diagnostic-experiment learning loops",2026-08-28
-25,KTOF_EMPIRICAL,EMPIRICAL_PROTOCOL_LOCKED_FORMULA_NOT_FROZEN,0.94,0.00,"outcome-labeled Ground/N/pilot dataset","calibrate only after time-safe outcome data and validation gates",2026-08-28
+순서,축,현재판정,공개근거준비도,엔진준비도,남은핵심자료,다음작업,갱신일
+1,누가,공개자료원설계잠금_원자료적재부분,0.86,0.72,"대량 원자료 적재·조사정합화·실제 기획자/결제자/영향자 관측","동행집단 의사결정 설계에 실제 자료 연결",2026-08-28
+2,왜_인간심리,공개자료원설계잠금_인과전환부분,0.84,0.68,"장기 원자료 정합화·개인별 노출→검색→예약→입국 행동자료·현장 인과검증","새 중요근거 발생시에만 재개",2026-08-28
+3,언제,공개자료원설계잠금_장기월별자료부분,0.88,0.70,"2015~2025 출발국×월 적재·출발국 달력·항공좌석 역사·정책/사건 기록·개인 예약선행기간","월별 장기자료 적재",2026-08-28
+4,출발국상위15,공개자료원설계잠금_다국가정합화부분,0.78,0.58,"정확한 상위15 산출·각국 정부 원자료 적재·목적지별 월자료·실제 전환행동","상위15 국가 원자료 정합화",2026-08-28
+5,경쟁목적지,공개자료원설계잠금_비교패널부분,0.82,0.61,"월별 경쟁국 자료·항공료/좌석/비자/호텔 기록·실제 후보집합과 선택전환","목적지 후보·선택 계층과 연결",2026-08-28
+6,검색,공개자료원설계잠금_행동전환부분,0.81,0.57,"검색량·노출·클릭률·순위·플랫폼간 이동경로·이탈분모·자체계측","검색 행동자료 확보",2026-08-28
+7,예약_결제,공개자료원설계잠금_거래전환부분,0.84,0.60,"예약이탈·승인/거절·본인인증·수수료/환전·환불/분쟁·현장/자체계측","실제 실패분모 확보",2026-08-28
+8,이동,공개자료원설계잠금_지역간이동_마지막구간부분,0.85,0.62,"외국인 실제 지역간 이동·운영사별 이용·경로→도착전환·마지막 이동구간 분모","실제 이동자료 연결",2026-08-28
+9,숙박,공개자료원설계잠금_숙박배분부분,0.87,0.65,"10년 정합화·지역별 숙박일수·가격/판매채널/재고·취소/노쇼","수용량·재고·시간 계층과 연결",2026-08-28
+10,활동,공개자료원설계잠금_활동전환부분,0.85,0.64,"10년 활동 정합화·계획대비실행 분모·수용량/판매가능성·실제 참가","활동 전환자료 확보",2026-08-28
+11,지출,공개자료원설계잠금_거래자료정합화부분,0.88,0.66,"10년 정합화·월별 출발국×지역×업종·결제자료 보정·고유인원분모","예산·지불의사와 실제지출 분리 연결",2026-08-28
+12,불편_민원,공개자료원설계잠금_분모부분,0.86,0.63,"10년 민원·다국어 후기/불편·시도했으나 실패한 행동자료·현장조사","실패여정과 연결",2026-08-28
+13,만족,공개자료원설계잠금_실제충성행동부분,0.89,0.69,"사전기대·실제추천/리뷰/재방문·문제회복 결과","사회적확산 계층과 연결",2026-08-28
+14,공급,공개자료원설계잠금_사업체통합부분,0.90,0.68,"전국 공급 적재/중복제거·숨은공급 통합·플랫폼/현장검증","전국 공급 적재",2026-08-28
+15,실제판매가능공급,공개자료원설계잠금_실시간검증부분,0.83,0.59,"실제 재고/가격·결제성공·수용량·판매의사·현장/자체계측","수용량·재고·시간 계층에 실시간 자료 연결",2026-08-28
+16,플랫폼,공개자료원설계잠금_플랫폼내부자료부분,0.84,0.60,"노출/순위/클릭률·채널점유·실질비용·가격동등성·고객소유권","민간 플랫폼 자료 확보",2026-08-28
+17,돈의흐름,공개자료원설계잠금_실현경제성부분,0.82,0.55,"실제 수수료·결제대행·환전·세금·환불·정산·비용·마진·지역잔존가치","실제 단위경제 자료 확보",2026-08-28
+18,10년_12개월시간축,공개자료원설계잠금_불균형장기패널부분,0.91,0.63,"월별 대량적재·조사정합화·해외거울자료·사건기록·시차추정","장기 월별 원자료 적재",2026-08-28
+19,실패여정,설계잠금_실제시도분모와대체행동부분,0.80,0.48,"실제 시도분모·실패이유·대체/회복 행동·현장/자체계측","반사실·미실현수요 설계에 실제 행동자료 연결",2026-08-28
+20,현장지능,조사절차잠금_현장수집대기,0.93,0.66,"공급자/여행자 현장실행·신뢰도 표본","서울/경기 공급자100곳 및 심층면담20명 시범조사",2026-08-28
+21,자체행동계측,사건구조잠금_실제계측대기,0.95,0.52,"실서비스 행동계측·거래대사","동의기반 사건계측 구현 및 품질검사",2026-08-28
+22,고립_병목_정보비대칭,진단설계잠금_실증보정대기,0.96,0.67,"분모·인과검증·해결비용","현장/자체계측 후 실제 격차객체 생성",2026-08-28
+23,사업기회,순위구조잠금_가중치미확정,0.96,0.62,"검증된 격차·단위경제·시범사업 결과","설명가능한 다기준 진단 후 시범사업",2026-08-28
+24,전체통합계층,종단간설계잠금_운영자료대기,0.97,0.64,"대량적재·현장·자체계측·민간거래자료·시범사업","조사→진단→실험→학습 순환 운영",2026-08-28
+25,경험적최종공식,학습절차잠금_공식미확정,0.94,0.00,"실제 결과가 붙은 현장/자체계측/시범사업 자료","시간누출 없는 결과자료 확보 후에만 공식과 가중치 학습",2026-08-28
