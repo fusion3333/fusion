@@ -1,0 +1,16 @@
+record_type,year,market_or_region,metric,value,unit,source_type,status,notes
+inbound_market,2025,중국,방한객,5480000,persons,official_research,verified_snapshot,연간 약값
+inbound_market,2025,日本,방한객,3650000,persons,official_research,verified_snapshot,연간 약값
+inbound_market,2025,대만,방한객,1890000,persons,official_research,verified_snapshot,연간 약값
+inbound_market,2025,미국,방한객,1480000,persons,official_research,verified_snapshot,연간 약값
+regional_spend,2025,서울,외국인관광소비,9592100000000,KRW,official_research,verified_snapshot,
+regional_spend,2025,부산,외국인관광소비,1053100000000,KRW,official_research,verified_snapshot,
+regional_spend,2025,인천,외국인관광소비,1040800000000,KRW,official_research,verified_snapshot,
+regional_spend,2025,경기,외국인관광소비,981100000000,KRW,official_research,verified_snapshot,
+regional_spend,2025,제주,외국인관광소비,450300000000,KRW,official_research,verified_snapshot,
+seoul_activity,2025,서울,쇼핑참여율,83.1,percent,official_survey,verified_snapshot,
+seoul_activity,2025,서울,음식미식참여율,81.7,percent,official_survey,verified_snapshot,
+seoul_activity,2025,서울,고궁역사유적참여율,45.2,percent,official_survey,verified_snapshot,
+seoul_trip,2025,서울,FIT비율,85.1,percent,official_survey,verified_snapshot,
+seoul_trip,2025,서울,평균서울체류,6.0,days,official_survey,verified_snapshot,
+seoul_spend,2025,서울,평균현지지출,1970000,KRW_per_person,official_survey,verified_snapshot,
