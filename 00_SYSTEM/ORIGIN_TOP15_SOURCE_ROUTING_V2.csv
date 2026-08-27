@@ -1,0 +1,22 @@
+market,source_class,primary_source,measurement,frequency,depth,format,status,rule
+Korea_inbound,O,Korea Tourism Data Lab / immigration,arrivals by origin nationality,monthly,10y+,XLSX/WEB,VERIFIED,anchor ranking from official Korea arrivals
+Japan_origin,O,Statistics Bureau Japan + destination governments,Japanese overseas travelers by destination,annual/monthly where available,10y+,XLS/PDF/WEB,VERIFIED,do not confuse outbound departures with destination arrivals
+China_origin,O,National Bureau/MCT/immigration + destination governments,Chinese outbound trips and Korea arrivals,mixed,10y+,WEB/XLS/PDF,PARTIAL,definition tourist/departure/visitor must be preserved
+Taiwan_origin,O,Taiwan Tourism Administration + immigration,outbound residents by destination,mixed,10y+,WEB/XLS,PARTIAL,mirror against Korea arrivals
+USA_origin,O,NTTO outbound + destination governments,US resident/citizen outbound destination,mixed,10y+,WEB/XLS,PARTIAL,preserve citizen/resident definitions
+HongKong_origin,O,HK Immigration/C&SD + destination governments,resident departures and destination arrivals,daily/monthly,10y+,WEB/XLS,PARTIAL,departure does not identify destination unless destination-side source used
+Philippines_origin,O,Philippine Statistics Authority,outbound residents purpose/profile,annual,20y+,PXWeb/API,VERIFIED,destination resolution may require destination mirror
+Vietnam_origin,O,GSO/immigration + destination governments,outbound residents / Korea destination,mixed,variable,WEB/PDF,PARTIAL,use Korea/destination immigration when origin detail weak
+Singapore_origin,O,SingStat,outbound resident departures by mode,monthly,10y+,Excel,VERIFIED,destination detail requires destination-side mirror
+Indonesia_origin,O,BPS Statistics Indonesia,outbound trips characteristics socioeconomic expenditure,annual + monthly headline,ongoing,PDF/WEB/MPD,VERIFIED,2025 uses immigration + digital survey + MPD
+Thailand_origin,O,NSO + Department of Tourism,outgoing Thai travellers by destination,annual,2020+,WEB/PDF,VERIFIED,2023 Korea share explicitly available
+Malaysia_origin,O,DOSM/immigration + destination governments,outbound residents / destination,mixed,variable,WEB/PDF,PARTIAL,needs stronger canonical series
+Canada_origin,O,Statistics Canada,Canadian resident outbound trips destination age expenditure,quarterly,10y+,CSV/SDMX/WEB,VERIFIED,destination and age available
+Australia_origin,O,Australian Bureau of Statistics,short-term resident returns by destination,monthly,10y+,CSV/XLSX,VERIFIED,border crossings not persons
+Russia_origin,O,Rosstat/border + destination governments,outbound trips/destination,mixed,variable,WEB/XLS,PARTIAL,method/regime flags required
+UnitedKingdom_origin,O,Office for National Statistics,visits abroad destination nights purpose spend mode nationality,annual/quarterly,2009+,XLSX,VERIFIED,2019 methodology break and 2024 airport assignment warning
+ALL,E,airlines/GDS/OTA/payment/platforms,search booking fare capacity conversion,near-real-time,proprietary,API/report,CONNECT_REQUIRED,never substitute for official population denominator
+ALL,S,Google/YouTube/Reddit/local SNS,interest intent narrative friction,mixed,variable,WEB,PROXY_ONLY,use for hypothesis and latent demand not population estimates
+ALL,R,peer-reviewed tourism/outbound studies,motivation destination choice elasticity,mixed,variable,PDF,VALIDATION,use to validate mechanism not overwrite official counts
+ALL,G,traveler interviews / diaspora / agents,decision chain payer planner barriers,field,new,structured survey,REQUIRED_FOR_GAPS,target high information-value segments
+ALL,N,first-party telemetry,exposure-search-click-book-pay-arrival chain,event,new,event log,NOT_YET_AVAILABLE,required for conversion and causal calibration
