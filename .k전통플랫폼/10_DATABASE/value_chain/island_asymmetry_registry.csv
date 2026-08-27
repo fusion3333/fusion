@@ -1,0 +1,14 @@
+issue_id,stage,island_type,information_asymmetry,who_knows_more,who_knows_less,root_cause,traveler_cost,supplier_cost,current_workaround,platform_gap,opportunity,evidence_status,confidence
+IA-001,Search,Data Island,한국어 원문과 외국어 정보의 양·최신성 차이,local provider/platform,foreign traveler,번역·콘텐츠 유지비용과 플랫폼 분산,추가검색·오정보 위험,다국어 운영비용,Google Translate/Papago/블로그,검증·최신성 보장 부재,verified multilingual layer,HYPOTHESIS,medium
+IA-002,Trust,Trust Island,플랫폼별 평점·리뷰 표본·사진·시설정보가 상이,platform/provider,traveler,독립 플랫폼 데이터 사일로,비교시간·잘못된 기대,평판관리 분산비용,여러 OTA/Google 교차확인,통합 confidence score 부재,multi-source trust score,OBSERVED,high
+IA-003,Plan,Navigation Island,장소 발견정보와 실제 이동시간/환승/영업시간/예약시간 단절,map/transport/provider,traveler,데이터 소유자가 서로 다름,일정실패·앱전환,노쇼·지각,지도+블로그+교통앱 병행,door-to-door itinerary layer 부재,journey orchestration,HYPOTHESIS,high
+IA-004,Book,Booking Island,실시간 재고·예약확정·취소정책이 공급자마다 상이,provider/OTA,traveler,소형사업자의 시스템 수준 차이,예약불안·중복예약,채널관리 비용,OTA 또는 이메일/메신저,소형 전통체험 통합 inventory 부족,booking middleware,OBSERVED,medium
+IA-005,Pay,Payment Island,최종 원화/외화 가격·FX·해외카드 가능여부가 결제시점까지 불명확,merchant/PG,traveler,PG·가맹점·카드 정책 분산,결제실패·예산 불확실,해외결제/정산비용,OTA 선결제/현금,관광 Journey 전체 결제 통합 부족,unified checkout,HYPOTHESIS,medium
+IA-006,Transport,Transport Island,교통카드 구매/충전·환승·막차·수하물 규칙이 서비스별 분산,transport operators,traveler,사업자별 시스템,학습시간·경로실수,외국어 안내비용,여러 앱/웹사이트,관광상품과 mobility 연결 부족,mobility bundle,OBSERVED,medium
+IA-007,Stay,Trust Island,실제 객실형태·화장실·침대/온돌·체크인·짐보관 정보 표준화 부족,accommodation provider,traveler,OTA 필드와 한국 숙박 특성 불일치,기대불일치,반복문의/분쟁,리뷰 사진 확인,한국형 숙박 특화 필드 부족,verified accommodation schema,HYPOTHESIS,high
+IA-008,Experience,Supply Island,소규모 전통체험의 품질·언어·보험·예약조건을 글로벌 고객이 확인하기 어려움,local supplier,traveler,오프라인 중심 운영·유통역량 부족,좋은 체험 미발견,글로벌 CAC/CS 부담,Klook/KKday/직접문의,롱테일 공급 연결 부족,verified local supply network,HYPOTHESIS,high
+IA-009,Food,Language Island,메뉴·알레르기·채식/종교식·대기/예약 정보가 불완전,restaurant,traveler,메뉴 구조화/번역 미흡,주문 실패·건강위험,직원응대 부담,번역카메라/리뷰,식단조건 기반 검색·예약 부족,food intelligence layer,HYPOTHESIS,medium
+IA-010,Medical,Regulatory Island,시술/치료 범위·가격·자격·위험·사후관리 정보 격차,medical provider/intermediary,traveler,의료 전문성·규제·가격 복잡성,안전/가격 리스크,규제준수·상담비용,등록 유치업자/의료기관 상담,trust+compliance layer,regulated referral/concierge,VERIFIED_PARTIAL,high
+IA-011,Support,Support Island,문제 발생 시 책임주체가 OTA·PG·공급자·운송사로 분리,each service provider,traveler,다중 계약관계,문제해결시간·환불지연,CS/분쟁비용,각 채널별 문의,journey-level single support owner 부재,premium concierge,OBSERVED,high
+IA-012,Regional,Regional Island,서울 밖 우수 콘텐츠가 글로벌 발견·예약·리뷰망에 덜 연결될 가능성,local suppliers,foreign traveler,분산된 마케팅·언어·유통,지역 체류/소비 기회 상실,낮은 국제유통 접근성,지자체 캠페인/OTA 일부,지역간 연결 Journey 부족,regional distribution network,HYPOTHESIS,medium
+IA-013,PostTrip,Post-trip Island,여행 중 산 상품·브랜드·체험과 귀국 후 재구매 채널 단절,brand/provider,traveler,관광과 cross-border commerce 분리,재탐색비용,LTV 손실,검색/마켓플레이스,trip-to-commerce identity 연결 부족,post-trip commerce,HYPOTHESIS,medium
