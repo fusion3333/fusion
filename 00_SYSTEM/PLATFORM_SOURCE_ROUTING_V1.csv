@@ -1,0 +1,15 @@
+source_id,tier,platform_family,source,measurement_role
+PLAT-O-001,O,official_public,KTO DataLab,market baseline
+PLAT-E-001,E,search_map,Google Places and Maps,discoverability and place-detail sensor
+PLAT-E-002,E,experience_ota,Viator supplier and partner resources,distribution transaction and visibility mechanics
+PLAT-E-003,E,experience_ota,Klook merchant and newsroom,merchant discovery marketing and booking ecosystem
+PLAT-E-004,E,stay_experience_ota,Airbnb host and help resources,listing booking fee and payout mechanics
+PLAT-E-005,E,stay_ota,Booking partner and public resources,accommodation discovery booking and review ecosystem
+PLAT-E-006,E,stay_ota,Agoda partner and public resources,accommodation discovery and booking ecosystem
+PLAT-E-007,E,experience_ota,GetYourGuide supplier resources,experience listing booking and distribution
+PLAT-E-008,E,experience_ota,KKday supplier resources,experience listing booking and distribution
+PLAT-E-009,E,ota,Trip.com partner resources,travel inventory booking and distribution
+PLAT-S-001,S,social,Social and community channels,discovery social proof referral and VOC sensor
+PLAT-R-001,R,research,Academic and industry platform research,methodology and platform economics hypotheses
+PLAT-G-001,G,supplier_ground,Supplier interviews,actual channel mix fees dependency payout support and pain
+PLAT-N-001,N,first_party_telemetry,Owned telemetry,impression click compare booking payment cancellation and referral denominators
