@@ -1,7 +1,7 @@
 sequence,axis,decision,public_evidence_readiness,engine_ready,primary_blocker,next_action,last_updated
-1,WHO,PUBLIC_SOURCE_DISCOVERY_LOCKED_RAW_INGESTION_PARTIAL,0.86,0.72,"bulk raw ingestion + survey harmonization + planner/payer/influencer Ground/N","proceed WHY+Human Psychology; reopen WHO on new material evidence",2026-08-27
-2,WHY_HUMAN_PSYCHOLOGY,ACTIVE,,,"not yet sequentially closed","execute full O/E/S/R/G/N completion pipeline",2026-08-27
-3,WHEN,QUEUED,,,,,2026-08-27
+1,WHO,PUBLIC_SOURCE_DISCOVERY_LOCKED_RAW_INGESTION_PARTIAL,0.86,0.72,"bulk raw ingestion + survey harmonization + planner/payer/influencer Ground/N","reopen WHO on new material evidence",2026-08-27
+2,WHY_HUMAN_PSYCHOLOGY,PUBLIC_SOURCE_DISCOVERY_LOCKED_CAUSAL_CONVERSION_PARTIAL,0.84,0.68,"historical raw harmonization + individual exposure→search→booking→arrival telemetry + Ground causal validation","proceed WHEN; reopen on material new evidence",2026-08-28
+3,WHEN,ACTIVE,,,"not yet sequentially closed","execute full O/E/S/R/G/N completion pipeline",2026-08-28
 4,ORIGIN_TOP15,QUEUED,,,,,2026-08-27
 5,COMPETITIVE_DESTINATION,QUEUED,,,,,2026-08-27
 6,SEARCH,QUEUED,,,,,2026-08-27
