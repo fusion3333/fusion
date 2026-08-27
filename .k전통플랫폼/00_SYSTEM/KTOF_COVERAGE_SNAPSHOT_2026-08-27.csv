@@ -6,7 +6,7 @@ WHERE,0.30,WEAK,"관광데이터랩 지역분석","국가×지역×연계방문 
 STAY,0.25,WEAK,"외래관광객조사 + 숙박 공급 seed","가격/숙박형태/체류/occupancy 통합 미완","조사변수+OTA+인허가 연결"
 DO,0.25,WEAK,"외래관광객조사 + TourAPI seed","활동×국적×지역×공급 연결 미완","활동 taxonomy 표준화"
 SPEND,0.30,WEAK,"외래관광객조사 + 관광데이터랩 카드","국가×지역×업종 시계열 미완","카드/조사 소비 matrix"
-SEARCH,0.15,MISSING,"일부 조사/플랫폼","채널·검색행동 국가별 장기자료 부족","공식 설문 문항 + 플랫폼 source map"
+SEARCH,0.32,PARTIAL,"관광데이터랩 7개국 월별 Google 한국여행 관심도 + 잠재방한 2022-2025 채널/구매사이트 + 외래관광객조사 정보접촉 경로","10년+ 안정적 검색시계열·절대검색량·search→OTA→booking user-level conversion 미확보","7개국 월별 관심도 실제 export + 조사 국가별 채널표 정규화 + 장기 가용기간 확인"
 BOOK_PAY,0.24,WEAK,"외래관광객조사 정의 + Booking.com Payments + GetYourGuide + Viator","한국 공급자별 예약경로/결제실패/해외카드/플랫폼 침투율과 한국별 정확한 수수료 미확보","공급자 표본 + 플랫폼별 Korea terms + 결제 friction evidence"
 MOVE,0.15,MISSING,"내비/교통 source seed","교통 journey 정량 패널 없음","철도/버스/택시/지도 데이터 조사"
 PAIN,0.25,WEAK,"관광불편신고 + 리뷰 source seed","국가×단계별 pain severity/frequency 미정규화","VOC taxonomy/corpus 구축"
