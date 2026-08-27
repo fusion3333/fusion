@@ -1,0 +1,13 @@
+tier,sensor,source_family,measurement,role,status
+1,O,KTO/KCTI foreign visitor survey,"transport modes used, trip behavior, visitor segmentation","canonical foreign-tourist behavior backbone",VERIFIED
+1,O,KTO/Data.go.kr inbound transport monthly,"arrival transport by month","border/arrival mode context; not domestic movement",VERIFIED
+1,O,KTO Tourism Data Lab telecom/card/navigation,"presence, spend, navigation search by region","multi-sensor regional movement context",VERIFIED
+1,O,KORAIL/SR/AREX/rail operators,"rail network, timetable, ridership, booking/access rules","intercity trunk supply and usage context",VERIFIED
+1,O,local governments/transit operators/AFC,"station/route ridership and transfers","network context; foreigner identity often unavailable",VERIFIED
+1,O,Seoul/local official transport guidance,"subway,bus,taxi usability,language,payment","foreigner usability and friction evidence",VERIFIED
+2,E,mobility/platform operators,"maps,taxi,rail/bus booking,tourist taxi,city tour bus","discoverability/booking/route UX sensor",PARTIAL
+2,E,telecom/card/mobility commercial data,"aggregated movement/transaction traces","high-value OD and conversion sensor",PROPRIETARY
+3,S,Google/Reddit/OTA/app reviews,"route confusion,last-mile,luggage,language,taxi,missed transport","friction taxonomy only; never prevalence without denominator",PARTIAL
+4,R,academic transport/tourism studies,"destination accessibility,mobility behavior,last-mile effects","mechanism and validation",PARTIAL
+5,G,traveler/supplier field interviews,"actual route choice,missed trips,last-mile,accessibility","ground-truth unknown usability and failure",REQUIRED
+6,N,first-party telemetry,"route search→selection→booking→boarding/arrival/failure","denominator-based conversion and failure",REQUIRED
