@@ -8,9 +8,9 @@ sequence,axis,decision,public_evidence_readiness,engine_ready,primary_blocker,ne
 7,BOOK_PAY,PUBLIC_SOURCE_DISCOVERY_LOCKED_TRANSACTION_FUNNEL_PARTIAL,0.84,0.60,"booking abandonment + issuer/card authorization/decline + authentication + effective fee/FX/DCC + refund/chargeback + Ground/N telemetry","reopen on material new evidence",2026-08-28
 8,MOVE,PUBLIC_SOURCE_DISCOVERY_LOCKED_OD_LAST_MILE_TELEMETRY_PARTIAL,0.85,0.62,"nationwide foreign-tourist OD + nationality-resolved operator use + route-to-arrival conversion + last-mile failure denominators + Ground/N","reopen on material new evidence",2026-08-28
 9,STAY,PUBLIC_SOURCE_DISCOVERY_LOCKED_NIGHT_ALLOCATION_TELEMETRY_PARTIAL,0.87,0.65,"10Y survey harmonization + individual region-night allocation + property price/channel/availability + occupancy/cancel/no-show + Ground/N","reopen on material new evidence",2026-08-28
-10,DO,PUBLIC_SOURCE_DISCOVERY_LOCKED_ACTIVITY_CONVERSION_TELEMETRY_PARTIAL,0.85,0.64,"10Y activity harmonization + planned-vs-completed denominator + time/region allocation + price/capacity/sellability + booking-to-attendance + Ground/N","reopen on material new evidence; proceed SPEND",2026-08-28
-11,SPEND,ACTIVE,,,"not yet sequentially closed","execute full O/E/S/R/G/N completion pipeline",2026-08-28
-12,PAIN_VOC,QUEUED,,,,,2026-08-27
+10,DO,PUBLIC_SOURCE_DISCOVERY_LOCKED_ACTIVITY_CONVERSION_TELEMETRY_PARTIAL,0.85,0.64,"10Y activity harmonization + planned-vs-completed denominator + time/region allocation + price/capacity/sellability + booking-to-attendance + Ground/N","reopen on material new evidence",2026-08-28
+11,SPEND,PUBLIC_SOURCE_DISCOVERY_LOCKED_TRANSACTION_CUBE_HARMONIZATION_PARTIAL,0.88,0.66,"10Y survey harmonization + monthly origin×region×industry ingestion + cash/wallet calibration + online-vs-consumption geography + unique denominator + Ground/N","reopen on material new evidence; proceed PAIN_VOC",2026-08-28
+12,PAIN_VOC,ACTIVE,,,"not yet sequentially closed","execute full O/E/S/R/G/N completion pipeline",2026-08-28
 13,SATISFACTION,QUEUED,,,,,2026-08-27
 14,SUPPLY,QUEUED,,,,,2026-08-27
 15,REAL_SELLABLE_SUPPLY,QUEUED,,,,,2026-08-27
