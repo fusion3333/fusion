@@ -2,7 +2,7 @@ source_id,domain,source_name,owner,geo,source_type,access,status,refresh,use_cas
 SRC-0001,hanok,종로구 한옥체험업 인허가,서울시/종로구,서울 종로,official_api,LOCALDATA_031106_JN,ACQUIRED,daily,공급망 master,A,2026-08-27
 SRC-0002,hanok,전국 한옥체험업 표준데이터,행정안전부/LOCALDATA,전국,official_file,CSV/DATA.GO.KR,DISCOVERED,daily,전국 공급망,A,2026-08-27
 SRC-0003,hanok,경기도 한옥체험업 현황,경기데이터드림,경기 31개 시군,official_file,CSV/XLS/JSON/XML,DISCOVERED,periodic,경기 공급망,A,2026-08-27
-SRC-0004,market,외래객조사/관광데이터랩,한국관광공사,전국,official_survey,web/report,DISCOVERED,annual,방한시장/TAM/SAM,A,2026-08-27
+SRC-0004,market,2025 외래관광객조사 확정 보고서,한국관광공사/한국문화관광연구원,전국,official_survey,PDF,VERIFIED,annual,방한시장/행동/A,A,2026-08-27
 SRC-0005,market,서울 외래관광객 실태조사,서울시/서울관광재단,서울,official_survey,report,DISCOVERED,annual,서울 고객행동,A,2026-08-27
 SRC-0006,medical,외국인환자 유치기관 등록/현황,Medical Korea/KHIDI,전국,official_registry,web,DISCOVERED,ongoing,K-Wellness 의료공급,A,2026-08-27
 SRC-0007,legal,관광진흥법 및 시행령,국가법령정보센터,전국,official_law,web,VERIFIED,as amended,여행업 규제,A,2026-08-27
@@ -10,17 +10,23 @@ SRC-0008,legal,전자상거래법 및 시행규칙,국가법령정보센터,전�
 SRC-0009,commercial,Klook 한국 전통문화 체험,Klook,서울/전국,OTA,web,ACQUIRED,realtime,경쟁/가격/상품구조,B,2026-08-27
 SRC-0010,commercial,KKday 서울 Cultural Experiences,KKday,서울,OTA,web,ACQUIRED,realtime,경쟁/판매량 proxy,B,2026-08-27
 SRC-0011,commercial,Trazy Culture & Class,Trazy,서울/전국,OTA,web,ACQUIRED,realtime,경쟁/가격/수요 proxy,B,2026-08-27
-SRC-0012,commercial,Booking.com Korea accommodation,Booking.com,전국,OTA,web,DISCOVERED,realtime,숙박 가격/평점,B,2026-08-27
+SRC-0012,commercial,Booking.com Korea accommodation,Booking.com,전국,OTA,web,PARTIAL,realtime,숙박 가격/평점/commission 구조,B,2026-08-27
 SRC-0013,commercial,Agoda Korea accommodation,Agoda,전국,OTA,web,DISCOVERED,realtime,숙박 가격/평점,B,2026-08-27
 SRC-0014,voice,Google Reviews,Google,전국,review_platform,web,DISCOVERED,realtime,평점/리뷰,B,2026-08-27
 SRC-0015,voice,Reddit Korea Travel communities,Reddit,글로벌,community,web,DISCOVERED,realtime,Pain Point/Voice of Customer,C,2026-08-27
-SRC-0016,market,2025 잠재 방한여행객 조사,한국관광공사,26개국,official_survey,PDF+국가별 집계표,VERIFIED,annual,국가별 Persona/방문의향,A,2026-08-27
+SRC-0016,market,2025 잠재 방한여행객 조사,한국관광공사,26개국,official_survey,PDF+국가별집계ZIP+raw신청,VERIFIED,annual,국가별 Persona/방문의향,A,2026-08-27
 SRC-0017,market,관광데이터랩 지역별 분석,한국관광공사,전국 시군구,official_bigdata,web+CSV,VERIFIED,monthly,지역방문/소비/업종/AOI,A,2026-08-27
 SRC-0018,market,부산 외국인 관광객 통계/정책,부산광역시,부산,official_stats,web/report,VERIFIED,periodic,지역확장/시장규모,A,2026-08-27
 SRC-0019,market,제주 국가별 외국인 소비,제주관광공사,제주,official_bigdata,CSV+web,VERIFIED,monthly,국가별 소비/읍면동/업종,A,2026-08-27
 SRC-0020,market,제주 방문관광객 실태조사,제주관광공사,제주,official_survey,CSV+web,VERIFIED,annual,만족도/행동/불만,A,2026-08-27
 SRC-0021,medical,외국인환자 유치실적보고/등록체계,KHIDI Medical Korea,전국,official_registry,web+reports,VERIFIED,annual,의료관광 규제/공급,A,2026-08-27
-SRC-0022,commercial,GetYourGuide Seoul experiences,GetYourGuide,서울/전국,OTA,web,DISCOVERED,realtime,서구권 경쟁/가격/리뷰,B,2026-08-27
-SRC-0023,commercial,Viator Korea experiences,Viator,서울/전국,OTA,web,DISCOVERED,realtime,서구권 경쟁/가격/리뷰,B,2026-08-27
+SRC-0022,commercial,GetYourGuide Supplier Terms 2026,GetYourGuide,글로벌,OTA_terms,web,VERIFIED,current,experience commission/payment/lock-in,A,2026-08-27
+SRC-0023,commercial,Viator Supplier Agreement 2026,Viator,글로벌,OTA_terms,web,VERIFIED,current,공급자 보험/운영요건,A,2026-08-27
 SRC-0024,commercial,Trip.com Korea experiences/accommodation,Trip.com,전국,OTA,web,DISCOVERED,realtime,중화권 경쟁/가격/리뷰,B,2026-08-27
 SRC-0025,voice,Booking/Agoda/Klook/KKday/Trazy review corpus,복수 OTA,글로벌,review_platform,web,DISCOVERED,realtime,Needs/Wants/Pain/Delight,B,2026-08-27
+SRC-0026,market,2025 외래관광객조사 원자료+코드북,한국관광공사/한국문화관광연구원,전국,official_microdata,ZIP SAV Excel+XLSX,VERIFIED_SOURCE,annual,국가별 행동/지출/체류 microdata,A,2026-08-27
+SRC-0027,market,2025 국가별 방한관광시장 분석,한국관광공사,26개국,official_synthesis,PDF,VERIFIED,annual,국가별 Persona backbone,A,2026-08-27
+SRC-0028,voice,2025 관광불편신고 종합분석서,한국관광공사,전국,official_complaint,PDF+infographic,VERIFIED_SOURCE,annual,공식 Pain Point taxonomy,A,2026-08-27
+SRC-0029,market,중국 FIT 숙박예약 채널 설문,한국관광공사 중국지역센터,중국,official_survey,market report,VERIFIED,ad hoc,중국 GTM/OTA channel,A,2026-08-27
+SRC-0030,commercial,GetYourGuide General Terms,GetYourGuide,글로벌,OTA_terms,web,VERIFIED,current,commercial-agent 계약구조,A,2026-08-27
+SRC-0031,commercial,Booking.com Accommodation Terms,Booking.com,글로벌,OTA_terms,web,VERIFIED,current,숙박 commission 산식/계약구조,A,2026-08-27
