@@ -1,138 +1,76 @@
-# Cross Layer 4 — Capacity / Inventory / Time V1
+# 교차계층 4 — 수용량·재고·시간 V1
 
-## Purpose
-Model effective tourism supply as time-varying, traveler-specific, channel-specific inventory rather than a static count of suppliers or registered rooms.
+## 목적
+관광공급을 업체 수나 등록 객실 수처럼 정적인 숫자로 보지 않고, 특정 날짜·시간·여행자조건·판매채널에서 실제 판매 가능한 공급으로 본다.
 
-## Core correction
-RegisteredSupply != OperatingSupply != ScheduledSupply != AvailableSupply != BookableSupply != ForeignerUsableSupply != ConfirmableSupply != ConsumableSupply.
+## 핵심 교정
+등록된 공급 ≠ 실제 영업중 공급 ≠ 해당일정에 운영되는 공급 ≠ 판매채널에 풀린 재고 ≠ 내 일행조건으로 예약 가능한 재고 ≠ 실시간 확정 가능한 재고 ≠ 실제 이용 가능한 공급
 
-The canonical object is not Supply(a) but EffectiveSupply(a,t,u,c), where a=asset/product, t=date/time slot, u=traveler/party, c=channel.
+핵심은 '공급자 수'가 아니라 특정 시점의 실제 판매가능 수용량이다.
 
-## Canonical state chain
-Registered -> Operating -> Scheduled -> CapacityDefined -> InventoryOpen -> Discoverable -> Eligible -> Bookable -> Held -> Confirmed -> Consumed.
+## 기본 흐름
+등록 → 영업 → 일정확정 → 수용량확정 → 재고개방 → 발견가능 → 이용자격충족 → 예약가능 → 임시확보 → 예약확정 → 실제이용
 
-Failure states include CLOSED, BLACKOUT, SOLD_OUT, CAPACITY_TOO_SMALL, PARTY_MIX_INELIGIBLE, LANGUAGE_SLOT_UNAVAILABLE, GUIDE_UNAVAILABLE, BOOKING_CUTOFF, CHANNEL_ALLOCATION_EXHAUSTED, HOLD_EXPIRED, OVERBOOKED, OPERATIONAL_CANCELLATION.
+## 주요 실패상태
+휴무 / 판매중지기간 / 매진 / 남은자리가 일행보다 적음 / 특정 동행구성 예약불가 / 외국어 가능시간 없음 / 가이드 없음 / 예약마감시간 경과 / 특정 채널 재고소진 / 임시확보 만료 / 초과예약 / 운영취소
 
-## Dimensions
-supplier_id
-product_id
-asset_id
-location_id
-service_date
-start_time
-end_time
-timezone
-day_of_week
-season
-holiday_event_regime
-channel
-market_language
-traveler_origin
-party_size
-party_mix
-capacity_type
-physical_capacity
-labor_capacity
-guide_capacity
-language_capacity
-transport_capacity
-channel_allocated_capacity
-remaining_inventory
-booking_cutoff
-min_party
-max_party
-lead_time_min
-blackout_flag
-availability_status
-inventory_observed_at
-inventory_valid_from
-inventory_valid_to
+## 수용량 종류
+1. 물리수용량: 객실, 좌석, 테이블, 차량, 작업대, 장소.
+2. 인력수용량: 직원·가이드·기사·장인이 실제 대응할 수 있는 양.
+3. 언어수용량: 외국어로 서비스를 제공할 수 있는 시간대와 인원.
+4. 법·안전수용량: 허가·안전기준상 최대치.
+5. 판매채널수용량: 직접판매·여행플랫폼·재판매자별로 배정된 재고.
+6. 운영수용량: 휴무·점검·날씨·준비시간 등을 반영한 실제 운영량.
+7. 일행적합수용량: 가족·단체 등 요청 인원과 구성에 맞는가.
+8. 품질·지속가능 수용량: 혼잡·서비스품질·문화재·환경을 해치지 않고 받을 수 있는 적정량.
 
-## Capacity taxonomy
-1. Physical capacity: rooms, seats, tables, vehicles, workstations, venue slots.
-2. Labor capacity: staff/guide/driver/artisan availability.
-3. Language capacity: foreign-language capable service slots, not merely staff language skill.
-4. Regulatory/safety capacity: legal maximum or permit/quota limit.
-5. Channel capacity: inventory allocated to direct/OTA/reseller channels.
-6. Operational capacity: capacity after closures, maintenance, weather, setup time and local operating rules.
-7. Group-fit capacity: whether the remaining inventory can accommodate the requested party size and composition.
-8. Experience-quality carrying capacity: maximum volume compatible with acceptable quality/crowding/sustainability; this must not be assumed equal to legal capacity.
+## 반드시 구분할 것
+- 등록 객실 수 ≠ 오늘 밤 예약 가능한 객실 수
+- 영업 중인 업체 ≠ 내가 원하는 날짜에 상품이 운영됨
+- 일정이 있음 ≠ 내가 보는 예약채널에 재고가 풀려 있음
+- 잔여재고 있음 ≠ 내 일행구성으로 예약 가능
+- 화면상 가능 표시 ≠ 실시간 예약 확정 가능
+- 물리적 최대인원 ≠ 품질·안전·보존을 고려한 적정인원
+- 매진 ≠ 반드시 높은 수요. 애초에 공급이 매우 적을 수 있음
+- 낮은 이용률 ≠ 낮은 수요. 가격·검색·채널·일정문제가 있을 수 있음
 
-## Key evidence and benchmark primitives
-- Korean official supply data can measure registered/operating supply and, for tourism accommodation, establishment and room counts by region/type/grade. It is a structural capacity baseline, not real-time sellable inventory.
-- Korea Tourism Data Lab updates tourism-business operating status monthly from local administrative licensing data. From 2026-01, suspended businesses are excluded from the count, demonstrating that even 'operating supply' has regime-dependent definitions.
-- Viator's current Supplier API explicitly separates future calendar availability from real-time availability. Availability checks request a product, date, start time and traveler/ticket mix and return remaining capacity/pricing used to determine whether purchase can proceed.
-- Viator also defines BookingCutoff and remaining Capacity. Capacity can be consumed differently by traveler types (e.g. infant exclusions). Therefore inventory is conditional on time and party composition, not a single product-level number.
-- Viator connectivity documentation warns that cached calendar availability can lag supplier changes; real-time checking is required before booking. Thus observed inventory has an observation timestamp and staleness risk.
-- Capacity-management research in hospitality/tourism distinguishes capacity management from demand management and shows that insufficient capacity affects waiting, crowding, employee strain, service quality and competitor leakage, while excess capacity causes underutilization and discount pressure.
-- Capacity-constrained tourism research also shows that allocation mechanisms (quota, permits, pricing, booking windows) affect who actually gains access. Capacity optimization therefore cannot be reduced to revenue maximization alone for heritage/public assets.
+## 연구·기업 근거
+한국 공식자료는 업체 수·객실 수·영업상태 같은 구조적 공급에는 강하지만 특정 날짜의 실시간 판매재고는 제공하지 않는다.
 
-## Mandatory anti-distortion rules
-Registered rooms != rooms available tonight.
-Property open != requested room/product available.
-Product listed != scheduled on the requested date.
-Scheduled != inventory open for this channel.
-Inventory open != enough inventory for the requested party.
-Available on cached calendar != confirmed real-time availability.
-Remaining capacity != foreigner-usable capacity.
-Physical capacity != quality/sustainable carrying capacity.
-Sold out != high unmet demand unless attempted-demand denominator exists.
-Low utilization != low demand unless price, discovery, channel and schedule constraints are controlled.
+여행상품 플랫폼의 공급자 연동구조에서는 날짜·시작시간·성인/아동 등 일행구성별로 남은 수용량을 확인하고, 화면에 저장된 달력정보와 예약 직전 실시간 재고를 분리한다. 따라서 재고에는 '언제 관측했는가'가 반드시 붙어야 한다.
 
-## Core measures (only where denominators are observed)
-EffectiveSellableCapacity(a,t,u,c) = min(physical, labor, language, regulatory, operational, channel, group-fit capacities) after blackout/cutoff/eligibility constraints.
+관광 수용량 연구에서도 수용량 부족은 대기·혼잡·품질하락·직원과부하·경쟁사 유출을 만들고, 과잉수용량은 시설과 인력의 미활용을 만든다. 문화·공공자산에서는 단순 매출극대화보다 품질·보존을 고려해야 한다.
 
-CapacityUtilization = ConsumedUnits / EffectiveSellableCapacity.
+## 핵심 측정
+실제 판매가능 수용량은 물리·인력·언어·법규·운영·채널·일행적합 제약 중 가장 강하게 묶는 조건의 영향을 받는다.
 
-AvailabilityRate = AvailableRequestedSlots / RequestedSlots.
+이용률 = 실제 이용량 / 실제 판매가능 수용량
 
-SelloutRate = SoldOutRequestedSlots / RequestedSlots.
+예약가능률 = 예약가능했던 요청시간대 / 전체 요청시간대
 
-CapacityLossByConstraint(k) = 1 - CapacityAfterConstraint(k) / CapacityBeforeConstraint(k).
+매진률 = 매진이었던 요청시간대 / 전체 요청시간대
 
-ForeignUsabilityCapacityRatio = ForeignerUsableCapacity / TechnicallyAvailableCapacity.
+외국인이용가능 수용량비 = 외국인이 실제 이용가능한 수용량 / 기술적으로 존재하는 수용량
 
-InventoryStaleness = ObservationTime - SourceValidTime; no real-time inference when freshness exceeds source-specific SLA.
+분모를 모르면 비율을 계산하지 않는다.
 
-## Relationship to other layers
-CHOICE: destinations/products with no feasible inventory must be excluded from the feasible choice set at t.
-TRAVEL_PARTY: party size/mix changes feasible inventory; one remaining seat is not usable by a family of four.
-BUDGET_WTP: scarcity and allocation may change observed price; do not infer WTP from scarcity price without choice evidence.
-SEARCH: calendar visibility and sold-out surfaces alter discovery/consideration.
-BOOK_PAY: inventory hold, cutoff and confirmation are transaction states.
-MOVE: transport seat/vehicle/last-mile capacity can invalidate otherwise sellable experiences.
-STAY: room-night inventory must be modeled by date/room/occupancy/channel, not registered rooms.
-DO: experience slots, guide/artisan time and group limits define actual activity capacity.
-SUPPLY/REAL_SELLABLE_SUPPLY: this layer turns static supply entities into time-indexed effective supply.
-PLATFORM: channel allocation and cache refresh can create cross-platform availability asymmetry.
-MONEY_FLOW: scarcity/yield/pricing affect unit economics but must be separated from capacity itself.
-FAILURE_JOURNEY: SOLD_OUT, CUTOFF, CAPACITY_TOO_SMALL and channel-allocation exhaustion are explicit failure reasons.
-TEMPORAL: capacity is first-class time-series data and may exhibit seasonality, event shocks and structural regime changes.
+## 다른 축과 연결
+목적지선택: 원하는 시간에 재고가 없으면 실제 후보집합에서 탈락할 수 있다.
+동행집단: 1자리 남음은 4인가족에게 재고가 아니다.
+예산·지불의사: 희소성 때문에 가격이 올랐다고 지불의사가 높다고 단정하지 않는다.
+예약·결제: 재고 임시확보와 예약마감은 거래상태다.
+이동: 교통좌석·차량·마지막구간 수용량도 전체 체험을 막을 수 있다.
+숙박·활동: 객실·체험시간·가이드시간을 날짜별로 본다.
+플랫폼: 플랫폼마다 재고배정이 달라 접근성 차이가 생길 수 있다.
+실패여정: 매진·예약마감·일행부적합을 명시적 실패원인으로 저장한다.
 
-## Opportunity objects enabled
-CapacityBottleneck: high validated demand + repeated constrained effective capacity + economically/operationally solvable constraint.
-HiddenCapacity: low displayed/bookable inventory despite materially larger operating capacity due to channel, schedule or language constraints.
-LanguageCapacityIsland: general physical slots exist but foreign-language service capacity is near zero.
-GroupFitGap: inventory exists but common party configurations cannot book it.
-ChannelAllocationIsland: direct capacity exists but global distribution channel inventory is absent/exhausted.
-LastMinuteAvailabilityGap: physical capacity remains but stale/closed calendars or booking cutoff prevent conversion.
-OvercapacityDistributionGap: persistent unused capacity with demand signals elsewhere and a discoverability/distribution mismatch.
-QualityCapacityRisk: revenue expansion would exceed service-quality/social/environmental carrying capacity; reject as opportunity unless redesign increases sustainable capacity.
+## 사업기회 유형
+수용량 병목 / 숨은 유휴수용량 / 외국어 수용량 부족 / 가족·단체 적합성 문제 / 해외플랫폼 재고배정 부족 / 당일·단기 예약차단 / 수요는 있는데 다른 채널에만 재고가 있는 경우 / 과밀로 품질이 무너지는 위험.
 
-## Formula implications
-Static Supply must not enter KTOF directly. The supply term must be generated from EffectiveSellableCapacity(a,t,u,c) or a derived accessibility/conversion measure.
+## 현재 판정
+공개근거 준비도: 0.93
+엔진 준비도: 0.66
 
-For a journey/product request r:
-Feasible_r = 1 only if all binding capacity and eligibility constraints are satisfied at the requested time/channel/party.
+주요 막힘: 공급자별 실시간재고, 채널별 배정량, 직원·외국어 대응수용량, 임시확보·노쇼·초과예약, 수용량 때문에 거절된 실제 요청 수, 지속가능 적정수용량.
 
-At opportunity level, capacity uplift should be evaluated as an intervention delta, not as raw capacity count:
-DeltaEffectiveCapacity_i = EffectiveCapacity_after_i - EffectiveCapacity_before_i.
-PotentialIncrementalConversions are bounded by both validated unmet demand and DeltaEffectiveCapacity.
-
-## Public evidence ceiling / required private data
-Public sources are strong for registered/operating facilities, room counts, some schedules and platform/API architecture. They are weak for supplier-level real-time inventory, channel allocation, guide/language staffing, inventory holds, no-show/overbooking, capacity rejection denominators and actual sustainable-quality limits.
-
-Those require OTA/reservation-system data, Ground interviews and N-Telemetry.
-
-## Decision
-DESIGN_LOCKED_PUBLIC_EVIDENCE_PARTIAL_REALTIME_INVENTORY_PENDING
+최종 상태: 설계 잠금 / 공개근거 부분확보 / 실시간 재고·운영자료 필요
