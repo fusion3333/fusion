@@ -1,0 +1,13 @@
+priority,source_family,source,role,canonical_use,limitations,status
+1,O,MOIS/local-government licensing data,legal/registered supply backbone,"business identity,status,address,permit/category,open/closed state","registration does not prove active inventory,quality,foreigner usability or actual sales",VERIFIED
+1,O,KTO Tourism Data Lab tourism-business status,current registered/open business aggregation,"monthly business counts and category/region context","2026 logic excludes suspended businesses; source data can change continuously",VERIFIED
+1,O,KCTI Tourism Industry Survey,industry population/economics,"business counts,employment,revenue,industry structure and historical raw data","survey/statistical population differs from live sellable inventory",VERIFIED
+1,O,MCST accommodation statistics,accommodation capacity,"region/category/grade business and room counts","aggregate capacity only; no live availability or foreigner usability",VERIFIED
+1,O,KTO TourAPI/VisitKorea,visitor-facing tourism asset discovery,"attractions,cultural facilities,events,leisure,accommodation,shopping,food and multilingual content","editorial/content coverage is not exhaustive business census",VERIFIED
+2,E,Google Maps/local maps,discoverability/reputation sensor,"listing presence,hours,reviews,photos,language discoverability","platform coverage/ranking bias; not legal status",PLANNED
+2,E,OTA/activity platforms,commercial distribution sensor,"listing,price,inventory,instant-bookability,cancellation,review volume","platform-specific and dynamic; absence does not prove no supply",PLANNED
+2,E,Supplier official web/social,direct supply sensor,"current offer,price,capacity,language,booking/payment/contact","self-reported and can be stale",PLANNED
+3,S,Instagram/YouTube/TikTok/X/Threads/local SNS,latent/emerging supply discovery,"small workshops,artisans,seasonal/pop-up experiences and social proof","no denominator; authenticity/status must be verified",PLANNED
+3,R,Academic/industry research,method/context,"classification,coverage bias,informality and supply-chain interpretation","not canonical live inventory",VERIFIED
+4,G,Ground interviews/field audit,real-world supply verification,"actual operation,capacity,foreign guests,language,pain,willingness,recombination potential","costly and sampled",REQUIRED_NEXT_LAYER
+5,N,Own telemetry/supplier onboarding,revealed supply state,"inventory updates,quote response,acceptance,rejection,booking/attendance","does not exist at public-discovery stage",REQUIRED_NEXT_LAYER
