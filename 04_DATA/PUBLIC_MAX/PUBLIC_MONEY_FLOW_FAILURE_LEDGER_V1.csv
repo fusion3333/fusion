@@ -1,0 +1,4 @@
+record_id,record_type,provider,product_type,market,valid_from,valid_to,journey_stage,traveler_paid,platform_fee_type,platform_fee_value,payment_fee,fx_fee,tax,refund_or_cancel_cost,supplier_payout_rule,failure_code,workaround,source_tier,source_ref,confidence,notes
+MF-0001,MONEY_FLOW,Airbnb,Experience,global,2026-02-05,,PAYOUT,,host_service_fee,20%,,,,"host cancellation may incur 20% of booking value under stated policy","service fee automatically deducted from host payout",,,E,Airbnb official help/host terms,HIGH,"timestamp terms; do not generalize to other platforms"
+F-0001,FAILURE,KTO 1330,Tourist complaint,Korea,,,AFTER_SALES,,,,,,,,,"COMPLAINT_REPORTED","1330 phone/chat/complaint resolution process",O,KTO VisitKorea 1330,HIGH,"complaint != verified violation != failed-journey denominator"
+# Extend with platform/payment/transport official rules and evidenced failures. Private negotiated terms remain PRIVATE; attempted denominators remain TELEMETRY_REQUIRED.
