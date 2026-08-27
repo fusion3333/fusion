@@ -1,0 +1,24 @@
+category,segment,item,importance,evidence_type,platform_implication,status
+NEED,all,다국어 설명,critical,official+traveler,영어 우선 다국어 상품페이지,active
+NEED,all,명확한 최종가격,critical,official+OTA,세금 수수료 포함 총액 우선표시,active
+NEED,all,해외카드 결제,critical,traveler,글로벌 결제수단,active
+NEED,all,정확한 위치와 이동방법,critical,official+traveler,지도 및 door-to-door 안내,active
+NEED,all,예약 확정 및 취소환불 규칙,critical,OTA,표준화 정책과 즉시확정 표시,active
+NEED,stay,현대식 화장실 여부,high,traveler,숙소 구조화 필드,active
+NEED,stay,침대 또는 온돌,high,traveler,숙소 구조화 필드,active
+NEED,all,신뢰 가능한 리뷰,critical,OTA+traveler,플랫폼별 리뷰 표본 및 Verified Review,active
+NEED,all,다국어 고객지원,high,traveler,여행 중 CS,active
+WANT,western,Authentic Korean Experience,critical,global_survey,전통성 점수 및 스토리텔링,active
+WANT,all,한옥숙박,high,market_hypothesis,STAY 핵심상품,active
+WANT,all,한국음식과 다도,high,official_survey,FOOD+EXPERIENCE 결합,active
+WANT,western,전통공예와 역사,high,global_survey,Heritage Journey,active
+WANT,all,K-Beauty와 K-Wellness,high,market_data,웰니스 교차판매,active
+WANT,all,개인화 일정,high,global_survey,Journey Builder,active
+PAIN,all,Google Maps 기능제약,high,official+traveler,내비게이션 추상화 및 Naver/Kakao 연동,active
+PAIN,all,언어장벽,high,official+traveler,다국어 콘텐츠와 실시간 안내,active
+PAIN,all,교통 및 결제 마찰,high,traveler,선결제와 이동가이드,active
+PAIN,all,택시 부당요금 불안,medium,official_complaints,픽업/정찰 이동상품,active
+PAIN,all,OTA 시설 광고 불일치,high,official_survey,검증된 사진과 시설정보,active
+PAIN,all,OTA 환불 위약금 문제,high,official_survey,명확한 취소정책,active
+PAIN,all,OTA 가격표시 불명확,high,official_survey,What you see is what you pay,active
+PAIN,all,플랫폼별 리뷰 편차,high,OTA+traveler,다중플랫폼 review confidence score,active
