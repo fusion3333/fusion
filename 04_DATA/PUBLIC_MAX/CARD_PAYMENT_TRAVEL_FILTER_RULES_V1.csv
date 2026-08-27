@@ -1,0 +1,15 @@
+rule_id,raw_signal,allowed_interpretation,forbidden_interpretation,required_join_or_gate,reason
+CF-001,foreign_card_POS_in_destination,foreign-issued card-present merchant activity in destination,foreign tourist total expenditure,"tourism industry filter + visitor/origin statistics + coverage note",foreign residents/business travelers/non-tourism transactions may be included
+CF-002,issuer_cards_used_abroad_POS,card-present spending abroad by issuing market,outbound physical-presence payment signal,total outbound tourism expenditure,"destination if available + travel statistics + cash/other-payment adjustment",not every card-present transaction is tourism and coverage is partial
+CF-003,issuer_cards_used_abroad_online,cross-border ecommerce/payment signal,country tourism demand,"travel-product merchant identification + booking timing + destination evidence",foreign online merchants can be unrelated to travel
+CF-004,cross_border_card_total,cross-border payment intensity,outbound tourism spend,"separate POS/online/cash + travel merchant categories",mixes ecommerce subscriptions digital goods and travel
+CF-005,foreign_card_ATM,cash withdrawal by foreign-issued instruments,merchant tourism consumption,"cash-withdrawal-specific treatment",withdrawn cash destination use is unobserved
+CF-006,transaction_count,payment event count,traveler count,"unique-card/person methodology if officially available",one traveler can transact many times
+CF-007,issuer_country,issuer-market signal,nationality or residence,"source definition/country mapping",issuer market can differ from cardholder nationality/residence
+CF-008,merchant_region,merchant transaction geography,lodging region or full itinerary,"mobility/stay sensor join",merchant location is only transaction location
+CF-009,gross_authorization_or_purchase_value,gross observed payment value,final supplier revenue,"refund/chargeback/net-settlement fields if available",refunds and reversals change final value
+CF-010,single_network_or_acquirer_spend,covered-network trend,total market share or total spend,"coverage/market-share denominator or triangulation",network/acquirer coverage is incomplete
+CF-011,top10_destination_rank,relative destination prominence,full destination distribution,"censoring flag + total denominator",destinations below rank 10 are absent
+CF-012,card_spend_growth,covered payment growth,visitor growth or demand growth,"arrivals + nights + FX + inflation + mix controls",spend can rise due to price FX mix or payment substitution
+CF-013,sold_out_or_inventory_absence,availability constraint,high demand,"capacity/schedule/channel checks",inventory can be withheld closed or channel-limited
+CF-014,card_fee_rate,payment cost component,total platform take rate,"scheme/acquirer/FX/platform fee ledger",merchant fee is only one money-flow component
