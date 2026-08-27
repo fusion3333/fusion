@@ -1,0 +1,18 @@
+domain,baseline_percent,current_percent,target_percent,status,next_gate
+서울/종로 한옥 공급,70,75,85,ACQUIRED,전체 471행 정규화+OTA 매칭
+서울 전체 한옥,30,30,85,DISCOVERED,자치구 전체 공식 모집단 확보
+경기 한옥,15,15,85,DISCOVERED,경기 공식 CSV 전수획득+seed 대조
+부산·제주·경주 숙박,5,10,85,DISCOVERED,공식 인허가/OTA 모집단 확보
+방한 외국인 국가별 규모,50,65,85,VERIFIED,26개국 집계표 정규화
+지역별 외국인 소비,45,65,85,VERIFIED,국가×지역×업종 CSV 획득
+외국인 관광행동,40,55,85,VERIFIED,외래객조사 문항/국가별 분해
+국가별 Needs/Wants,20,35,85,VALIDATING,26개국 잠재방한 집계표+VOC 결합
+전통문화 체험 공급자,10,20,85,VALIDATING,서울/경주/부산/제주/경기 전수 inventory
+K-Wellness/한의원,10,30,85,VALIDATING,등록기관+비의료 웰니스 공급망 분리
+Booking/Agoda/Google,10,18,85,VALIDATING,공급자별 가격·평점·리뷰 대량매칭
+Reddit/해외 커뮤니티,10,12,85,DISCOVERED,국가별 VOC 코퍼스 구축
+경쟁 플랫폼,5,30,85,VALIDATING,Klook/KKday/Trazy/GetYourGuide/Viator 기능·수수료 비교
+교통/결제/언어 병목,20,45,85,VALIDATING,여정별 friction 정량화
+법률·규제,5,35,85,VALIDATING,여행업/전자상거래/의료유치/개인정보/PG 검토
+공급자 수수료/경제성,5,12,85,HYPOTHESIS,경쟁 수수료+공급자 인터뷰+unit economics
+실제 고객 지불의사,0,5,85,UNVALIDATED,랜딩/설문/가격테스트/선결제 실험
