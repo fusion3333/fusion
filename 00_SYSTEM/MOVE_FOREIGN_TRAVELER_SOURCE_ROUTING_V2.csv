@@ -1,0 +1,12 @@
+source_class,priority,source_family,what_to_measure,examples,canonical_role,limitations
+O_OFFICIAL,1,KTO/Korea Tourism Data Lab,foreigner transport-service usability and travel behavior,Korea Transportation Guide; foreign visitor survey,FOREIGNER_USABILITY_BACKBONE,service guide does not equal actual usage
+O_OFFICIAL,1,National/local transport operators,rail/bus/subway/airport/ferry supply fares schedules ridership,KORAIL; SRT; Incheon Airport; Seoul Metro; local transit,NETWORK_SUPPLY_CONTEXT,most ridership lacks foreigner flag
+O_OFFICIAL,1,Government complaint/enforcement,taxi violations complaints accessibility policy,Seoul Metropolitan Government; MOLIT,VERIFIED_FRICTION,complaints and verified violations must remain separate
+E_ENTERPRISE,2,Payment/transit infrastructure,purchase topup tap settlement acceptance,Tmoney; card/PG operators,TRANSACTION_USABILITY,commercial coverage may not expose failure rates
+E_ENTERPRISE,2,Ride hailing,discoverability language identity payment dispatch completion,k.ride; Uber Taxi; Kakao T,FOREIGNER_RIDE_HAILING_STATE,public product docs do not expose conversion/abandonment
+E_ENTERPRISE,2,Maps/navigation,route search language POI transit guidance,Naver Map; Kakao Map; Google Maps where applicable,NAVIGATION_INTENT_PROXY,search intent is not movement presence
+E_ENTERPRISE,2,Rail/bus booking,foreign language booking foreign card ticket issuance,KORAIL foreign booking; express/intercity channels,BOOKABILITY_STATE,availability varies by channel/operator/date
+S_SOCIAL_VOC,3,Traveler communities,failed signup payment topup route confusion luggage late night last mile,Reddit r/koreatravel; travel forums,REPORTED_PAIN,selection bias and unverifiable anecdotes
+R_RESEARCH,4,Academic/policy research,mode choice accessibility last mile MaaS tourist mobility,transport/tourism journals; policy institutes,MECHANISM_VALIDATION,often lagged or local samples
+G_GROUND,5,Traveler/supplier fieldwork,attempted-but-failed trips actual last mile wait refusal luggage capacity language,intercepts diaries supplier interviews,GROUND_TRUTH,costly and small samples
+N_NEW,6,Operational telemetry,app funnel payment authorization AFC foreign-card BIN booking abandonment,platform/operator partnership or first-party instrumentation,FAILURE_JOURNEY_GOLD,usually proprietary; strategic acquisition target
