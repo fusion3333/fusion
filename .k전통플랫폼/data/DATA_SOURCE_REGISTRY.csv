@@ -30,3 +30,8 @@ SRC-0028,voice,2025 관광불편신고 종합분석서,한국관광공사,전국
 SRC-0029,market,중국 FIT 숙박예약 채널 설문,한국관광공사 중국지역센터,중국,official_survey,market report,VERIFIED,ad hoc,중국 GTM/OTA channel,A,2026-08-27
 SRC-0030,commercial,GetYourGuide General Terms,GetYourGuide,글로벌,OTA_terms,web,VERIFIED,current,commercial-agent 계약구조,A,2026-08-27
 SRC-0031,commercial,Booking.com Accommodation Terms,Booking.com,글로벌,OTA_terms,web,VERIFIED,current,숙박 commission 산식/계약구조,A,2026-08-27
+SRC-0032,market,2026년 1분기 방한 외래관광객 규모/지출/만족/지역방문,문화체육관광부·한국관광공사·한국문화관광연구원,전국,official_stats+survey,web,VERIFIED_PROVISIONAL,quarterly,시장규모/지출/만족/지역분산,A,2026-08-27
+SRC-0033,market,2026 국정성과 방한객 1000만/5월 카드지출,문화체육관광부,전국,official_stats,web,VERIFIED_PROVISIONAL,periodic,상반기 시장 pulse,A,2026-08-27
+SRC-0034,market,관광데이터랩 국가별 분석 빅데이터,한국관광공사,전국 시군구,official_bigdata,web+download,VERIFIED_SOURCE,monthly,국가×지역×방문×신용카드소비×간편결제×숙박리뷰,A,2026-08-27
+SRC-0035,data,관광데이터랩 데이터 설명/갱신주기,한국관광공사,전국,official_metadata,web,VERIFIED,monthly,ETL cadence/data governance,A,2026-08-27
+SRC-0036,content,한국관광 콘텐츠랩 다국어/OpenAPI,한국관광공사,전국,official_content_api,web+OpenAPI,VERIFIED_SOURCE,ongoing,9개 언어 관광콘텐츠/콘텐츠 연결,A,2026-08-27
