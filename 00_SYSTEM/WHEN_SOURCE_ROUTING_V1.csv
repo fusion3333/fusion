@@ -1,0 +1,11 @@
+priority,sensor,source,measurement,time_granularity,use,restriction
+1,O,KTO Korean Tourism Statistics,inbound visitors by nationality sex age purpose transport,MONTH,"canonical inbound calendar backbone","do not infer motivation from counts"
+1,O,MOJ Immigration Statistics Monthly,foreign entries and immigration context,MONTH,"cross-check entry regime and administrative series","tourist != all foreign entrants"
+1,O,KTO Foreign Tourist Survey,trip behavior and satisfaction,MONTH/QUARTER/YEAR,"condition WHEN by WHO WHY STAY DO SPEND","2020-2022 methodology break"
+1,O,KTO Potential Visitor Survey,intention and desired timing,YEAR/WAVE,"future demand and why-now","intent != arrival"
+2,E,airline and airport schedules,seat capacity routes frequency,DAY/MONTH,"supply constraint/event covariate","capacity != passenger demand"
+2,E,OTA/search platform trends,search booking price availability,DAY/WEEK/MONTH,"lead indicators","index != absolute volume unless denominator exists"
+3,S,Google/SNS/VOC,season/event/holiday conversation,DAY/WEEK,"hypothesis and shock discovery","not population prevalence"
+4,R,peer-reviewed tourism demand/event studies,seasonality shock elasticity and causal methods,VARIES,"method selection and validation","transfer coefficients only after validation"
+5,G,traveler/supplier interviews,why-now school holiday event weather crowding constraints,EVENT,"latent timing driver validation","sample bias must be recorded"
+6,N,first-party telemetry,impression search plan booking payment arrival timestamps,EVENT,"lead-lag conversion and failed journey timing","requires owned/partner telemetry"
