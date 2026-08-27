@@ -1,0 +1,29 @@
+domain,variable,required_dimensions,preferred_source,source_type,minimum_history,current_status,priority,notes
+WHO,arrivals,nationality|month|year,관광지식정보시스템/한국관광통계,XLSX/WEB,10y+,PARTIAL,1,승인통계 기준축
+WHO,age_gender,nationality|age|gender|year,외래관광객조사,CSV/XLSX/PDF,10y+,MISSING,1,표본/가중치 보존
+WHO,income_budget,nationality|income|budget|year,외래관광객조사/잠재방한여행객조사,CSV/XLSX/PDF,10y+,MISSING,2,직접소득 부재 시 여행예산 proxy
+WHY,purpose,nationality|purpose|year,외래관광객조사,CSV/XLSX/PDF,10y+,MISSING,1,
+WHY,korea_choice_reason,nationality|reason|year,외래관광객조사,CSV/XLSX/PDF,10y+,MISSING,1,
+WHY,k_content_effect,nationality|content_type|year,한류실태/외래관광객조사/잠재방한조사,CSV/XLSX/PDF,10y+,MISSING,2,
+WHEN,seasonality,nationality|month,한국관광통계,XLSX,10y+,PARTIAL,1,월 120개 이상
+WHERE,regional_visits,nationality|province|city|month,관광데이터랩 이동통신/외래관광객조사,CSV/XLSX/WEB,10y target,MISSING,1,데이터 가용기간 별도 기록
+WHERE,region_flow,origin|destination|nationality|period,통신/내비/철도/지역관광공사,CSV/XLSX/API,all available,MISSING,1,
+STAY,length_of_stay,nationality|region|year,외래관광객조사/관광데이터랩,CSV/XLSX/PDF,10y+,MISSING,1,
+STAY,accommodation_type,nationality|type|region|year,외래관광객조사,CSV/XLSX/PDF,10y+,MISSING,1,
+STAY,room_price,property|date|channel,공식숙박/OTA 공개정보,WEB/API,dynamic,MISSING,3,약관 준수
+DO,activities,nationality|activity|region|year,외래관광객조사/지역기관,CSV/XLSX/PDF,10y+,MISSING,1,
+SPEND,total_spend,nationality|region|year,외래관광객조사/카드데이터,CSV/XLSX/PDF,10y+,MISSING,1,
+SPEND,category_spend,nationality|region|industry|period,관광데이터랩 카드/지역관광공사,CSV/XLSX/WEB,all available,MISSING,1,
+SEARCH,info_channel,nationality|channel|year,외래관광객조사/Google Trends/SNS,CSV/XLSX/WEB,10y target,MISSING,2,
+BOOK_PAY,booking_channel,nationality|channel|product|year,외래관광객조사/OTA,CSV/XLSX/WEB,10y target,MISSING,2,
+BOOK_PAY,payment_fx,nationality|method|merchant|period,카드/결제/외래관광객조사,CSV/XLSX/PDF,all available,MISSING,2,
+MOVE,transport_mode,nationality|region|mode|year,외래관광객조사/철도/교통카드,CSV/XLSX/API/PDF,10y target,MISSING,2,
+PAIN,pain_points,nationality|stage|topic|platform,외래관광객조사/공개리뷰/VOC,CSV/WEB/API,all available,MISSING,1,
+SATISFACTION,satisfaction_revisit,nationality|region|activity|year,외래관광객조사,CSV/XLSX/PDF,10y+,MISSING,1,
+SUPPLY,supply_master,entity|category|region|price|language|booking|payment,TourAPI/지자체/인허가/공식업체/플랫폼,API/CSV/XLSX/WEB,current+history,MISSING,1,entity resolution 필요
+PLATFORM,coverage,platform|entity|region|category|language,OTA/Google/국가별플랫폼,WEB/API,current snapshots,MISSING,1,노출률 계산
+MONEY_FLOW,fees_margin,platform|category|fee|tax|pg|fx,공식 파트너문서/사업보고서/정책자료,PDF/WEB/DOCX,current+history,MISSING,2,비공개는 INACCESSIBLE
+GAP_ENGINE,information_asymmetry,entity|field|language|platform,한국어 원천 vs 외국어 노출 비교,derived,periodic,MISSING,1,KTOF 계산
+GAP_ENGINE,island_score,entity|region|category,Supply+Platform+Journey derived,derived,periodic,MISSING,1,KTOF 계산
+GAP_ENGINE,bottleneck,journey_stage|conversion|traffic|value,조사+플랫폼+실거래 proxy,derived,periodic,MISSING,1,KTOF 계산
+OPPORTUNITY,revalue,asset|current_value|new_value|cost,Supply+Price+Demand+WTP,derived,periodic,MISSING,1,KTOF 계산
