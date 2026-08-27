@@ -1,0 +1,10 @@
+source_tier,sensor,source,measurement_role,granularity,status,critical_caveat
+O,Survey,KTO/KCTI Foreign Tourist Survey,trip duration; regional stay duration; accommodation type; booking items,nationality/segment/month/region,VERIFIED,"survey definitions and method regimes must be preserved"
+O,Telecom,Korea Tourism Data Lab SKT mobility,regional overnight/length-of-stay proxy,23 countries/municipality/month,VERIFIED,"estimated roaming-SIM population; trend/proxy not exact hotel nights"
+O,Supply,MCST tourism accommodation registry,registered establishments and rooms,region/type/year,VERIFIED,"registered tourism accommodation is not all lodging supply"
+E,OTA,Booking.com first-party search/booking data,accommodation demand/search/booking destination signal,market/city/date/party,VERIFIED_PARTIAL,"platform population only; search is not stay"
+E,OTA,Agoda/other OTA first-party data,accommodation search/booking signal,market/city/date,PARTIAL,"coverage varies by publication and platform"
+S,VOC,Google/OTA reviews and social posts,stay pain/quality/location/language/cleanliness proxy,property/market/time,REQUIRED,"self-selection and platform bias"
+R,Research,peer-reviewed accommodation choice/length-of-stay studies,mechanism and validation,segment/destination,REQUIRED,"do not substitute study samples for population estimates"
+G,Ground,supplier interviews/field audit,actual capacity; foreign guest mix; booking/payment; occupancy constraints,property/date,REQUIRED,"needed for real sellable supply and hidden inventory"
+N,Telemetry,our booking/stay event stream,search→book→check-in→night allocation→checkout→cancel,traveler/property/night,REQUIRED,"needed for causal conversion and failed stay journey"
