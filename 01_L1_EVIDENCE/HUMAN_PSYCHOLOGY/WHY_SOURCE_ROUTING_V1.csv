@@ -1,0 +1,9 @@
+priority,source_class,source,measurement,coverage,role,limitation
+O1,O,KTO Foreign Tourist Survey,actual visitors: purpose/interest trigger/Asia consideration/choice reasons/search context,monthly survey backbone,observed visitor stated motivations,"recall/self-report; methodology breaks especially 2020-2022"
+O2,O,KTO Potential Foreign Tourist Survey,3-year Korea intent/image/information influence/non-intender barriers,2020 pilot; 2021 expanded; annual 2022+,pre-arrival demand and intent,"2025 sample design and weighting changed; intent is not behavior"
+O3,O,KTO Tourism Data Lab country dashboards,experience/intent + search-interest index + country profiles,2022-2025 for several demand fields,normalized country mirror,"Google interest is relative index; only 7 countries supported for search-interest"
+E1,E,search/platform/OTA/airline first-party or licensed telemetry,search/book/price/availability transitions,proprietary/variable,revealed behavior augmentation,"access/licensing and platform-selection bias"
+S1,S,public reviews/social/video/community VOC,desire/emotion/identity/risk/friction language,continuous but nonrepresentative,discover latent motives and vocabulary,"self-selection/platform bias; cannot infer population share"
+R1,R,peer-reviewed tourism psychology/destination-image/content-induced tourism research,mechanisms and validated constructs,multi-study,causal/behavioral framing,"context transfer to Korea requires validation"
+G1,G,traveler interviews/choice interviews,why-now/abandoned intent/decision hierarchy,pilot required,counterfactual and latent motive discovery,"small samples; interviewer bias"
+N1,N,first-party funnel telemetry,exposure→search→plan→attempt→book→pay→arrive,future proprietary,actual state transitions,"not available before product/partner instrumentation"
