@@ -1,0 +1,15 @@
+domain,subdomain,variable,source_priority,source_name,source_type,granularity,time_coverage,status,limitations,next_action
+MOVE,regional_mobility,foreign_visitor_region_flow,O1,KTO Tourism Data Lab,mobile/location aggregated,region x month,monthly multi-year,VERIFIED,methodology/coverage differs by product,acquire downloadable tables and methodology
+MOVE,navigation,destination_search_flow,O1,KTO Tourism Data Lab,navigation aggregated,POI/region x month,monthly multi-year,VERIFIED,search is intent not actual movement,join to mobility and spend
+MOVE,airport_gateway,airport_ground_transport_options,O1,Incheon International Airport Corporation,official operational,airport/terminal,current,VERIFIED,availability not usage,collect bus/rail/taxi/car-rental topology
+MOVE,rail,rail_passenger_volume,O1,KORAIL via data.go.kr,official administrative,train type/line x date,annual/periodic,VERIFIED,not foreigner-specific,join to KTO foreigner regional flow
+MOVE,public_transport,mode_share,O1,MOLIT transport-card big data,official aggregated,region/day,varies,VERIFIED,mostly all users not foreigner-specific,use as infrastructure capacity/context layer
+MOVE,metro,station_card_transactions,O2,local transit operators/AFC,official administrative,station x month,long historical where available,VERIFIED,card type rarely identifies foreigner,use as accessibility/capacity proxy
+MOVE,taxi,foreign_tourist_complaints,O1,Seoul Metropolitan Government,official complaint/enforcement,foreign tourist x incident,2024-2026 confirmed,VERIFIED,Seoul only; complaint underreporting,encode overcharge/refusal/payment-language friction
+MOVE,taxi,foreign_taxi_app_access,O1,Seoul Metropolitan Government,official service guidance,app/service,current,VERIFIED,current service availability not adoption,map Korean-card/phone constraints and international alternatives
+MOVE,airport_bus,airport_bus_usage,O1,Seoul Metropolitan Government,official operations,route/passengers,varies,PARTIAL,aggregate not nationality-specific,collect current route/passenger datasets
+MOVE,airport_vehicle,airport_origin_vehicle_flow,O1,Korea Airports Corporation via data.go.kr,official linked administrative,airport x origin dong x month,2024 examples,VERIFIED,private/car users and not foreigner-specific,use only as domestic access context
+MOVE,journey_friction,first_hour_transport_failure,G1,Ground Intelligence,partner survey/interview,traveler/supplier,prospective,MISSING,no public direct measurement,design airport-to-first-destination failure survey
+MOVE,journey_friction,luggage_transfer_friction,G1,Ground Intelligence + reviews,field/review,trip/event,prospective,MISSING,selection bias,collect failure/recovery events
+MOVE,journey_friction,language_navigation_failure,G1,Ground Intelligence + app reviews,field/review,trip/event,prospective,MISSING,platform-specific bias,measure search-route-ticketing failure chain
+MOVE,journey_friction,last_mile_gap,DERIVE,Cross-engine graph,derived,OD pair x month,derived,PROVISIONAL,requires normalized mobility+supply+schedule,build after raw ingestion
