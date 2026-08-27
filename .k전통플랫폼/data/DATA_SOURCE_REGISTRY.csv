@@ -1,0 +1,16 @@
+source_id,domain,source_name,owner,geo,source_type,access,status,refresh,use_case,reliability,last_checked
+SRC-0001,hanok,종로구 한옥체험업 인허가,서울시/종로구,서울 종로,official_api,LOCALDATA_031106_JN,ACQUIRED,daily,공급망 master,A,2026-08-27
+SRC-0002,hanok,전국 한옥체험업 표준데이터,행정안전부/LOCALDATA,전국,official_file,CSV/DATA.GO.KR,DISCOVERED,daily,전국 공급망,A,2026-08-27
+SRC-0003,hanok,경기도 한옥체험업 현황,경기데이터드림,경기 31개 시군,official_file,CSV/XLS/JSON/XML,DISCOVERED,periodic,경기 공급망,A,2026-08-27
+SRC-0004,market,외래객조사/관광데이터랩,한국관광공사,전국,official_survey,web/report,DISCOVERED,annual,방한시장/TAM/SAM,A,2026-08-27
+SRC-0005,market,서울 외래관광객 실태조사,서울시/서울관광재단,서울,official_survey,report,DISCOVERED,annual,서울 고객행동,A,2026-08-27
+SRC-0006,medical,외국인환자 유치기관 등록/현황,Medical Korea/KHIDI,전국,official_registry,web,DISCOVERED,ongoing,K-Wellness 의료공급,A,2026-08-27
+SRC-0007,legal,관광진흥법 및 시행령,국가법령정보센터,전국,official_law,web,VERIFIED,as amended,여행업 규제,A,2026-08-27
+SRC-0008,legal,전자상거래법 및 시행규칙,국가법령정보센터,전국,official_law,web,VERIFIED,as amended,통신판매 규제,A,2026-08-27
+SRC-0009,commercial,Klook 한국 전통문화 체험,Klook,서울/전국,OTA,web,DISCOVERED,realtime,경쟁/가격/상품구조,B,2026-08-27
+SRC-0010,commercial,KKday 서울 Cultural Experiences,KKday,서울,OTA,web,DISCOVERED,realtime,경쟁/판매량 proxy,B,2026-08-27
+SRC-0011,commercial,Trazy Culture & Class,Trazy,서울/전국,OTA,web,DISCOVERED,realtime,경쟁/가격/수요 proxy,B,2026-08-27
+SRC-0012,commercial,Booking.com Korea accommodation,Booking.com,전국,OTA,web,DISCOVERED,realtime,숙박 가격/평점,B,2026-08-27
+SRC-0013,commercial,Agoda Korea accommodation,Agoda,전국,OTA,web,DISCOVERED,realtime,숙박 가격/평점,B,2026-08-27
+SRC-0014,voice,Google Reviews,Google,전국,review_platform,web,DISCOVERED,realtime,평점/리뷰,B,2026-08-27
+SRC-0015,voice,Reddit Korea Travel communities,Reddit,글로벌,community,web,DISCOVERED,realtime,Pain Point/Voice of Customer,C,2026-08-27
