@@ -1,0 +1,12 @@
+priority,source_class,source,role,measurement,guardrail
+1,OFFICIAL,KTO Tourism Complaint Center/Data Lab,canonical complaint backbone,"year/month, type, region, nationality, complaint cases","complaint cases are selected reports, not prevalence among all tourists"
+1,OFFICIAL,KTO 1330 Travel Helpline & Complaint Center,service and complaint channel,"complaint/inquiry intake and resolution path","contact volume is not automatically dissatisfaction prevalence"
+1,OFFICIAL,Seoul Metropolitan Government,taxi and city-service verified friction,"reported complaint, investigation, verified violation, remedy","reported complaint != verified violation"
+2,OFFICIAL,central/local public agencies,domain-specific complaint and accessibility evidence,"transport/payment/accessibility/safety/service friction","preserve domain definitions"
+3,COMPANY,OTA/maps/platform first-party reviews,transaction-adjacent VOC,"rating, review text, topic, property/product, timestamp","platform sample != all Korea visitors; preserve platform bias"
+3,COMPANY,operator/customer-service evidence,service failure evidence,"support topic, cancellation/refund/booking/payment friction","do not infer denominators without first-party counts"
+4,SNS,Reddit Korea travel communities,open-ended traveler narratives,"pain topic, journey stage, severity, workaround, sentiment","anecdotal/discussion evidence; never convert posts to population prevalence"
+4,SNS,YouTube/Instagram/TikTok/Threads/X,discovery and lived-experience VOC,"topic, language, market, engagement, narrative","engagement != incidence; creator/audience selection bias"
+5,RESEARCH,academic/industry research,validation and taxonomy,"constructs, correlations, qualitative themes","study population/method must be retained"
+6,GROUND,direct supplier/traveler interview,hidden offline friction,"actual failure, workaround, supplier constraint, resolution","record interview protocol/sample"
+7,N_TELEMETRY,owned journey telemetry,denominator-bearing behavioral friction,"attempt, failure edge, abandonment, recovery, conversion loss","future empirical layer; consent/privacy required"
