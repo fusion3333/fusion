@@ -3,29 +3,35 @@
 ## 완료
 - [x] Expo + React Native + TypeScript 앱 구조
 - [x] 홈 안전 대시보드
-- [x] 5대 범죄 표준 모델
-- [x] 외국인 주민 비율 표준 모델
-- [x] 관심지역 선택
-- [x] 알림 권한 설정 UI
-- [x] 위치 권한 설정 UI
-- [x] 출처/한계 화면
+- [x] 전국 법정동코드 OpenAPI 직접 연결
+- [x] 전국 지역 검색 UI
+- [x] GPS → 전국 행정구역 자동 선택
+- [x] 관심지역/알림 설정 영속화
+- [x] 경기북부경찰청 5대범죄 odcloud OpenAPI 직접 연결
+- [x] 2022~2025 경기북부 범죄 추이 provider
+- [x] 2025 잠정자료 상태 표시
+- [x] 공식 CSV importer + CP949 처리
+- [x] 행정안전부 외국인주민 XML provider
+- [x] 주민등록 총인구를 독립 provider로 분리
+- [x] 기준기간 불일치 시 외국인 주민 비율 계산 차단
 - [x] Express API 프록시
-- [x] 행정안전부 외국인주민 API provider
-- [x] 범죄 공개통계 provider 계약
-- [x] 범죄 데이터 검증/정규화 스크립트
-- [x] API 키 비공개 구조
-- [x] 데이터 미연결 시 가짜 수치 차단
+- [x] `.env` 자동 로딩
+- [x] API timeout/cache/error handling
+- [x] Push token 구독/해지 API
+- [x] 보호된 지역 갱신 push endpoint
+- [x] EAS build profiles
+- [x] GitHub Actions typecheck/expo-doctor/script syntax 검사
+- [x] 데이터 미수집과 0건 구분
+- [x] 경찰서 관할과 행정구역 차이 표시
 
-## 실제 운영 전 필수
-- [ ] data.go.kr 서비스키 발급 및 서버 환경변수 등록
-- [ ] 경기북부경찰청 최신 공식 파일 다운로드/정규화
-- [ ] 정규화 파일을 HTTPS 정적 저장소에 게시하고 CRIME_DATA_URL 설정
-- [ ] 실제 기기에서 iOS/Android 빌드 테스트
-- [ ] 푸시 토큰 등록용 백엔드 저장소 선택
-- [ ] 정기 데이터 갱신 작업 배포
-- [ ] 개인정보처리방침/이용약관 작성
-- [ ] 앱스토어/플레이스토어 등록
+## 실데이터 최종 검증 필요
+- [ ] 노출된 data.go.kr 인증키 재발급 후 `server/.env` 설정
+- [ ] 주민등록 인구 API 실제 응답 샘플로 요청 파라미터/필드 최종 확정
+- [ ] 외국인 주민 API 실제 XML 응답으로 총 외국인 주민 필드 최종 확정
+- [ ] 전국 시도경찰청별 범죄 provider 확대
+- [ ] Expo EAS projectId 연결
+- [ ] iOS/Android 실제 기기 빌드 및 push 검증
 
 ## 제품 표현 제한
 
-현재 공개 데이터의 갱신주기보다 빠르게 "실시간 범죄 발생"이라고 표현하지 않는다. 개별 사건 스트림이 공식적으로 확보되면 별도의 provider로 추가한다.
+공식 공개 데이터의 공간·시간 해상도보다 더 세밀하게 표현하지 않는다. 경찰서 단위 통계를 특정 동네 사건으로 바꾸지 않으며, 범죄 데이터가 없는 지역은 추정하지 않는다.
