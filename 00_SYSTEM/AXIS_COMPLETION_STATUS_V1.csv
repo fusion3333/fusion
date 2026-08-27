@@ -3,9 +3,9 @@ sequence,axis,decision,public_evidence_readiness,engine_ready,primary_blocker,ne
 2,WHY_HUMAN_PSYCHOLOGY,PUBLIC_SOURCE_DISCOVERY_LOCKED_CAUSAL_CONVERSION_PARTIAL,0.84,0.68,"historical raw harmonization + individual exposure→search→booking→arrival telemetry + Ground causal validation","reopen on material new evidence",2026-08-28
 3,WHEN,PUBLIC_SOURCE_DISCOVERY_LOCKED_RAW_PANEL_EVENT_LEDGER_PARTIAL,0.88,0.70,"2015-2025 origin×month ingestion + origin calendars + route/seat history + policy/event ledger + individual lead-time telemetry","reopen on material new evidence",2026-08-28
 4,ORIGIN_TOP15,PUBLIC_SOURCE_DISCOVERY_LOCKED_MULTI_COUNTRY_RAW_HARMONIZATION_PARTIAL,0.78,0.58,"exact 2025 TOP15 computation + origin raw ingestion/harmonization + incomplete destination-resolved monthly series + G/N conversion chain","reopen on material new evidence",2026-08-28
-5,COMPETITIVE_DESTINATION,PUBLIC_SOURCE_DISCOVERY_LOCKED_PANEL_HARMONIZATION_PARTIAL,0.82,0.61,"full monthly comparator ingestion + HK historical extraction + airfare/seat/visa/hotel ledgers + user-level choice/switching evidence","reopen on material new evidence; proceed SEARCH",2026-08-28
-6,SEARCH,ACTIVE,,,"not yet sequentially closed","execute full O/E/S/R/G/N completion pipeline",2026-08-28
-7,BOOK_PAY,QUEUED,,,,,2026-08-27
+5,COMPETITIVE_DESTINATION,PUBLIC_SOURCE_DISCOVERY_LOCKED_PANEL_HARMONIZATION_PARTIAL,0.82,0.61,"full monthly comparator ingestion + HK historical extraction + airfare/seat/visa/hotel ledgers + user-level choice/switching evidence","reopen on material new evidence",2026-08-28
+6,SEARCH,PUBLIC_SOURCE_DISCOVERY_LOCKED_BEHAVIORAL_FUNNEL_PARTIAL,0.81,0.57,"query-level absolute volume + impressions/CTR/ranking + cross-platform paths + OTA abandon denominators + first-party telemetry","reopen on material new evidence; proceed BOOK_PAY",2026-08-28
+7,BOOK_PAY,ACTIVE,,,"not yet sequentially closed","execute full O/E/S/R/G/N completion pipeline",2026-08-28
 8,MOVE,QUEUED,,,,,2026-08-27
 9,STAY,QUEUED,,,,,2026-08-27
 10,DO,QUEUED,,,,,2026-08-27
