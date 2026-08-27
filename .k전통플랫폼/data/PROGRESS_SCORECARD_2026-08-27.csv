@@ -1,18 +1,18 @@
 domain,previous_percent,current_percent,target_percent,status,evidence_basis,next_gate
 서울/종로 한옥 공급,75,75,85,ACQUIRED,공식 인허가 원본 확보,OTA/가격/리뷰/가용성 매칭
-서울 전체 한옥,30,30,85,DISCOVERED,전국/서울 인허가 소스 존재,서울 전체 모집단 ingest
+서울 전체 한옥,30,35,85,VERIFIED_SOURCE,서울 관광사업체 등록통계+서울스테이 외국인관광도시민박/한옥체험업 pipeline 확인,서울 전체 모집단 ingest+외국어/예약/결제 매칭
 경기 한옥,15,15,85,DISCOVERED,경기데이터드림 소스 발견,31개 시군 ingest
-부산·제주·경주 숙박,5,5,85,DISCOVERED,지역 관광데이터 소스 존재,숙박 master 구축
+부산·제주·경주 숙박,5,15,85,PARTIAL,제주 빅데이터플랫폼 장기 조사/이동통신/입도+서울/제주 공급원 구조 확인,부산·경주 equivalent source inventory+지역별 숙박 master
 방한 외국인 국가별 규모,75,80,85,VERIFIED_SOURCE,2025 국가별 분석+외래객 원자료+2026 Q1 476만/1~5월872만 pulse,2025 microdata 국가별 표+2026 월별 국적 확정치
-지역별 외국인 소비,65,72,85,VERIFIED_SOURCE,관광데이터랩 신용카드/통신/간편결제 구조+2026Q1 3.2128조/5월2.1조 pulse,핵심9개국×지역×업종 실제 export
-외국인 관광행동,70,75,85,VERIFIED_SOURCE,2025 외래객 원자료+2026Q1 만족90.8/지역방문34.5,2025 microdata 분석+2026 지역방문 정의/코드북 확인
+지역별 외국인 소비,65,78,85,VERIFIED_SOURCE,관광데이터랩 신용카드/통신/간편결제 구조+제주 2014-2023 카드소비 장기보고서와 OTA/전자상거래 과소포착 한계 확인,핵심9개국×지역×업종 실제 export+채널 coverage 보정
+외국인 관광행동,70,78,85,VERIFIED_SOURCE,2025 외래객 원자료+2026Q1 만족90.8/지역방문34.5+서울 외국인 관광객 기간권 역/시간대 이동 proxy 발견,2025 microdata 분석+교통카드 CSV ingest
 국가별 Needs/Wants,55,55,85,VERIFIED_SOURCE,잠재방한 26개국 16360+16360 표본/집계표,9개 핵심국 추출
-전통문화 체험 공급자,20,20,85,PARTIAL,Klook/KKday/Trazy/GYG/Viator 경로,공급자 전수 master
+전통문화 체험 공급자,20,22,85,PARTIAL,Klook/KKday/Trazy/GYG/Viator 경로+licensed→sellable supply 분리 규칙 강화,공급자 전수 master+Ground Intelligence
 K-Wellness/한의원,30,30,85,PARTIAL,Medical Korea 등록/규제 경계,공급자·가격·비의료 체험 분리
 Booking/Agoda/Google,25,25,85,PARTIAL,Booking 공식 공급자 약관+OTA 경로,실제 가격/리뷰 매칭
 Reddit/해외 커뮤니티,10,10,85,DISCOVERED,VOC 경로만 존재,국가별 corpus/theme coding
 경쟁 플랫폼,45,45,85,PARTIAL,주요 OTA 상품구조+GYG/Booking/Viator 약관,기능/가격/공급/수익 비교 matrix
-교통/결제/언어 병목,40,45,85,PARTIAL,데이터랩 결제 coverage+콘텐츠랩 9개언어+병목 taxonomy,공식 불편신고+리뷰/Reddit 정량 빈도 매핑
+교통/결제/언어 병목,40,60,85,VERIFIED_SOURCE,서울 외국인 관광객 기간권 승하차/유출 CSV+2026 국제카드 교통결제 regime change+콘텐츠랩 다국어 구조,실제 CSV ingest+결제실패율/국제카드 acceptance/VOC before-after
 법률·규제,50,50,85,PARTIAL,2026 관광진흥법 여행업 경계+의료유치 경계,통신판매/개인정보/패키지 책임 법률 matrix
-공급자 수수료/경제성,30,30,85,PARTIAL,GYG/Booking 공식 commission 메커니즘 확인,한국 공급자 인터뷰+실제 계약률+unit economics
+공급자 수수료/경제성,30,32,85,PARTIAL,GYG/Booking 공식 commission 메커니즘+서울 교통 국제카드 평균 서비스수수료 3.7% 정책사례,한국 공급자 인터뷰+실제 계약률+unit economics
 실제 고객 지불의사,5,5,85,UNVALIDATED,유사상품 시장존재만 확인,랜딩/가격 A-B/결제의향 실험
