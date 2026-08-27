@@ -1,0 +1,9 @@
+legal_id,domain,trigger,requirement_or_risk,source,status,impact,next_action
+LG-001,travel_business,외국인을 대상으로 국내여행 상품을 직접 기획·알선·판매,종합여행업 해당성 검토 필수,관광진흥법 시행령 제2조,VERIFIED,HIGH,등록요건/보증보험/사무실 등 세부조문 추가검토
+LG-002,ecommerce,웹/앱에서 여행·체험·숙박 용역 판매,전자상거래/통신판매 규율 적용 가능,전자상거래법 제2조 및 관련 조문,VERIFIED,HIGH,통신판매업 신고/표시사항/청약철회 정책 검토
+LG-003,ecommerce,플랫폼 거래기록 처리,표시광고 6개월 및 계약/청약철회 기록 5년 등 보존의무,전자상거래법 시행령 제6조,VERIFIED,MEDIUM,데이터보존 정책 설계
+LG-004,consumer_protection,가격·시설·환불조건 표시,기만적 표시/청약철회 방해 금지,전자상거래법 제21조,VERIFIED,HIGH,총액표시/환불정책/CS SOP 설계
+LG-005,privacy,외국 클라우드/CRM/결제사로 개인정보 이전,개인정보 국외이전 요건 및 고지/동의·보호조치 필요,개인정보보호법 제28조의8 및 시행령 제29조의10,VERIFIED,HIGH,데이터흐름도와 DPA/처리방침 설계
+LG-006,medical_tourism,한의원·병원 환자를 플랫폼이 유치·알선,외국인환자 유치사업 등록 및 실적보고 체계 적용 가능,의료 해외진출 및 외국인환자 유치 지원에 관한 법률/KHIDI,VERIFIED,CRITICAL,의료상품은 등록기관/유치사업자 파트너 모델 우선 검토
+LG-007,wellness,한방차·다도·명상·비의료 스파 등,의료행위와 구분 필요,의료/관광 규제 경계,VALIDATING,MEDIUM,상품 설명과 행위 범위 분류
+LG-008,payments,해외카드 결제 수납 및 공급자 정산,PG/전자금융 구조 및 Merchant of Record 책임 검토 필요,전자금융 관련 법령,DISCOVERED,HIGH,PG사/세무/정산 구조 법률검토
