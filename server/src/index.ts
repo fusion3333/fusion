@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import cors from 'cors';
 import express from 'express';
 import { getCrimeHistory, getCrimeStat } from './providers/crime.js';
