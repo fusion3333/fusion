@@ -1,0 +1,8 @@
+year,airport_scope,operations_total,passengers_total,international_passengers,unit,source_url,quality_note
+2019,Incheon International Airport,404104,71169722,70578050,"flights/persons",https://www.airport.kr/co_en/4272/subview.do,"전체 여객과 국제선 여객은 서로 다른 범위; 관광객 수가 아님"
+2020,Incheon International Airport,149982,12049851,,"flights/persons",https://www.airport.kr/co_ko/651/subview.do,"코로나기 급락 체크포인트; 공항 전체 여객"
+2021,Incheon International Airport,131027,3198909,,"flights/persons",https://www.airport.kr/co_ko/651/subview.do,"코로나기 공항 전체 여객"
+2022,Incheon International Airport,171253,17869759,,"flights/persons",https://www.airport.kr/co_ko/651/subview.do,"회복 초기 공항 전체 여객"
+2023,Incheon International Airport,337299,56131064,55763768,"flights/persons",https://www.airport.kr/co_ko/651/subview.do,"전체 여객과 국제선 여객 구분"
+2024,Incheon International Airport,413200,71156947,70669246,"flights/persons",https://www.airport.kr/co_ko/664/subview.do,"국제선 기준 2019 대비 100.1% 회복·상회; 전체 여객은 별도 값"
+2025,Incheon International Airport,425760,74071475,,"flights/persons",https://www.airport.kr/co_en/4272/subview.do,"공항 전체 여객; 외국인 관광객과 동일하지 않음"
