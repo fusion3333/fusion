@@ -1,0 +1,10 @@
+source_id,tier,source_family,source,measurement_role
+MF-O-001,O,official_tourism,KTO and official tourism statistics,traveler expenditure and regional tourism baseline
+MF-O-002,O,tax_regulation,Korean tax and payment regulators,tax and regulatory treatment where directly applicable
+MF-E-001,E,platform,Airbnb official help,guest price host payout service fee cancellation and payout mechanics
+MF-E-002,E,payment,PayPal Korea official fees,cross-border commercial receipt and currency-conversion fee mechanics
+MF-E-003,E,ota_platform,OTA supplier and partner disclosures,commission promotion affiliate refund and payout mechanics when disclosed
+MF-E-004,E,acquirer_pg,PG and acquirer pricing disclosures,payment processing authorization settlement and FX mechanics when disclosed
+MF-R-001,R,research,academic tourism leakage and value-chain research,methodology for retained value leakage multiplier and incidence
+MF-G-001,G,supplier_ground,supplier interviews,actual gross sales commissions promotions payment fees refunds taxes labor input costs and net margin
+MF-N-001,N,owned_telemetry,owned transaction ledger,traveler paid amount fee stack refund payout supplier revenue and repeat economics
