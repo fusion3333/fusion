@@ -1,0 +1,12 @@
+node_or_edge,canonical_type,required_keys,temporal_keys,provenance_keys,joins_to,materialization_gate
+NODE,TravelerSegment,"origin,age_band,party_type,motivation","valid_time","source_id,observation_id,confidence","Demand,Search,Journey",public or survey evidence
+NODE,Supplier,"supplier_id,name,location,category","observed_at,valid_time","source_id,entity_resolution_confidence","Asset,Product,PlatformListing",entity resolution threshold
+NODE,Product,"product_id,supplier_id,category","observed_at,valid_time","source_id,observation_id","PlatformListing,Price,Inventory,Journey",stable product identity
+NODE,PlatformListing,"listing_id,product_id,platform,market,language","observed_at","source_id,source_ref","Search,BookPay,Review",listing observed
+NODE,Friction,"friction_id,journey_stage,failure_code","observed_at,valid_time","source_id,evidence_type,confidence","Journey,Platform,Move,Payment",evidenced not inferred
+NODE,MoneyFlow,"money_id,provider,fee_type","valid_from,valid_to","source_id,source_ref","Platform,Payment,Supplier",commercial rule timestamped
+EDGE,DISCOVERED_VIA,"traveler_segment,listing/search_surface","observed_at","source_id,confidence","Search",no causal claim without denominator
+EDGE,BOOKED_ON,"product,platform","observed_at","source_id,confidence","BookPay",confirmed booking evidence only
+EDGE,FAILED_AT,"journey,friction","observed_at","source_id,evidence_type","FailureJourney",attempt evidence required for rate
+EDGE,PAYS_FEE_TO,"transaction/provider,fee","valid_time","source_id,source_ref","MoneyFlow",fee scope known
+EDGE,LOCATED_AT,"supplier/product,location","valid_time","source_id,confidence","Move,Supply",resolved geography
