@@ -1,21 +1,21 @@
-name,city,district,address,category,rating_5,review_count,rating_source,checked_date,registry_match_status
-하녹하녹,서울,종로구,"자하문로1나길 6",호텔,5.0,10,Google,2026-08-27,pending
-서촌게스트하우스,서울,종로구,"자하문로7길 28-3",게스트하우스,4.7,47,Google,2026-08-27,pending
-Haemil by Stay42,서울,종로구,"율곡로10길 15-14",게스트하우스,4.3,46,Google,2026-08-27,pending
-Hanok Guest house Dongchonjae,서울,종로구,"자하문로11길 21-10",게스트하우스,4.9,7,Google,2026-08-27,pending
-AWIK Hanok Stay,서울,종로구,"계동길 72",호텔,3.6,11,Google,2026-08-27,pending
-참한옥게스트하우스,서울,종로구,"삼일대로32길 49-5",게스트하우스,4.7,18,Google,2026-08-27,pending
-락고재 서울 본관,서울,종로구,"가회동 218",호텔,4.5,122,Google,2026-08-27,pending
-24게스트하우스 경복궁점,서울,종로구,"자하문로5가길 27-3",게스트하우스,4.7,99,Google,2026-08-27,pending
-다자연 한옥스테이,서울,종로구,"율곡로10길 81-3",호텔,4.9,7,Google,2026-08-27,pending
-누하당,서울,종로구,"필운대로 49-7",게스트하우스,4.5,20,Google,2026-08-27,pending
-Bukchonmaru Hanok Guesthouse,서울,종로구,"창덕궁길 152",게스트하우스,4.5,64,Google,2026-08-27,pending
-가인한옥게스트하우스,서울,종로구,"북촌로11길 118",게스트하우스,3.0,2,Google,2026-08-27,pending
-사이드 한옥 레지던스,서울,종로구,"필운대로 27-5",호텔,4.6,33,Google,2026-08-27,pending
-종로한옥 궁 게스트하우스,서울,종로구,"와룡동 60",게스트하우스,3.7,47,Google,2026-08-27,pending
-유진 한옥 스테이,서울,종로구,"5 43 유진하우스",B&B,4.1,21,Google,2026-08-27,pending
-세종한옥게스트하우스,서울,종로구,"체부동 163-3",숙박업소,4.7,3,Google,2026-08-27,pending
-THE CHAE Premium Hanok Stay,서울,종로구,"효자로9길 56-3",호텔,5.0,34,Google,2026-08-27,pending
-소현당 게스트하우스,서울,종로구,"율곡로1길 74-11",게스트하우스,3.5,99,Google,2026-08-27,pending
-아날로그한옥,서울,종로구,"계동길 70-24",호텔,4.6,14,Google,2026-08-27,pending
-다자연 한옥스테이,서울,종로구,"율곡로10길 81-3",호텔,9.3,387,Agoda_10point,2026-08-27,pending_cross_platform
+name,city,district,address,category,rating,rating_scale,review_count,rating_source,checked_date,registry_match_status
+하녹하녹,서울,종로구,"자하문로1나길 6",호텔,5.0,5,10,Google,2026-08-27,pending
+서촌게스트하우스,서울,종로구,"자하문로7길 28-3",게스트하우스,4.7,5,47,Google,2026-08-27,pending
+Haemil by Stay42,서울,종로구,"율곡로10길 15-14",게스트하우스,4.3,5,46,Google,2026-08-27,pending
+Hanok Guest house Dongchonjae,서울,종로구,"자하문로11길 21-10",게스트하우스,4.9,5,7,Google,2026-08-27,pending
+AWIK Hanok Stay,서울,종로구,"계동길 72",호텔,3.6,5,11,Google,2026-08-27,pending
+참한옥게스트하우스,서울,종로구,"삼일대로32길 49-5",게스트하우스,4.7,5,18,Google,2026-08-27,pending
+락고재 서울 본관,서울,종로구,"가회동 218",호텔,4.5,5,122,Google,2026-08-27,pending
+24게스트하우스 경복궁점,서울,종로구,"자하문로5가길 27-3",게스트하우스,4.7,5,99,Google,2026-08-27,pending
+다자연 한옥스테이,서울,종로구,"율곡로10길 81-3",호텔,4.9,5,7,Google,2026-08-27,pending
+누하당,서울,종로구,"필운대로 49-7",게스트하우스,4.5,5,20,Google,2026-08-27,pending
+Bukchonmaru Hanok Guesthouse,서울,종로구,"창덕궁길 152",게스트하우스,4.5,5,64,Google,2026-08-27,pending
+가인한옥게스트하우스,서울,종로구,"북촌로11길 118",게스트하우스,3.0,5,2,Google,2026-08-27,pending
+사이드 한옥 레지던스,서울,종로구,"필운대로 27-5",호텔,4.6,5,33,Google,2026-08-27,pending
+종로한옥 궁 게스트하우스,서울,종로구,"와룡동 60",게스트하우스,3.7,5,47,Google,2026-08-27,pending
+유진 한옥 스테이,서울,종로구,"5 43 유진하우스",B&B,4.1,5,21,Google,2026-08-27,pending
+세종한옥게스트하우스,서울,종로구,"체부동 163-3",숙박업소,4.7,5,3,Google,2026-08-27,pending
+THE CHAE Premium Hanok Stay,서울,종로구,"효자로9길 56-3",호텔,5.0,5,34,Google,2026-08-27,pending
+소현당 게스트하우스,서울,종로구,"율곡로1길 74-11",게스트하우스,3.5,5,99,Google,2026-08-27,pending
+아날로그한옥,서울,종로구,"계동길 70-24",호텔,4.6,5,14,Google,2026-08-27,pending
+다자연 한옥스테이,서울,종로구,"율곡로10길 81-3",호텔,9.3,10,387,Agoda,2026-08-27,pending_cross_platform
