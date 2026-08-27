@@ -12,9 +12,9 @@ sequence,axis,decision,public_evidence_readiness,engine_ready,primary_blocker,ne
 11,SPEND,PUBLIC_SOURCE_DISCOVERY_LOCKED_TRANSACTION_CUBE_HARMONIZATION_PARTIAL,0.88,0.66,"10Y survey harmonization + monthly origin×region×industry ingestion + cash/wallet calibration + online-vs-consumption geography + unique denominator + Ground/N","reopen on material new evidence",2026-08-28
 12,PAIN_VOC,PUBLIC_SOURCE_DISCOVERY_LOCKED_DENOMINATOR_TELEMETRY_PARTIAL,0.86,0.63,"10Y complaint harmonization + nationality×region×type×month panel + platform review denominators + multilingual TOP15 VOC + attempted-failed telemetry + Ground","reopen on material new evidence",2026-08-28
 13,SATISFACTION,PUBLIC_SOURCE_DISCOVERY_LOCKED_REVEALED_LOYALTY_TELEMETRY_PARTIAL,0.89,0.69,"10Y raw harmonization + expectation baseline + attribute mapping + platform selection calibration + actual referral/review/repeat behavior + recovery outcomes","reopen on material new evidence",2026-08-28
-14,SUPPLY,PUBLIC_SOURCE_DISCOVERY_LOCKED_ENTITY_RESOLUTION_SELLABILITY_PARTIAL,0.90,0.68,"bulk licensing/TourAPI/industry ingestion + entity resolution + category harmonization + platform/social matching + latent traditional/local supply Ground discovery","reopen on material new evidence; proceed REAL_SELLABLE_SUPPLY",2026-08-28
-15,REAL_SELLABLE_SUPPLY,ACTIVE,,,"not yet sequentially closed","execute full O/E/S/R/G/N completion pipeline",2026-08-28
-16,PLATFORM,QUEUED,,,,,2026-08-27
+14,SUPPLY,PUBLIC_SOURCE_DISCOVERY_LOCKED_ENTITY_RESOLUTION_SELLABILITY_PARTIAL,0.90,0.68,"nationwide entity ingestion/dedup + hidden supply union + platform/Ground validation","reopen on material new evidence",2026-08-28
+15,REAL_SELLABLE_SUPPLY,PUBLIC_SOURCE_DISCOVERY_LOCKED_GROUND_TRANSACTION_VALIDATION_PARTIAL,0.83,0.59,"nationwide sellability audit + channel inventory/price + identity/payment success + capacity/willingness + Ground/N denominators","reopen on material new evidence; proceed PLATFORM",2026-08-28
+16,PLATFORM,ACTIVE,,,"not yet sequentially closed","execute full O/E/S/R/G/N completion pipeline",2026-08-28
 17,MONEY_FLOW,QUEUED,,,,,2026-08-27
 18,TEMPORAL_10Y12M,QUEUED,,,,,2026-08-27
 19,FAILURE_JOURNEY,QUEUED,,,,,2026-08-27
