@@ -5,9 +5,9 @@ sequence,axis,decision,public_evidence_readiness,engine_ready,primary_blocker,ne
 4,ORIGIN_TOP15,PUBLIC_SOURCE_DISCOVERY_LOCKED_MULTI_COUNTRY_RAW_HARMONIZATION_PARTIAL,0.78,0.58,"exact 2025 TOP15 computation + origin raw ingestion/harmonization + incomplete destination-resolved monthly series + G/N conversion chain","reopen on material new evidence",2026-08-28
 5,COMPETITIVE_DESTINATION,PUBLIC_SOURCE_DISCOVERY_LOCKED_PANEL_HARMONIZATION_PARTIAL,0.82,0.61,"full monthly comparator ingestion + HK historical extraction + airfare/seat/visa/hotel ledgers + user-level choice/switching evidence","reopen on material new evidence",2026-08-28
 6,SEARCH,PUBLIC_SOURCE_DISCOVERY_LOCKED_BEHAVIORAL_FUNNEL_PARTIAL,0.81,0.57,"query-level absolute volume + impressions/CTR/ranking + cross-platform paths + OTA abandon denominators + first-party telemetry","reopen on material new evidence",2026-08-28
-7,BOOK_PAY,PUBLIC_SOURCE_DISCOVERY_LOCKED_TRANSACTION_FUNNEL_PARTIAL,0.84,0.60,"booking abandonment + issuer/card authorization/decline + authentication + effective fee/FX/DCC + refund/chargeback + Ground/N telemetry","reopen on material new evidence; proceed MOVE",2026-08-28
-8,MOVE,ACTIVE,,,"not yet sequentially closed","execute full O/E/S/R/G/N completion pipeline",2026-08-28
-9,STAY,QUEUED,,,,,2026-08-27
+7,BOOK_PAY,PUBLIC_SOURCE_DISCOVERY_LOCKED_TRANSACTION_FUNNEL_PARTIAL,0.84,0.60,"booking abandonment + issuer/card authorization/decline + authentication + effective fee/FX/DCC + refund/chargeback + Ground/N telemetry","reopen on material new evidence",2026-08-28
+8,MOVE,PUBLIC_SOURCE_DISCOVERY_LOCKED_OD_LAST_MILE_TELEMETRY_PARTIAL,0.85,0.62,"nationwide foreign-tourist OD + nationality-resolved operator use + route-to-arrival conversion + last-mile failure denominators + Ground/N","reopen on material new evidence; proceed STAY",2026-08-28
+9,STAY,ACTIVE,,,"not yet sequentially closed","execute full O/E/S/R/G/N completion pipeline",2026-08-28
 10,DO,QUEUED,,,,,2026-08-27
 11,SPEND,QUEUED,,,,,2026-08-27
 12,PAIN_VOC,QUEUED,,,,,2026-08-27
