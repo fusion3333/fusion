@@ -1,0 +1,25 @@
+field,measurement_type,state,required,definition_rule,join_keys,warning
+traveler_segment_id,DERIVED,segment,YES,stable segment identifier,period|origin_market|segment_version,not a person identifier
+period,TIME,state,YES,observation period,year|month,retain source frequency
+nationality,ADMIN/SURVEY,state,YES when available,source-defined nationality,country_code,not equal to residence
+country_of_residence,SURVEY,state,YES when available,usual residence country,residence_country_code,do not fill from nationality
+origin_region,SURVEY,state,OPTIONAL,subnational residence/origin region,country|region,availability recent/uneven
+age_band,ADMIN/SURVEY,state,YES when available,source age band + canonical crosswalk,age_schema_version,keep original band
+sex_gender,ADMIN/SURVEY,state,YES when available,source category,sex_gender_schema_version,crew/unknown preserved
+party_type,SURVEY,state,YES for party analysis,solo/friend/partner/family/child/parent/coworker/group/mixed,trip_id_or_segment,multiple response possible
+party_size,SURVEY/BOOKING/GROUND,state,OPTIONAL,count of travelers in party,trip/segment,do not derive from party_type
+children_present,SURVEY/DERIVED,state,OPTIONAL,child companion observed,trip/segment,derived flag required if inferred
+senior_present,SURVEY/DERIVED,state,OPTIONAL,senior companion observed,trip/segment,derived flag required if inferred
+travel_form,SURVEY,state,YES when available,FIT/package/airtel/hybrid according to source,period|segment,definition changes possible
+prior_korea_visit_count,SURVEY,state,YES when available,number/band of prior visits,period|segment,actual history not revisit intent
+income_band,SURVEY,state,OPTIONAL,respondent/household income as source defines,currency|period|country,PPP/FX normalization must be separate
+planned_travel_budget,SURVEY,state,OPTIONAL,planned budget,period|currency|party_basis,not actual spend
+actual_trip_spend,SURVEY/TRANSACTION,outcome,OPTIONAL,actual observed/estimated spend,trip|currency|measurement_type,belongs SPEND too
+occupation,SURVEY,state,OPTIONAL,source occupation class,occupation_schema_version,legacy availability uneven
+education,SURVEY,state,OPTIONAL,source education class,education_schema_version,availability uneven
+language_profile,SURVEY/GROUND,state,OPTIONAL,languages used/proficiency if directly observed,segment,never infer solely from nationality
+repeat_visitor,SURVEY,state,YES when available,has visited Korea before,segment,boolean derived from observed visit count only
+methodology_regime,METADATA,metadata,YES,survey/admin regime version,source|period,required for longitudinal joins
+weight,SURVEY,metadata,YES for microdata,official survey weight,source|year,never analyze weighted survey as raw counts
+source_id,METADATA,metadata,YES,provenance source,source registry,mandatory
+confidence,METADATA,metadata,YES,CONFIRMED/HIGH/MEDIUM/LOW/UNKNOWN,evidence id,missing != zero
