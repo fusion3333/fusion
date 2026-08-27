@@ -44,3 +44,7 @@ SRC-0042,spend,제주관광 동향 및 이슈보고서 2014-2023 카드소비,�
 SRC-0043,supply,서울시 관광사업체 등록현황,서울특별시,서울 자치구,official_statistics,WEB+CSV export,VERIFIED_SOURCE,annual,법정 등록 공급 모집단 baseline,A,2026-08-27
 SRC-0044,stay,서울시 관광호텔 등록현황 및 객실이용 통계,서울특별시,서울,official_statistics,WEB+CSV export,VERIFIED_SOURCE,annual,호텔수·객실수·객실이용률·등급 공급 baseline,A,2026-08-27
 SRC-0045,supply,2026 서울스테이 지원사업/등록체계,서울관광재단,서울,official_program,WEB,VERIFIED,current,외국인관광도시민박업·한옥체험업 실제 지원/등록 pipeline,A,2026-08-27
+SRC-0046,book_pay_move,2026 외래객 교통서비스 이용현황판,한국관광공사,전국,official_guide,PDF,VERIFIED_SOURCE,current,교통수단별 온라인예약·현장구매·해외발행카드 수용/불수용 matrix,A,2026-08-27
+SRC-0047,book_pay_move,서울 대중교통 오픈루프 결제 전환 계획,서울특별시,서울·수도권,official_policy,WEB,VERIFIED,2025-2030,해외카드 직접태깅 미지원→EMV open-loop 단계전환 병목 event,A,2026-08-27
+SRC-0048,pain_move,외국인 택시 QR 불편신고 및 부당요금 단속,서울특별시,서울,official_complaint,WEB,VERIFIED,2025-2026,외국인 이동 Pain·부당요금·서비스 recovery 측정,A,2026-08-27
+SRC-0049,book_pay_move,외국인 관광객 MaaS 접근제약 및 전용서비스 개발,서울특별시/서울관광재단,서울,official_policy_case,WEB,VERIFIED,2022,국내 휴대폰·국내은행/카드 인증이 외국인 MaaS 접근을 제한한 구조적 friction baseline,A,2026-08-27
