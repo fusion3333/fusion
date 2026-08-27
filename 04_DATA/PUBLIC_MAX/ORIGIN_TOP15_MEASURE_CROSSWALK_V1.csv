@@ -1,0 +1,10 @@
+canonical_measure,korean_meaning,accepted_source_measure,do_not_merge_with,normalization_rule
+outbound_trips,해외여행/방문 건수,"trips;visits;short-term resident returns;tourist trips",unique_persons,"retain source trip definition and border-crossing flag"
+outbound_departures,거주자 출국 건수,"resident departures;departures",outbound_trips,"use as propensity denominator only unless methodology defines trip"
+destination_visits,특정 목적국 방문,"visits by country;destination country returns",arrivals_to_korea,"mirror-side measure; join only by origin-period-destination"
+nights,해외 숙박일수,"nights;length of stay",visits,"store total nights and derived nights_per_visit separately"
+spend,해외여행 지출,"expenditure;spending;outbound tourism expenditure",card_spend,"preserve currency/current-price/coverage and survey definition"
+card_spend,해외 카드 관측소비,"card transactions;card spending",tourism_spend,"never inflate to total tourism spend without coverage model"
+purpose,주요 여행목적,"holiday;business;VFR;study;other",motivation,"purpose is reported trip category not latent psychological motive"
+unique_persons,고유 여행자 수,"persons where explicitly measured",trips,"never derive by deduplicating unavailable trip records"
+share_of_outbound,전체 해외여행 중 목적국 비중,"destination visits / comparable outbound denominator",share_of_korea_arrivals,"numerator and denominator must share origin/time/definition"
