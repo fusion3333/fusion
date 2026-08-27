@@ -1,0 +1,11 @@
+source_class,priority,source_family,measurement,role,status,limitation
+O,1,KTO-MCST international visitor transport guide,"mode×channel×stage foreign-card usability; online/on-site/tap",official backbone,VERIFIED,"availability is not transaction success"
+O,1,MOLIT intercity bus payment policy,"foreign-card on-site and mobile reservation/payment coverage",policy/regime evidence,VERIFIED,"does not expose authorization or abandonment rate"
+O,1,Seoul Metropolitan Government,"international-card ticket/pass purchase and recharge; fee regime",policy/fee evidence,VERIFIED,"Seoul-specific; machine/channel-specific"
+O,1,KORAIL,"ticket purchase; card payment; confirmation; cancellation/refund rules",rail booking evidence,VERIFIED,"actual foreign-card failure denominator unavailable"
+E,2,OTA/platform/transport operators,"inventory→booking→payment→confirmation/refund implementation",enterprise sensor,PARTIAL,"commercial rules and first-party logs often proprietary"
+E,2,PG/card networks/acquirers,"authorization; authentication; FX/DCC; settlement; chargeback",payment-rail sensor,PARTIAL,"merchant/card/country-level effective rates mostly proprietary"
+S,3,traveler VOC/social,"account/card/top-up/refund/booking pain taxonomy",hypothesis discovery,PARTIAL,"nonrepresentative; never use as population failure rate"
+R,4,academic/industry research,"payment friction; trust; conversion; cross-border commerce",mechanism/validation,PARTIAL,"not Korea-tourist transaction denominator"
+G,5,supplier/traveler interviews,"actual accepted cards; booking workflow; refund handling; manual workarounds",ground truth,REQUIRED,"not yet collected at scale"
+N,6,first-party event telemetry,"BOOK_STARTED/ABANDONED; PAY_STARTED/DECLINED/SUCCESS; REFUND_REQUESTED/COMPLETED",causal funnel denominator,REQUIRED,"must be obtained by partner integration or own product"
