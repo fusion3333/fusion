@@ -1,0 +1,8 @@
+priority,sensor,source,role,status,notes
+1,O,KTO/KCTI 2025 Foreign Tourist Survey,overall/item satisfaction + revisit + recommendation,VERIFIED,"monthly survey; final report/raw/codebook available"
+2,O,KTO/KCTI historical Foreign Tourist Survey,longitudinal satisfaction harmonization,VERIFIED_PARTIAL,"question/method regime changes require codebook harmonization"
+3,E,OTA/review platforms,property/activity/service rating and review sensor,PARTIAL,"platform populations are selected; do not infer population satisfaction"
+4,S,Google/Reddit/SNS/VOC,expectation mismatch and delight/pain discovery,PARTIAL,"taxonomy/hypothesis sensor only without denominator"
+5,R,peer-reviewed Korea inbound tourism research,expectation-value-satisfaction-behavior mechanism,VERIFIED,"use as method/mechanism evidence not current population rate"
+6,G,traveler/supplier follow-up interviews,why score was given + counterfactual + recovery effect,REQUIRED,"needed for causal interpretation"
+7,N,first-party telemetry,rebook/referral/review/return behavior after experience,REQUIRED,"needed to connect stated satisfaction to revealed behavior"
