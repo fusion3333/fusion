@@ -1,0 +1,18 @@
+domain,previous_percent,current_percent,target_percent,status,evidence_basis,next_gate
+서울/종로 한옥 공급,75,75,85,ACQUIRED,공식 인허가 원본 확보,OTA/가격/리뷰/가용성 매칭
+서울 전체 한옥,30,30,85,DISCOVERED,전국/서울 인허가 소스 존재,서울 전체 모집단 ingest
+경기 한옥,15,15,85,DISCOVERED,경기데이터드림 소스 발견,31개 시군 ingest
+부산·제주·경주 숙박,5,5,85,DISCOVERED,지역 관광데이터 소스 존재,숙박 master 구축
+방한 외국인 국가별 규모,60,75,85,VERIFIED_SOURCE,2025 국가별 분석+외래객 원자료 확인,microdata ingest/국가별 표 생성
+지역별 외국인 소비,60,65,85,VERIFIED_SOURCE,관광데이터랩/제주 공식 빅데이터,지역×국가×업종 export
+외국인 관광행동,50,70,85,VERIFIED_SOURCE,2025 외래객 원자료+코드북 확인,microdata 분석
+국가별 Needs/Wants,30,55,85,VERIFIED_SOURCE,잠재방한 26개국 16360+16360 표본/집계표,9개 핵심국 추출
+전통문화 체험 공급자,15,20,85,PARTIAL,Klook/KKday/Trazy/GYG/Viator 경로,공급자 전수 master
+K-Wellness/한의원,25,30,85,PARTIAL,Medical Korea 등록/규제 경계,공급자·가격·비의료 체험 분리
+Booking/Agoda/Google,15,25,85,PARTIAL,Booking 공식 공급자 약관+OTA 경로,실제 가격/리뷰 매칭
+Reddit/해외 커뮤니티,10,10,85,DISCOVERED,VOC 경로만 존재,국가별 corpus/theme coding
+경쟁 플랫폼,25,45,85,PARTIAL,주요 OTA 상품구조+GYG/Booking/Viator 약관,기능/가격/공급/수익 비교 matrix
+교통/결제/언어 병목,40,40,85,PARTIAL,병목 taxonomy 구축,정량 complaint/사용행태 매핑
+법률·규제,30,50,85,PARTIAL,2026 관광진흥법 여행업 경계+의료유치 경계,통신판매/개인정보/패키지 책임 법률 matrix
+공급자 수수료/경제성,10,30,85,PARTIAL,GYG/Booking 공식 commission 메커니즘 확인,한국 공급자 인터뷰+실제 계약률+unit economics
+실제 고객 지불의사,5,5,85,UNVALIDATED,유사상품 시장존재만 확인,랜딩/가격 A-B/결제의향 실험
