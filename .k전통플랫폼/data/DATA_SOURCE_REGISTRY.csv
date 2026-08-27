@@ -35,3 +35,12 @@ SRC-0033,market,2026 국정성과 방한객 1000만/5월 카드지출,문화체�
 SRC-0034,market,관광데이터랩 국가별 분석 빅데이터,한국관광공사,전국 시군구,official_bigdata,web+download,VERIFIED_SOURCE,monthly,국가×지역×방문×신용카드소비×간편결제×숙박리뷰,A,2026-08-27
 SRC-0035,data,관광데이터랩 데이터 설명/갱신주기,한국관광공사,전국,official_metadata,web,VERIFIED,monthly,ETL cadence/data governance,A,2026-08-27
 SRC-0036,content,한국관광 콘텐츠랩 다국어/OpenAPI,한국관광공사,전국,official_content_api,web+OpenAPI,VERIFIED_SOURCE,ongoing,9개 언어 관광콘텐츠/콘텐츠 연결,A,2026-08-27
+SRC-0037,move,서울교통공사 외국인 관광객 기간권 일별 통행통계,서울교통공사,서울 지하철 1~8호선,official_file,CSV,VERIFIED_SOURCE,annual,외국인 전용 패스 역·시간대 승하차 이동 proxy,A,2026-08-27
+SRC-0038,move,서울교통공사 외국인 관광객 기간권 일별 유출통계,서울교통공사,수도권,official_file,CSV,VERIFIED_SOURCE,semiannual,서울→서울교통공사 외 구간 이동 edge proxy,A,2026-08-27
+SRC-0039,move,서울교통공사 역별 승하차인원 OpenAPI,서울교통공사,서울,official_api,JSON+XML,VERIFIED_SOURCE,realtime,외국인 전용패스 데이터의 일반 유동량 baseline,A,2026-08-27
+SRC-0040,move,Climate Card international-card acceptance,서울특별시/서울교통공사/Tmoney,서울,official_policy+payment,WEB,VERIFIED,current,외국인 교통결제 friction 및 정책변화 event,A,2026-08-27
+SRC-0041,market,제주관광빅데이터플랫폼,제주관광공사,제주 읍면동,official_bigdata,WEB+downloads,VERIFIED_SOURCE,monthly,외국인 이동통신 방문·입도·지역 패턴·조사보고서,A,2026-08-27
+SRC-0042,spend,제주관광 동향 및 이슈보고서 2014-2023 카드소비,제주관광공사,제주 읍면동/업종,official_report,PDF,VERIFIED_SOURCE,periodic,10년 카드소비 구조·외국인 회복·지역집중 분석,A,2026-08-27
+SRC-0043,supply,서울시 관광사업체 등록현황,서울특별시,서울 자치구,official_statistics,WEB+CSV export,VERIFIED_SOURCE,annual,법정 등록 공급 모집단 baseline,A,2026-08-27
+SRC-0044,stay,서울시 관광호텔 등록현황 및 객실이용 통계,서울특별시,서울,official_statistics,WEB+CSV export,VERIFIED_SOURCE,annual,호텔수·객실수·객실이용률·등급 공급 baseline,A,2026-08-27
+SRC-0045,supply,2026 서울스테이 지원사업/등록체계,서울관광재단,서울,official_program,WEB,VERIFIED,current,외국인관광도시민박업·한옥체험업 실제 지원/등록 pipeline,A,2026-08-27
