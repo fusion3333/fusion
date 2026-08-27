@@ -1,91 +1,45 @@
-# CROSS LAYER 01 — CHOICE / CONSIDERATION SET V1
+# 교차계층 1 — 목적지 선택·후보집합 V1
 
-## Why this layer exists
-The existing WHY, SEARCH and COMPETITIVE_DESTINATION axes do not fully represent the sequential process by which a traveler becomes aware of Korea, places Korea into a feasible choice set, compares Korea with alternatives, rejects or retains destinations, and finally selects Korea or another destination.
+## 목적
+한국을 알게 된 사람이 실제 여행 후보에 한국을 넣고, 일본·대만·태국 등과 비교한 뒤 한국을 선택하거나 탈락시키는 과정을 분리해 기록한다. 기존의 여행동기·검색·경쟁목적지 축을 하나의 선택과정으로 연결한다.
 
-This is a cross-layer, not a new standalone axis. It connects WHY + SEARCH + COMPETITIVE_DESTINATION + ORIGIN_TOP15 + WHEN + BOOK_PAY.
+## 기본 흐름
+가능한 목적지 전체 → 인지한 목적지 → 초기 후보 → 후기 후보 → 실제 검토대상 → 최종 선택
 
-## Canonical state sequence
-AVAILABLE_SET -> AWARENESS_SET -> INITIAL_CONSIDERATION_SET -> LATE_CONSIDERATION_SET -> ACTION_SET -> CHOSEN_DESTINATION
+별도 결과:
+제외 / 현실적으로 불가능 / 다른 목적지로 대체 / 여행연기 / 여행취소
 
-Parallel terminal states:
-EXCLUDED -> UNAVAILABLE -> SURROGATE/SUBSTITUTE -> DEFERRED -> NO_TRIP
+## 핵심 원칙
+- 인지 ≠ 후보편입
+- 후보편입 ≠ 선호
+- 선호 ≠ 최종선택
+- 최종선택 ≠ 예약
+- 예약 ≠ 실제방문
+- 일본방문 ≠ 한국에서 일본으로 대체됐다는 증거
+- 한국검색 없음 ≠ 한국을 몰랐음
 
-## Evidence basis
-Tourism choice-set literature has long modeled destination selection as sequential set formation rather than one-shot choice. Crompton's tourism choice-set framework distinguishes initial consideration, late consideration, action and interaction sets. Later research maps destination rejection and selection explicitly, and two-stage/nested choice models show that destination choice is influenced by destination categorization, affective image and traveler constraints.
+## 필요한 정보
+여행자·동행집단, 출발국, 선택시점, 후보 목적지, 후보 진입·탈락 이유, 가격·비자·항공·시간·안전·동행제약, 비교순위, 최종선택, 관측시점, 출처, 신뢰도.
 
-Current industry evidence also supports a non-fixed early destination set. Expedia/Luth path-to-purchase research across seven markets used 70k+ digital panel travelers and 5,713 survey respondents. More than half of travelers began without a single fixed destination or considered multiple destinations; the research identifies weather/season, trip type, travel cost, access and travel time as important similarities/differences among considered destinations.
+## 연구근거
+관광 목적지 선택 연구는 잠재여행자가 한 번에 목적지를 고르는 것이 아니라 초기 후보를 만들고, 이를 줄여 후기 후보를 만들고, 최종 선택하는 단계적 구조를 제시한다. 산업 행동연구도 여행 초기에 목적지를 확정하지 않거나 여러 목적지를 함께 검토하는 사람이 많음을 보여준다.
 
-KTO's 2025 Potential Foreign Visitor Survey provides a Korea-specific official bridge for this layer because it includes potential visitors, visit intention, desired travel patterns and market-level comparison/consideration questions. This should be joined to actual inbound survey data but must not be treated as observed booking/arrival behavior.
+한국의 잠재 방한여행객 조사도 한국 인지도·방문의향·희망여행행태 등을 제공하므로 후보편입과 방문의향을 잇는 공식센서로 활용할 수 있다. 다만 실제 예약·입국행동과 동일시하지 않는다.
 
-## Required objects
-TravelerDecisionUnit
-ChoiceEpisode
-DestinationCandidate
-ChoiceSetMembership
-ChoiceSetTransition
-ChoiceConstraint
-ChoiceAttributeEvaluation
-ChosenDestination
-RejectedDestination
-SubstituteDestination
-NoTripOutcome
+## 수학적 연결
+개인의 목적지 선택확률은 세상의 모든 목적지가 아니라 실제 후보집합 안에서 계산해야 한다.
 
-## Required dimensions
-traveler_segment_id
-party_decision_unit_id
-origin_market
-choice_episode_id
-destination_id
-choice_set_stage
-membership_status
-entry_reason
-exit_reason
-constraint_code
-attribute_code
-attribute_value
-consideration_rank
-observed_at
-event_time
-source_id
-confidence
+선택확률 = 함수(실제 후보집합, 개인특성, 여행동기, 가격, 접근성, 위험, 사회적 영향, 공급상태)
 
-## Choice transition model
-For traveler/party u, destination d and decision time t:
-P(d enters consideration | awareness, motive, image, constraints, exposure)
-P(d survives to late set | relative utility, access, cost, time, risk, social proof)
-P(d chosen | late set, budget, availability, booking friction, competing alternatives)
+실제 계수는 나중에 조건부로짓·다항로짓·중첩로짓·혼합로짓 등 여러 모형을 비교해 결정한다.
 
-No empirical coefficients are frozen at this stage.
+## 사업기회 유형
+인지→후보편입 손실, 후보편입→실제검토 손실, 경쟁국 대체 후보, 가격·접근성·비자·시간 제약 탈락, 여행자체 취소형 잠재수요.
 
-## Critical measurement rules
-Awareness != Consideration.
-Consideration != Preference.
-Preference != Choice.
-Choice != Booking.
-Booking != Arrival.
-Rejected != Disliked: a destination may be rejected because of price, time, visa, air access, party constraints or inventory.
-No Korea search != no Korea awareness.
-Japan arrival != evidence that Japan directly substituted for Korea unless the traveler-level choice set or a defensible quasi-experimental design supports the substitution claim.
+## 현재 판정
+공개근거 준비도: 0.90
+엔진 준비도: 0.62
 
-## Diagnostic objects enabled
-AWARENESS_TO_CONSIDERATION_GAP
-CONSIDERATION_TO_ACTION_GAP
-KOREA_UNDERPENETRATION
-COMPETITOR_SUBSTITUTION_CANDIDATE
-CONSTRAINT_REJECTION
-PRICE_REJECTION
-ACCESS_REJECTION
-NO_TRIP_LATENT_DEMAND
+주요 막힘: 개인별 후보집합의 시간변화, 실제 탈락·전환 이유, 경쟁국으로 바뀐 실제 행동자료.
 
-## Formula interface
-This layer supplies the denominator for destination choice. The choice probability must be conditional on the feasible/considered set C_u,t rather than the universe of all destinations:
-P(d|u,t) = P(d | C_u,t, X_u,t, Z_d,t)
-
-Later empirical modeling candidates include conditional/multinomial logit, nested logit, mixed logit and staged consideration-set models. Model selection must be empirical and time-safe.
-
-## Data gaps
-Korea-specific traveler-level longitudinal choice-set transitions are not publicly observed at scale. KTO potential-traveler survey can measure stated consideration and intention, while Expedia-type digital panels show path behavior in selected foreign markets. Actual switching/rejection reasons require survey microdata, Ground interviews, partner-panel data or first-party telemetry.
-
-## Status
-DESIGN_LOCKED_PUBLIC_EVIDENCE_PARTIAL_BEHAVIORAL_TRANSITIONS_PENDING
+최종 상태: 설계 잠금 / 공개근거 부분확보 / 실제 선택전환 자료 필요
