@@ -1,0 +1,10 @@
+gate_id,gate,required_evidence,pass_condition,output_if_pass,output_if_fail
+G1,DEMAND,"official/survey/search proxy with market/time",demand evidence exists,DemandCandidate,INSUFFICIENT_DEMAND_EVIDENCE
+G2,SUPPLY,"resolved supplier/product + quality/sellability evidence",supply exists or latent asset evidenced,SupplyCandidate,NO_EVIDENCED_SUPPLY
+G3,GAP,"journey edge mismatch/friction with provenance",gap is evidenced not assumed,GapObject,UNPROVEN_GAP
+G4,DENOMINATOR,"attempt/exposure denominator where rate is claimed",denominator exists or no rate claim,RateEligible,COUNT_ONLY
+G5,ECONOMICS,"public fee/price/value evidence or explicit unknown",economic path sufficiently observed,EconomicsCandidate,ECONOMICS_UNKNOWN
+G6,SOLVABILITY,"intervention mechanism + owner + constraint",credible intervention exists,InterventionCandidate,NOT_ACTIONABLE
+G7,CONFIDENCE,"source tiers + recency + agreement",minimum confidence threshold,ParetoCandidate,RESEARCH_PRIORITY
+G8,KTOF,"outcome-labeled Ground/N/Pilot data",NEVER pass in public-only phase,EmpiricalScore,NO_EMPIRICAL_SCORE
+# Dry-run output is Pareto/explainable ranking only. No fabricated KTOF weights.
