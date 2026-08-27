@@ -1,0 +1,10 @@
+source_class,primary_owner,target_frequency,target_fields,access_status,engine_use,quality_rule
+ENTRY_VISA,법무부 출입국·외국인정책본부/K-ETA/재외공관,event_date,"visa_free;k_eta;eligible_market;effective_start;effective_end",PUBLIC_WEB_VERIFIED,입국마찰 체제,"발표일과 시행일 분리; 국가/여권범위 보존"
+PUBLIC_HEALTH_ENTRY,질병관리청/외교부 재외공관,event_date,"quarantine;pre_departure_test;post_arrival_test;qcode",PUBLIC_WEB_VERIFIED,입국마찰 체제,"방역정책 유효일 기준; 확진자 격리와 일반 입국자 규칙 분리"
+AVIATION_ACCESS,인천국제공항공사/한국공항공사/국토교통부,month+year,"operations;passengers;route;seat_if_available",PUBLIC_WEB_DOWNLOAD,항공접근성,"여객≠외국인관광객; 운항편≠좌석; 국내/국제 범위 분리"
+FX_PRICE,한국은행 ECOS,day+month,"KRW_USD;KRW_JPY;KRW_CNY;NEER;REER",PUBLIC_DOWNLOAD_API_KEY_FOR_AUTOMATION,가격환경,"월평균/말일 등 통계기준 보존; 명목·실질 분리"
+ORIGIN_HOLIDAY,TOP15 각국 정부·공식 공휴일 캘린더,date_range,"holiday_name;start_date;end_date;holiday_type",PUBLIC_BUT_COUNTRY_SPECIFIC,출발시장 여행가능시간,"음력·이동휴일은 연도별 공식 날짜 사용; 이름만으로 추정 금지"
+TOURISM_POLICY_EVENT,문화체육관광부/한국관광공사,event_date_range,"campaign;festival;visit_korea_year;promotion",PUBLIC_WEB_VERIFIED,정책·프로모션 노출,"행사 개최≠순인과효과; 성과발표와 개입 자체를 분리"
+CONTENT_EXPOSURE,공식 배급사·시상기관,event_date,"title;release_or_award;global_scope",PUBLIC_WEB_VERIFIED,인지·검색 설명변수,"노출사건≠방한 증가 인과; 후행 검색·예약 자료로 별도 검증"
+ORIGIN_POLICY,출발국 정부+한국 정부 공식 대응자료,event_date_range,"group_tour_rule;travel_advisory;outbound_policy",PUBLIC_MIXED,출발국 선택제약,"정책 시행강도·지역별 차이를 일률화하지 않음"
+STATISTICAL_REGIME,각 통계 작성기관,method_change_date,"method;questionnaire;classification;coverage",PUBLIC_METHOD_NOTES,측정체제 단절,"현실변화와 측정변화를 구분; 체제 전후 직접 비교 제한"
