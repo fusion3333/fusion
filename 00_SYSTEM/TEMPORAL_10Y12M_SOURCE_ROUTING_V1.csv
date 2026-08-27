@@ -1,0 +1,11 @@
+source_id,tier,source_family,source,temporal_role,coverage_rule
+TEMP-O-001,O,Korea inbound official,KTO Korea Tourism Statistics,monthly inbound arrivals and origin characteristics,primary long-run backbone; preserve published month and definition
+TEMP-O-002,O,Korea survey official,Foreign Tourist Survey,annual/quarterly traveler behavior satisfaction spend stay activity,never interpolate annual survey into monthly observations without model flag
+TEMP-O-003,O,KTO DataLab private-derived,KTO DataLab telecom/card/navigation,monthly region presence spend search context,available periods differ; store sensor_start_date and methodology version
+TEMP-O-004,O,origin mirror official,TOP15 origin-country government tourism/immigration statistics,origin outbound and destination-resolved mirror series,keep each country's calendar and revision regime
+TEMP-O-005,O,competitor official,Japan Taiwan Thailand Hong Kong Singapore etc official tourism agencies,monthly competing-destination arrivals,do not compare until definitions/calendar aligned
+TEMP-E-001,E,aviation,airline/airport/schedule/seat sources,route frequency seats capacity fare proxies,commercial series must be timestamped and licensing retained
+TEMP-E-002,E,platform,OTA/search/social platform time series,search/listing/price/review/discovery proxies,relative indices are not absolute demand
+TEMP-R-001,R,macro,event,FX oil CPI holidays weather policy visa events,exogenous/event ledger,events are candidate causes not causal proof
+TEMP-G-001,G,ground,supplier repeated panel,capacity price channel foreigner share pain willingness,repeat same instrument to preserve comparability
+TEMP-N-001,N,telemetry,owned first-party telemetry,exposure click booking payment movement completion repeat,retain event timestamp origin segment channel and journey_id
