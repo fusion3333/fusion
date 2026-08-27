@@ -1,0 +1,7 @@
+priority,source_family,source_or_method,role,measurement,rule
+1,OFFICIAL,"KTO/MCST/public registries + tourism complaint evidence",baseline/legal/operating context,"registered/operating supply; documented foreigner friction","never equate registered with sellable"
+2,ENTERPRISE_FIRST_PARTY,"supplier official site/app/booking engine; OTA listing; payment/booking interfaces",commercial accessibility,"price, inventory, language, booking, payment, cancellation, confirmation","observe by channel×date×product"
+3,PLATFORM,"Google Maps/VisitKorea/Klook/KKday/Viator/GetYourGuide/Booking/Agoda etc.",global discoverability/distribution,"listing, reviews, language, price visibility, bookability","platform listing != supplier-wide capability"
+4,SNS_VOC,"Instagram/YouTube/TikTok/Reddit/reviews",latent supply + friction discovery,"current activity, traveler workaround, authenticity, hidden pain","hypothesis sensor; no population-rate inference"
+5,GROUND,"phone/email/visit/interview/mystery booking",ground truth,"capacity, foreigner share, languages, payment reality, willingness, packageability","time-stamp; record respondent role"
+6,N_TELEMETRY,"our own funnel/event instrumentation",revealed sellability,"impression→detail→book attempt→pay→confirm→attend→refund","required for denominators and causal calibration"
