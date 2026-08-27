@@ -1,0 +1,9 @@
+sequence,cross_layer,role,status,public_evidence_readiness,engine_ready,primary_blocker,next_action,last_updated
+1,CHOICE_CONSIDERATION_SET,"bridge WHY SEARCH COMPETITION into staged destination choice",DESIGN_LOCKED_PUBLIC_EVIDENCE_PARTIAL_BEHAVIORAL_TRANSITIONS_PENDING,0.90,0.62,"traveler-level longitudinal choice-set transitions + switching/rejection reasons + feasible-set denominator","map KTO potential-traveler variables and competitor mirror into ChoiceEpisode rows",2026-08-28
+2,TRAVEL_PARTY_DECISION_UNIT,"planner payer influencer companion household decision",QUEUED,,,,"research and design",2026-08-28
+3,BUDGET_WTP_ELASTICITY,"budget envelope willingness-to-pay and price response",QUEUED,,,,"research and design",2026-08-28
+4,CAPACITY_INVENTORY_TIME,"time-varying effective supply and inventory",QUEUED,,,,"research and design",2026-08-28
+5,NETWORK_SOCIAL_DIFFUSION,"review creator peer and social propagation",QUEUED,,,,"research and design",2026-08-28
+6,COUNTERFACTUAL_LOST_DEMAND,"non-choice substitution no-trip and latent demand",QUEUED,,,,"research and design",2026-08-28
+7,INTERVENTION_CAUSAL_UPLIFT,"resolution cost causal conversion uplift and experiment",QUEUED,,,,"research and design",2026-08-28
+8,UNCERTAINTY_DECOMPOSITION,"sampling measurement bias missingness model and temporal uncertainty",QUEUED,,,,"research and design",2026-08-28
