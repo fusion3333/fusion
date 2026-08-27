@@ -1,167 +1,57 @@
-# CROSS LAYER 03 — BUDGET / WTP / PRICE ELASTICITY V1
+# 교차계층 3 — 예산·지불의사·가격반응 V1
 
-Status: DESIGN_LOCKED_PUBLIC_EVIDENCE_PARTIAL_REVEALED_ELASTICITY_PENDING
-Date: 2026-08-28
+상태: 설계 잠금 / 공개근거 부분확보 / 실제 가격반응 자료 필요
 
-## Purpose
-Separate observed expenditure from ex-ante affordability, willingness-to-pay, and behavioral price response. This layer connects WHO/DECISION_UNIT/CHOICE with BOOK_PAY/SPEND/MONEY_FLOW/OPPORTUNITY without treating spend as preference.
+## 목적
+실제 지출액과 여행 전에 쓸 수 있었던 예산, 특정 상품에 얼마까지 낼 의향이 있었는지, 가격이 바뀌었을 때 실제 선택이 얼마나 달라지는지를 분리한다.
 
-## Core anti-distortion rules
+## 핵심 원칙
+- 실제지출 ≠ 여행예산
+- 여행예산 ≠ 최대지불의사
+- 최대지불의사 ≠ 실제지불가격
+- 실제지불가격 ≠ 총여행비용
+- 설문상의 지불의사 ≠ 실제 행동에서 드러난 지불의사
+- 평균지출액을 최대지불의사로 사용하지 않는다.
+- 구매하지 않음 ≠ 가격 때문에 포기함
 
-1. ObservedSpend != BudgetEnvelope.
-2. BudgetEnvelope != WillingnessToPay.
-3. WTP != PricePaid.
-4. PricePaid != TotalTripCost.
-5. StatedWTP != RevealedWTP.
-6. AverageSpend must not be used as a direct WTP estimate.
-7. Price elasticity is conditional on market, segment, product, time, alternatives, income/budget, exchange rate, party structure and journey stage.
-8. A non-purchase is not automatically price rejection; availability, trust, language, payment, timing and search failure must be separated.
-9. Budget is a constraint across a portfolio of trip components; a price change in air transport can alter destination, stay length, accommodation, activities and food simultaneously.
-10. Use ranges/distributions when exact budget or WTP is unobserved; never manufacture a point estimate.
+## 기본 흐름
+여행의향 → 예산형성 → 항목별 예산배분 → 목적지·상품 후보 → 가격노출 → 비교·타협 → 구매결정 → 실제지출 → 여행 중 재배분
 
-## Decision sequence
+## 예산 객체
+총여행예산, 자유지출가능 예산, 절대상한/선호상한, 개인·가족·회사·후원자 예산, 통화, 예산형성시점.
 
-TravelIntent
- -> BudgetFormation
- -> BudgetAllocation
- -> ConsiderationSet
- -> AttributeTradeoff
- -> PriceExposure
- -> PurchaseDecision
- -> ActualSpend
- -> PostPurchaseReallocation
+## 예산 배분
+항공 / 숙박 / 현지교통 / 음식 / 쇼핑 / 체험 / 문화 / 의료·웰니스 / 비상예산 등으로 분리한다.
 
-Tourism demand literature supports budget formation as an upstream decision rather than an output of realized expenditure. A staged tourism-demand model explicitly places tourism-budget estimation before frequency/stay and destination/mode choice.
+## 실제가격도 분리
+표시가격 ≠ 세금·수수료·환전·교통비 등을 포함한 최종부담액
 
-## Core entities
+검색시간·언어불편 같은 비가격 마찰은 검증된 금전화 계수가 있을 때만 돈으로 환산한다.
 
-### BudgetEnvelope
-- decision_unit_id
-- episode_id
-- currency
-- total_trip_budget_min/max
-- discretionary_budget_min/max
-- hard_cap / soft_cap
-- budget_basis: individual / household / sponsor / employer / group
-- formation_date
-- confidence
-- source_id
+## 최대지불의사
+국가, 연령, 소득, 여행심리, 여행목적, 동행구성, 계절, 과거방문, 상품속성, 대체상품, 당시 상황에 따라 달라질 수 있다.
 
-### BudgetAllocation
-- category: air / lodging / local_transport / food / shopping / activity / wellness / culture / contingency / other
-- planned_amount/range
-- priority_rank
-- substitutable_flag
-- protected_flag
+## 가격반응
+가격이 1% 변했을 때 수요가 몇 % 변하는지를 한 개의 한국관광 숫자로 만들지 않는다. 국가×세그먼트×계절×상품×가격구간×경쟁상황별로 달라질 수 있다.
 
-### PriceExposure
-- product_id / destination_id
-- displayed_price
-- all_in_price
-- tax_fee_fx_shipping_tip components
-- currency
-- timestamp
-- channel/platform
-- availability at exposure
+또한 항공료가 오르면 단순히 항공구매만 줄어드는 것이 아니라 목적지, 체류기간, 숙박등급, 활동, 음식비가 함께 재배분될 수 있으므로 여행 전체 묶음 안에서 본다.
 
-### WTPObservation
-- actor_id / decision_unit_id
-- object: destination / trip bundle / product / attribute
-- method: revealed_preference / discrete_choice / contingent_valuation / auction / stated_range / inferred_interval
-- lower_bound / upper_bound
-- currency
-- scenario/context
-- confidence
+## 경쟁목적지와 연결
+일본·대만·태국의 항공·숙박가격 변화가 한국 선택확률에 어떤 영향을 주는지 실제 후보집합과 결합해 추정할 수 있다. 단순 가격동행만으로 대체효과라 부르지 않는다.
 
-### PriceResponseObservation
-- old_price / new_price
-- choice before/after or exposed/control
-- quantity/booking probability response
-- alternative chosen
-- segment/market/time
-- causal_quality flag
+## 사업기회 유형
+- 실제지출은 낮지만 지불의사는 높고 접근장벽이 있는 경우
+- 높은 지불의사에 비해 판매가능 공급이 부족한 경우
+- 가격민감도가 높고 경쟁이 강한 시장
+- 가격민감도가 낮고 차별성이 강하지만 수용량이 부족한 시장
 
-## Price concepts
+## 한국 공개자료 사용규칙
+외래관광객조사의 지출자료는 실제지출과 세그먼트 분석에 사용한다. 이를 여행 전 예산이나 최대지불의사로 이름만 바꿔 쓰지 않는다.
 
-P_display != P_all_in != P_generalized
+## 현재 판정
+공개근거 준비도: 0.92
+엔진 준비도: 0.64
 
-GeneralizedPrice = monetary all-in cost + monetized travel time + search/booking friction + payment/FX friction + cancellation/risk cost, where monetization is empirically justified. Do not silently convert non-price friction into money without a validated coefficient.
+주요 막힘: 여행 전 실제 예산, 수용 가능한 최대가격, 봤던 가격과 거절한 가격, 할인·쿠폰, 실제 대체상품, 가격변화에 따른 행동.
 
-## Modeling family
-
-### Budget constraint
-For decision unit u at time t:
-SUM_k p_k q_k <= B_u,t
-
-B is latent or observed ex-ante budget, not realized spend.
-
-### Utility / discrete choice
-U_u,j,t = beta_x X_j,t + beta_p P_j,t + interactions + random heterogeneity + epsilon
-
-WTP for attribute k may be derived in a utility model as -beta_k / beta_price only when model assumptions and scale are appropriate.
-
-### Elasticity
-Own-price elasticity:
-epsilon_p = (% change in demand) / (% change in price)
-
-Cross-price elasticity between Korea and substitute destination s:
-epsilon_K,s = (% change in Korea demand) / (% change in price of s)
-
-Elasticities must be indexed by segment x origin x season x product/destination x price range. Do not assume constant elasticity globally.
-
-## Evidence implications
-
-Tourism discrete-choice research demonstrates that destination choice can respond differently to airfare, hotel tariffs and exchange rates; price cannot be represented as one scalar. Experimental/stated-preference approaches can estimate responses for alternatives and prices not sufficiently observed in historical transactions.
-
-Holiday discrete-choice experiments estimate marginal WTP for attributes such as transport mode, accommodation quality and stay length and use latent-class models to represent taste heterogeneity. Korean tourism research has also estimated WTP for Seoul destination activities and found offered price, origin, preferred activity, prior experience and trip purpose relevant; Korean choice-experiment research on Dokdo likewise estimates attribute-specific MWTP and finds price, age and income significant.
-
-Revealed expenditure research treats travel choices as utility maximization subject to a budget constraint and distinguishes preallocated from unplanned destination expenditure. High-travel-cost research shows price shocks can alter destination, length of stay, accommodation and mode jointly, reinforcing portfolio rather than single-item elasticity.
-
-## Korea public-data mapping
-
-2025 Foreign Tourist Survey microdata/codebook is an official respondent-level source for realized trip expenditure and traveler characteristics. It is evidence for SPEND and heterogeneity, but realized expenditure alone does NOT reveal the ex-ante budget envelope or reservation price/WTP. Therefore KTO spend rows must never be relabeled WTP.
-
-Potential-traveler surveys, future Ground interviews and N-telemetry should capture:
-- intended total budget before booking
-- category allocation
-- maximum acceptable price/range for key products
-- observed rejected/accepted prices
-- alternatives considered
-- fee/FX response
-- coupon/discount exposure
-- party payer and budget controller
-
-## Opportunity implications
-
-A useful opportunity is not merely HighSpend. Required distinction:
-
-HighSpend + LowWTPMargin => weak pricing headroom
-LowObservedSpend + HighLatentWTP + AccessFailure => monetization opportunity
-HighWTP + LowAccessibleSupply => supply/revalue opportunity
-HighPriceElasticity + HighCompetition => discount/efficiency problem
-LowPriceElasticity + HighDifferentiation + CapacityConstraint => yield/pricing opportunity
-
-PotentialRevenueLift should ultimately depend on causal change in conversion/quantity and contribution margin, not WTP alone.
-
-## Graph integration
-
-DecisionUnit -HAS_BUDGET-> BudgetEnvelope
-BudgetEnvelope -ALLOCATES_TO-> BudgetAllocation
-Traveler/Actor -EXPOSED_TO_PRICE-> PriceExposure
-Actor -HAS_WTP_OBSERVATION-> WTPObservation
-PriceExposure -AFFECTS_CHOICE-> ChoiceEpisode
-ChoiceEpisode -RESULTS_IN-> Transaction/NoPurchase
-Transaction -OBSERVES-> ActualSpend
-Product/Destination -HAS_PRICE_RESPONSE-> PriceResponseObservation
-
-All observations require time, market, currency, source, method and uncertainty metadata.
-
-## Public evidence ceiling / blockers
-
-Public evidence is strong for realized expenditure, destination/product prices and methodological estimation of WTP/elasticity. It is materially weaker for Korea-inbound ex-ante budget envelopes, individual reservation prices, price exposures immediately before abandonment, rejected alternatives, discount/coupon exposure and causal price response. These require microdata mapping, Ground, platform/transaction telemetry or experiments.
-
-## Lock decision
-
-The architecture is locked around four separate variables:
-BUDGET_ENVELOPE -> WTP -> PRICE_RESPONSE/ELASTICITY -> ACTUAL_SPEND.
-SPEND remains an outcome/constraint realization sensor and cannot substitute for the first three.
+최종 상태: 설계 잠금 / 공개근거 부분확보 / 실제 가격반응 자료 필요
