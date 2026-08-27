@@ -1,0 +1,30 @@
+field,role,rule
+observation_id,primary key,immutable source-derived identifier
+axis,join dimension,one of canonical engine axes
+origin_country,segment dimension,ISO-normalized where source supports
+comparison_destination,mirror dimension,Korea/Japan/Taiwan/Thailand/Singapore/Vietnam/HongKong or null
+region,geographic dimension,preserve source geography then map crosswalk
+year_month,time key,YYYY-MM when true monthly observation exists
+period_grain,time metadata,month/quarter/year/event/point-in-time
+season,derived,derive only from year_month; never replace month
+value,measurement,source value only
+unit,measurement metadata,persons/trips/visits/nights/currency/index/share etc
+measurement_type,semantic guard,arrival/trip/visit/search_proxy/presence_proxy/spend/review etc
+source_id,provenance,join to source registry
+publication_date,vintage,actual release date where available
+revision_date,vintage,latest known revision date or null
+valid_from,regime,start date for rule/method/fee validity when applicable
+valid_to,regime,end date or null
+quality_flag,QA,VERIFIED/PARTIAL/ESTIMATED/PROXY/REVISED/KNOWN_ERROR
+regime_tag,event context,covid/mers/method_change/visa/air_capacity/policy/platform etc when evidenced
+missing_reason,missingness,NOT_COLLECTED/NOT_PUBLISHED/PRIVATE/NOT_APPLICABLE/ACCESS_FAILED/UNKNOWN
+notes,audit,definition changes and caveats
+
+RULE_01,no synthetic monthly interpolation,"quarterly/annual sources remain quarterly/annual"
+RULE_02,no zero fill,"missing is never converted to zero"
+RULE_03,preserve ragged panel,"sensor start dates differ; keep true coverage"
+RULE_04,preserve vintage,"revisions and known errors remain visible"
+RULE_05,no causal labeling from coincidence,"regime/event tags are candidate explanations until tested"
+RULE_06,origin-calendar join,"holiday/school/calendar variables join by origin x valid date"
+RULE_07,destination-regime join,"visa/K-ETA/payment/transport/platform rule changes join by valid date"
+RULE_08,lag not hard-coded,"search-to-book-to-arrival lag estimated by origin/segment/product/season when data permits"
