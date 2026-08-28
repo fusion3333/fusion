@@ -1,0 +1,15 @@
+layer,public_status,primary_route,measurement_boundary,next_evidence
+traveler_expenditure,VERIFIED,KTO official survey/statistics,"survey expenditure is not transaction settlement",maintain definitions by survey year
+foreign_card_spend,VERIFIED,KTO Data Lab + workstream06,"card-observed spend is partial payment universe",join payment coverage metadata
+platform_fee_rules,VERIFIED_EXAMPLES,enterprise official terms,"published platform-specific rules are not nationwide realized commissions",supplier contracts or partner dashboards
+payment_fee_rules,VERIFIED_EXAMPLES,PG/wallet/network official terms,"published fees are not realized merchant fee stack",merchant statements and settlement files
+cross_border_fx,PARTIAL,enterprise pricing + BOK FX,"headline FX or conversion schedule is not effective transaction spread",transaction-level currency and settlement evidence
+tax_refund_legal_rules,VERIFIED,law.go.kr + Korea Customs Service,"eligibility/caps/channels are not utilization",official/operator transaction statistics
+tax_refund_realized_flow,NOT_PUBLIC_REQUIRED_GRAIN,operator/official transaction data,"no nationwide traveler-level net-refund panel verified",partner/operator or official microdata
+refund_chargeback,NOT_PUBLIC_REQUIRED_GRAIN,platform/PG + supplier ledger,"reverse-flow economics need realized cases",partner ledger / N telemetry
+supplier_payout,NOT_PUBLIC_REQUIRED_GRAIN,supplier/partner dashboard,"cannot derive from traveler spend alone",Ground accounting / N telemetry
+supplier_operating_cost,GROUND_REQUIRED,supplier accounting,"labor and inputs are supplier-specific",Ground accounting
+local_input_share,GROUND_REQUIRED,supplier procurement,"supplier location does not prove input locality",invoice/procurement evidence
+supplier_profit,GROUND_REQUIRED,supplier P&L,"payout is not profit",accounting evidence
+local_retained_value,GROUND_AND_N_REQUIRED,transaction + supplier accounting,"requires auditable allocation of fees costs profit and geography",Ground + N telemetry
+CAC_repeat_economics,N_TELEMETRY_REQUIRED,owned funnel/CRM,"public platform rates cannot measure own acquisition economics",owned telemetry
