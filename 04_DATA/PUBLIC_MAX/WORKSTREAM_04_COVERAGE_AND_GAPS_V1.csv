@@ -1,0 +1,18 @@
+family,target,coverage_status,public_source_status,ingestion_status,use_rule,next_layer_action
+month_spine,2015-01_to_2026-08,COMPLETE,AVAILABLE,INGESTED,Unique monthly key; 140 months,Extend only as new months close
+verified_events,policy_pandemic_megaevent,STRONG,AVAILABLE,INGESTED,Use causal_status; event existence is not effect,Append newly verified events without rewriting history
+statistical_regimes,major_breaks,STRONG,AVAILABLE,INGESTED,Model breaks explicitly,Append definition/sensor changes when discovered
+bilateral_fx,KRW_and_top15_currency_context,PATH_VERIFIED,AVAILABLE_BIS_BOK,ACCESS_CONSTRAINED,Do not fabricate or manually transcribe bulk series; preserve series IDs and units,Machine bulk ingest from BIS CSV/SDMX or ECOS API when binary/API execution path is available
+neer_reer,KRW_broad_monthly,PATH_VERIFIED,AVAILABLE_BIS,ACCESS_CONSTRAINED,2020=100; appreciation direction preserved,Machine bulk ingest M.N.B.KR and M.R.B.KR
+aviation_realized,Korea_airport_monthly_operations_passengers,PATH_VERIFIED,AVAILABLE_KAC,INTERACTIVE_EXPORT_CONSTRAINED,Passengers/operations are not seats,Automate Excel/query extraction in executable data pipeline
+aviation_schedule,international_route_frequency,PATH_VERIFIED,AVAILABLE_MOLIT,INTERACTIVE_EXPORT_CONSTRAINED,Schedule frequency is not realized demand,Snapshot/version schedules; never substitute passenger counts
+seat_capacity,origin_destination_monthly_seats,PARTIAL,NOT_FULLY_PUBLIC,NOT_PUBLIC_OR_FRAGMENTED,Do not infer seats from flights without aircraft/capacity data,Commercial/airline/airport partnership layer if needed
+origin_holidays_japan,2015_2026,PATH_VERIFIED,AVAILABLE,NOT_BULK_INGESTED,Derive travel windows separately from statutory holidays,Machine ingest Cabinet Office CSV
+origin_holidays_taiwan,2015_2026,PARTIAL,ANNUAL_ARCHIVES,NOT_BULK_INGESTED,Do not backfill old years from current calendar,Archive-by-year ingestion
+origin_holidays_us,2015_2026,PATH_VERIFIED,AVAILABLE_RULES,NOT_BULK_INGESTED,Federal holiday != travel vacation,Generate dates from official rules with verification
+origin_holidays_other_top15,2015_2026,PARTIAL,FRAGMENTED,NOT_VERIFIED_FULL,Missing != no holiday; do not synthesize from nonofficial calendars,Country-by-country official archive acquisition
+content_shocks,2015_2026,FRAMEWORK_ONLY,PUBLIC_SIGNALS_FRAGMENTED,NOT_CAUSALLY_INGESTED,Popularity != tourism effect; require release/global reach/signal/tourism-link evidence,Build as separate evidence table when measurement contract is satisfied
+cpi_oil_price,macro_monthly,PATH_AVAILABLE,PUBLIC,NOT_INGESTED,Keep macro covariates separate from events,Add in modeling-ready continuous covariate pipeline
+hotel_price,monthly_korea,PARTIAL,PUBLIC_COMPARABLE_SERIES_WEAK,NOT_INGESTED,Do not fabricate national hotel-price series,Commercial/public accommodation price sensor later
+airfare,origin_korea_monthly,PARTIAL,PUBLIC_COMPARABLE_SERIES_WEAK,NOT_INGESTED,Do not use oil as airfare proxy,Commercial/OTA/airline sensor later
+zero_vs_missing,all_event_families,COMPLETE,CONTRACT_FIXED,IMPLEMENTED,0 only after verified observation; otherwise missing codes,Enforce in QA pipeline
