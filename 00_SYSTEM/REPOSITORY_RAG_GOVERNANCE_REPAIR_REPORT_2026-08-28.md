@@ -1,72 +1,85 @@
 # Repository RAG Governance Repair Report — 2026-08-28
 
-Status: REPAIR PASS COMPLETE / PHYSICAL MIGRATIONS SEPARATELY TRACKED
+Status: GOVERNANCE CLOSEOUT COMPLETE
 Project: Korea Inbound Tourism Opportunity Intelligence Engine
 
 ## Scope
-Repository-wide audit focused on duplicated authority, semantic drift, identifier collision, stale status, project-scope contamination, false precision, graph overstatement and Foreign Tourist Survey authority fragmentation.
+Repository-wide audit focused on duplicated authority, semantic drift, identifier collision, stale status, project-scope contamination, false precision, graph overstatement, L2 namespace split and Foreign Tourist Survey authority fragmentation.
 
-## Repairs completed
+## Completed repairs
 
 ### 1. Canonical current-state authority router
-Created `00_SYSTEM/CANONICAL_CURRENT_STATE_INDEX_V1.md` as MASTER / ALWAYS-REFERENCE. It defines precedence among canonical, active, historical and superseded artifacts and fixes current project semantics.
+`00_SYSTEM/CANONICAL_CURRENT_STATE_INDEX_V1.md` is MASTER / ALWAYS-REFERENCE and defines repository authority precedence.
 
-### 2. Source routing upgraded to O/E/S/R/G/N
-Created `00_SYSTEM/SOURCE_ROUTING_AND_EVIDENCE_STANDARD_V2.md` and promoted it over legacy V1 for current work.
+### 2. Core document status registry
+`00_SYSTEM/CANONICAL_DOCUMENT_STATUS_REGISTRY_V1.csv` classifies core artifacts as CANONICAL / ACTIVE / HISTORICAL / SUPERSEDED / ARCHIVE.
 
-Fixed meanings:
-O Official; E Enterprise operational data; S Social/user-generated expression; R Research; G project-created field evidence; N system-native behavior/transaction telemetry.
+### 3. Source routing upgraded to O/E/S/R/G/N
+`00_SYSTEM/SOURCE_ROUTING_AND_EVIDENCE_STANDARD_V2.md` is canonical.
+Fixed meanings: O Official; E Enterprise operational data; S Social/user-generated expression; R Research; G project-created field evidence; N system-native behavior/transaction telemetry.
+The current project frame is 25 base axes + 8 cross-layers.
 
-### 3. Dataset identifier collision contained
-Created `00_SYSTEM/CANONICAL_DATASET_ID_REGISTRY_V1.csv`.
-The legacy `KOR-002` through `KOR-009` identifiers had conflicting meanings between `KOREA_OFFICIAL_RAW_BACKBONE_V1.csv` and `KOREA_OFFICIAL_SOURCE_COVERAGE_MATRIX_V2.csv`. New `KORC-*` canonical IDs resolve identity while preserving legacy aliases for provenance. Rule: never join on colliding legacy IDs alone.
+### 4. Dataset identifier collision contained
+`00_SYSTEM/CANONICAL_DATASET_ID_REGISTRY_V1.csv` resolves legacy KOR-* collisions through canonical IDs and legacy aliases. Never join on colliding legacy IDs alone.
 
-### 4. Workstream status conflict resolved
-Created `00_SYSTEM/WORKSTREAM_CURRENT_STATUS_REGISTRY_V1.csv`.
-Workstream 04 current status is fixed as `PUBLIC_SOURCE_MAXIMUM_COMPLETE_WITH_NUMERIC_JOIN_CONSTRAINTS`; older `...WITH_ACCESS_CONSTRAINTS` final wording is superseded for current-state reporting.
+### 5. Legacy `.k전통플랫폼` authority contained
+The subtree README is explicitly `HISTORICAL / PROTOTYPE` with `DO NOT USE AS CURRENT STATE WITHOUT CANONICAL CROSSCHECK`.
+The subtree is ARCHIVE for current-state purposes.
 
-### 5. Completion dimensions separated
-Created `00_SYSTEM/PIPELINE_STATUS_MODEL_V1.md` with independent SOURCE_DISCOVERY, BULK_INGESTION, HARMONIZATION, GRAPH_POPULATION and ENGINE_READINESS dimensions. Older single-status backlog files are historical planning evidence, not canonical current state.
+### 6. Historical KTOF formula superseded
+`.k전통플랫폼/00_SYSTEM/KTOF_OPPORTUNITY_ENGINE_V1.md` now directly carries a HISTORICAL / SUPERSEDED warning.
+Current KTOF authority is `00_SYSTEM/KTOF_AND_OPPORTUNITY_INTELLIGENCE_MODEL_V1.md`.
+`KTOF^(0)` is the current hypothesis/measurement model; `KTOF^(*)` is the future empirically estimated formula. Early equal-weight/fixed multiplicative forms are not validated production scoring formulas.
 
-### 6. Graph terminology repaired
-Created `00_SYSTEM/GRAPH_MATERIALIZATION_SEMANTICS_V1.md` separating schema defined/locked, rows populated, joins validated and diagnostics validated. Older 'graph materialized' wording must not imply actual populated graph data without row artifacts.
+### 7. Workstream final status unified
+`00_SYSTEM/WORKSTREAM_CURRENT_STATUS_REGISTRY_V1.csv` is the single current final-status authority for workstreams 01–08.
+Workstream 04 current status is `PUBLIC_SOURCE_MAXIMUM_COMPLETE_WITH_NUMERIC_JOIN_CONSTRAINTS`; earlier `...WITH_ACCESS_CONSTRAINTS` wording is superseded for final-state reporting.
 
-### 7. Foreign Tourist Survey authority consolidated
-Created `01_L1_EVIDENCE/FOREIGN_TOURIST_SURVEY/FOREIGN_TOURIST_SURVEY_CANONICAL_AUTHORITY_INDEX_2026-08-28.md`.
-Newer dated official manifests override stale UNKNOWN entries. Current state remains `OFFICIAL_RAW_CODEBOOK_MANIFEST_AND_REGIME_VERIFIED_VARIABLE_CROSSWALK_PENDING`; respondent rows are not claimed ingested.
+### 8. Pipeline completion dimensions separated
+`00_SYSTEM/PUBLIC_DATA_INGESTION_BACKLOG_V2.csv` is the active backlog and separates:
+- SOURCE_DISCOVERY_STATUS
+- BULK_INGESTION_STATUS
+- HARMONIZATION_STATUS
+- GRAPH_POPULATION_STATUS
+- ENGINE_READINESS_STATUS
 
-### 8. Safety-alert project contamination removed from active PR state
-Closed korea-tour PR #1 and PR #2 without merge and marked them as project-scope contamination. The safety-alert project belongs in the separate safe-alam repository and must not be used as tourism-engine evidence.
+V1 is SUPERSEDED for current-state use.
 
-### 9. Root README repaired
-README now routes RAG through the canonical current-state index, defines O/E/S/R/G/N correctly, distinguishes legacy namespaces, clarifies completion semantics and prevents graph/schema and public-source completion overclaims.
+### 9. Completion scores relabeled
+`AXIS_COMPLETION_STATUS_V1.csv` and `CROSS_LAYER_COMPLETION_STATUS_V1.csv` retain the historical planning estimates but now explicitly label the numeric readiness columns `EXPERT_ESTIMATE_NOT_EMPIRICAL`.
+They are not measured statistical precision.
 
-## Problems intentionally preserved as history rather than deleted
+### 10. Graph terminology repaired
+`00_SYSTEM/GRAPH_MATERIALIZATION_SEMANTICS_V1.md` separates schema lock, row population and join validation.
+Canonical terms include GRAPH_SCHEMA_LOCKED, GRAPH_ROWS_POPULATED and GRAPH_JOIN_VALIDATED. 'Materialized' alone cannot imply all three.
 
-### Legacy `.k전통플랫폼`
-Preserved because it contains valuable project genealogy, early hypotheses and source research. It is now explicitly subordinate to the current-state index. Deleting it would destroy provenance.
+### 11. L2 namespace physically unified
+Root canonical L2 namespace is now only `02_L2_OBSERVATION/`.
+The former root `02_L2_OBSERVATIONS/` split namespace was physically migrated and removed.
+Foreign Tourist Survey observations were moved under `02_L2_OBSERVATION/FOREIGN_TOURIST_SURVEY/`; FX/air-seat observations under WHEN; card observations under CARD_PAYMENT; WHY observation into the canonical L2 namespace.
+No new root files may be written to `02_L2_OBSERVATIONS/`.
 
-### Historical KTOF formula
-Preserved as historical hypothesis. Current authority is `KTOF_AND_OPPORTUNITY_INTELLIGENCE_MODEL_V1.md`; equal-weight/fixed multiplicative early forms are not empirical production KTOF.
+### 12. Foreign Tourist Survey authority consolidated
+Created `01_L1_EVIDENCE/FOREIGN_TOURIST_SURVEY/FOREIGN_TOURIST_SURVEY_CANONICAL_MANIFEST_2007_2025_V1.csv` as the single current wave-level artifact/access/regime view.
+`FOREIGN_TOURIST_SURVEY_CANONICAL_AUTHORITY_INDEX_2026-08-28.md` routes through that manifest first, with dated manifests preserved for provenance.
+Current state remains `OFFICIAL_RAW_CODEBOOK_MANIFEST_AND_REGIME_VERIFIED_VARIABLE_CROSSWALK_PENDING`; respondent rows are not claimed ingested.
 
-### Old completion percentages
-Preserved as historical expert progress estimates. Without explicit denominator/formula they are `NOT_EMPIRICAL` and cannot be reported as measured precision.
+### 13. Safety-alert project separated
+Korea-tour PR #1 and #2 are closed without merge and marked not planned in this repository.
+The canonical safety-alert repository is `fusion3333/safe-alam`.
+That repository contains the actual Expo app structure (`app/`, `src/`, `server/`, `scripts/`, `docs/`, `.github/`, `eas.json`, package/config files) and remains the sole active home for that project.
+No safety-alert code/PR state should be treated as Korea-tour evidence or backlog.
 
-### Old backlog/low-coverage queues
-Preserved as historical operational snapshots. They do not override current workstream status registry or pipeline status model.
+## Intentionally preserved history
+Historical source research, early hypotheses, early scorecards, old queues and `.k전통플랫폼/**` are preserved for genealogy/provenance. They are not current authority.
 
-## Remaining physical migrations — not semantic blockers
+`ENGINE_END_TO_END_MASTER_V1.md` retains its legacy filename for reference stability even though its internal architecture is newer. The Current State Index resolves this explicitly; renaming is not required for semantic correctness and is intentionally deferred to avoid breaking references.
 
-1. Move existing files from legacy split `02_L2_OBSERVATIONS/` into canonical `02_L2_OBSERVATION/` with history-safe create/delete operations and link/path updates. Until then retrieval must search both; no new files should be added to plural namespace.
-2. Rename `ENGINE_END_TO_END_MASTER_V1.md` to match its internal V2 title after all references are enumerated and updated atomically. Current-state index explicitly resolves the mismatch in the meantime.
-3. Optionally add explicit historical headers inside every `.k전통플랫폼` file. Current root authority router already prevents them from overriding canonical state, so mass-editing historical evidence is not required for semantic correctness.
-4. Migrate legacy CSVs to include `canonical_dataset_id` physically. Until migrated, joins must use `CANONICAL_DATASET_ID_REGISTRY_V1.csv` rather than legacy `KOR-*` alone.
-5. Regenerate future backlog/queue versions using the five independent pipeline status dimensions instead of mutating old snapshots.
+## Governance result
+The requested governance sequence is complete:
+Canonical authority → dataset identity → O/E/S/R/G/N routing → legacy containment → KTOF supersession → workstream status → L2 unification → Survey canonical manifest → split backlog statuses → estimate labeling → graph terminology → safety repository separation.
 
-## Audit conclusion
-The project architecture itself was not materially corrupted. The main defect was authority/governance drift caused by rapid evolution: multiple generations of valid-at-the-time documents remained simultaneously retrievable as if equally current. This repair pass establishes a single current-state routing layer and contains the highest-risk semantic/data-integrity conflicts.
+The repository can now proceed to substantive evidence/data work without relying on stale 18-axis/OESR-only/equal-weight-KTOF/single-status assumptions.
 
-The next substantive research/data phase can now proceed without first relying on stale 18-axis/OESR-only/equal-weight-KTOF assumptions.
-
-Recommended next execution order:
-`Foreign Tourist Survey variable crosswalk → actual sellability row observations → Ground supplier economics/WTP → lost-demand/native telemetry → intervention outcomes → business case / empirical KTOF learning`.
+## Next execution order
+`Foreign Tourist Survey variable crosswalk → Sellability → Ground Economics → WTP → Lost Demand → Native Transaction → Intervention Outcome → Business Case → empirical KTOF learning`
