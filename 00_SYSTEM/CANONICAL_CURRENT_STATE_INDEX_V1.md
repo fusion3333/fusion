@@ -9,16 +9,19 @@ This file is the authority router for repository RAG and human work. When docume
 
 ## Authority precedence
 1. CANONICAL / MASTER files listed in this index
-2. ACTIVE completion gates and current manifests
+2. ACTIVE completion gates, registries and current manifests
 3. L1 evidence and L2 observations
 4. L3 graph contracts/data
-5. HISTORICAL / SUPERSEDED material only for provenance and project history
+5. HISTORICAL / SUPERSEDED / ARCHIVE material only for provenance and project history
 
 ## Canonical architecture
-- `00_SYSTEM/ENGINE_END_TO_END_MASTER_V1.md` — active end-to-end architecture; filename is legacy V1 while internal specification is V2. Treat content as current until filename migration.
+- `00_SYSTEM/ENGINE_END_TO_END_MASTER_V1.md` — active end-to-end architecture; filename retained for reference stability while internal specification is V2.
 - `00_SYSTEM/KTOF_AND_OPPORTUNITY_INTELLIGENCE_MODEL_V1.md` — canonical KTOF concept. `KTOF^(0)` is hypothesis/measurement model; `KTOF^(*)` is future empirically estimated formula.
 - `00_SYSTEM/SOURCE_ROUTING_AND_EVIDENCE_STANDARD_V2.md` — canonical source/evidence routing. O/E/S/R/G/N definitions are authoritative.
 - `00_SYSTEM/CANONICAL_DATASET_ID_REGISTRY_V1.csv` — canonical dataset identity and legacy alias resolution.
+- `00_SYSTEM/CANONICAL_DOCUMENT_STATUS_REGISTRY_V1.csv` — canonical/active/historical/superseded/archive classification for core repository artifacts.
+- `00_SYSTEM/WORKSTREAM_CURRENT_STATUS_REGISTRY_V1.csv` — single current final-status authority for workstreams 01–08.
+- `00_SYSTEM/PUBLIC_DATA_INGESTION_BACKLOG_V2.csv` — active execution backlog with five independent pipeline status dimensions.
 
 ## Source classes — fixed meanings
 - O = Official Data: data produced/held/published by governments, public agencies, official statistical/administrative bodies.
@@ -38,23 +41,29 @@ O/E/S/R are external-world evidence classes; G is evidence we actively create by
 - Business extension: KTOF Candidate → Business Readiness → Evidence Gap → Ground Research → MVP → Native Telemetry → Causal Validation → Investment Decision
 
 ## Historical / legacy authority rule
-`.k전통플랫폼/**` is historical/prototype material unless a file is explicitly promoted in this index. It must not override current root canonical documents. In particular:
-- `.k전통플랫폼/00_SYSTEM/KTOF_OPPORTUNITY_ENGINE_V1.md` is HISTORICAL HYPOTHESIS ONLY; its equal-weight/fixed multiplicative formula is not current production KTOF.
+`.k전통플랫폼/**` is ARCHIVE / historical-prototype material unless a file is explicitly promoted in this index. The subtree README carries `DO NOT USE AS CURRENT STATE WITHOUT CANONICAL CROSSCHECK`. It must not override current root canonical documents.
+
+In particular:
+- `.k전통플랫폼/00_SYSTEM/KTOF_OPPORTUNITY_ENGINE_V1.md` is SUPERSEDED / HISTORICAL HYPOTHESIS ONLY; its equal-weight/fixed multiplicative formula is not current production KTOF and the file itself now carries a supersession warning.
 - `.k전통플랫폼/00_SYSTEM/SOURCE_ROUTING_AND_EVIDENCE_STANDARD_V1.md` is SUPERSEDED by root V2 for current source classes and current architecture.
 - legacy 18-axis descriptions are superseded by the current 25-axis + 8-cross-layer frame.
 
 ## Physical namespace rule
-Canonical L2 namespace is `02_L2_OBSERVATION/`. Existing `02_L2_OBSERVATIONS/` files are legacy-split content pending physical migration; retrieval must search both until migration is completed.
+Canonical L2 namespace is `02_L2_OBSERVATION/`.
+The former root `02_L2_OBSERVATIONS/` split namespace has been physically migrated and removed. New L2 files must never be added to the plural namespace.
+Legacy `.k전통플랫폼/**` namespaces remain archival and do not define root current-state paths.
 
 ## Completion semantics
 `PUBLIC_SOURCE_MAXIMUM_COMPLETE...` means public-source discovery/definition work reached a defensible public maximum. It does NOT mean bulk raw rows, harmonization, graph population, Ground, Native, causal validation or empirical KTOF are complete.
 
-Completion must be tracked separately as:
+Completion is tracked separately as:
 - SOURCE_DISCOVERY_STATUS
 - BULK_INGESTION_STATUS
 - HARMONIZATION_STATUS
 - GRAPH_POPULATION_STATUS
 - ENGINE_READINESS_STATUS
+
+`00_SYSTEM/PUBLIC_DATA_INGESTION_BACKLOG_V1.csv` is SUPERSEDED for current-state use by V2.
 
 ## Graph semantics
 - GRAPH_SCHEMA_LOCKED = graph contract/schema exists
@@ -63,16 +72,28 @@ Completion must be tracked separately as:
 Never use 'materialized' alone to imply all three.
 
 ## Quantitative progress labels
-Repository completion percentages and decimals without an explicit denominator/formula are `EXPERT_PROGRESS_ESTIMATE / NOT_EMPIRICAL`. They must not be represented as measured statistical precision.
+Repository completion percentages and decimals without an explicit denominator/formula are `EXPERT_PROGRESS_ESTIMATE / NOT_EMPIRICAL`. Current axis and cross-layer score tables label those columns explicitly as expert estimates; they must not be represented as measured statistical precision.
 
 ## Workstream 04 status resolution
 Current canonical public-source status: `PUBLIC_SOURCE_MAXIMUM_COMPLETE_WITH_NUMERIC_JOIN_CONSTRAINTS`. Earlier `...WITH_ACCESS_CONSTRAINTS` wording is superseded for final-state reporting.
 
 ## Foreign Tourist Survey
-Current state: official raw/codebook/supporting-artifact evidence has advanced beyond older inventories, but respondent-level harmonized variable crosswalk remains pending. Older UNKNOWN entries must not override newer dated L1 manifests/observations.
+Wave-level current artifact/access/regime truth is centralized in:
+`01_L1_EVIDENCE/FOREIGN_TOURIST_SURVEY/FOREIGN_TOURIST_SURVEY_CANONICAL_MANIFEST_2007_2025_V1.csv`
+
+Authority routing is defined in:
+`01_L1_EVIDENCE/FOREIGN_TOURIST_SURVEY/FOREIGN_TOURIST_SURVEY_CANONICAL_AUTHORITY_INDEX_2026-08-28.md`
+
+Current state remains `OFFICIAL_RAW_CODEBOOK_MANIFEST_AND_REGIME_VERIFIED_VARIABLE_CROSSWALK_PENDING`. Respondent rows are not claimed ingested. Older UNKNOWN entries must not override newer canonical/datetime evidence.
 
 ## Safety-alert project separation
-The neighborhood safety-alert application is not part of the tourism engine. Its canonical repository is separate (`safe-alam`). Any historical/open PR material under `korea-tour` must not be used as tourism-engine evidence.
+The neighborhood safety-alert application is not part of the tourism engine. Its canonical repository is `fusion3333/safe-alam`. Korea-tour PR #1 and #2 are closed/not-planned here and must not be used as tourism-engine evidence, architecture, backlog or current state.
+
+## Governance closeout
+The requested governance pass is complete for current-state authority, dataset identity, source routing, legacy authority containment, KTOF supersession, workstream status, L2 namespace, Foreign Tourist Survey manifest, backlog status dimensions, progress-score labeling, graph terminology and safety-project separation.
+
+Future work should proceed in this order unless new evidence changes priority:
+`Foreign Tourist Survey variable crosswalk → Sellability → Ground Economics → WTP → Lost Demand → Native Transaction → Intervention Outcome → Business Case → empirical KTOF learning`.
 
 ## Non-negotiable RAG rule
 For any project answer: resolve current authority through this index first, then ground claims in the referenced canonical/active GitHub artifacts. If evidence conflicts, report the conflict; do not silently merge it.
