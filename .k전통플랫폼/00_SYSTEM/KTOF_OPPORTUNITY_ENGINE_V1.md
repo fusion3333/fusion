@@ -1,3 +1,6 @@
+> **HISTORICAL / SUPERSEDED — DO NOT USE AS CURRENT KTOF.**
+> This document preserves an early research hypothesis only. Current authority is root `00_SYSTEM/KTOF_AND_OPPORTUNITY_INTELLIGENCE_MODEL_V1.md`, where `KTOF^(0)` is the hypothesis/measurement model and `KTOF^(*)` is the future empirically estimated formula. The equal-weight/fixed multiplicative form below is not a validated production scoring formula.
+
 # KTOF — Korea Tourism Opportunity Function V1
 
 기준일: 2026-08-27
