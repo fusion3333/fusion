@@ -1,0 +1,26 @@
+path,status,authority_note,updated_at
+00_SYSTEM/CANONICAL_CURRENT_STATE_INDEX_V1.md,CANONICAL,"MASTER / ALWAYS-REFERENCE authority router",2026-08-28
+00_SYSTEM/SOURCE_ROUTING_AND_EVIDENCE_STANDARD_V2.md,CANONICAL,"current O/E/S/R/G/N source and evidence standard",2026-08-28
+00_SYSTEM/KTOF_AND_OPPORTUNITY_INTELLIGENCE_MODEL_V1.md,CANONICAL,"current KTOF(0)/KTOF(*) authority",2026-08-28
+00_SYSTEM/CANONICAL_DATASET_ID_REGISTRY_V1.csv,CANONICAL,"canonical dataset identity and legacy alias resolution",2026-08-28
+00_SYSTEM/WORKSTREAM_CURRENT_STATUS_REGISTRY_V1.csv,CANONICAL,"single final-status authority for workstreams 01-08",2026-08-28
+00_SYSTEM/PIPELINE_STATUS_MODEL_V1.md,CANONICAL,"five independent pipeline status dimensions",2026-08-28
+00_SYSTEM/GRAPH_MATERIALIZATION_SEMANTICS_V1.md,CANONICAL,"schema/rows/join validation terminology",2026-08-28
+00_SYSTEM/PUBLIC_DATA_INGESTION_BACKLOG_V2.csv,ACTIVE,"current execution backlog using split pipeline statuses",2026-08-28
+00_SYSTEM/PUBLIC_DATA_INGESTION_BACKLOG_V1.csv,SUPERSEDED,"historical single-status backlog; do not use for current state",2026-08-28
+00_SYSTEM/LOW_COVERAGE_COMPLETION_QUEUE_V1.csv,HISTORICAL,"old planning snapshot",2026-08-28
+00_SYSTEM/LOW_COVERAGE_COMPLETION_QUEUE_V2.csv,HISTORICAL,"old planning snapshot; regenerate before operational reuse",2026-08-28
+00_SYSTEM/AXIS_COMPLETION_STATUS_V1.csv,ACTIVE,"scores explicitly labeled expert estimate / not empirical",2026-08-28
+00_SYSTEM/CROSS_LAYER_COMPLETION_STATUS_V1.csv,ACTIVE,"scores explicitly labeled expert estimate / not empirical",2026-08-28
+00_SYSTEM/ENGINE_END_TO_END_MASTER_V1.md,ACTIVE,"content is current architecture V2; filename retained for reference stability",2026-08-28
+00_SYSTEM/REPOSITORY_RAG_GOVERNANCE_REPAIR_REPORT_2026-08-28.md,ACTIVE,"governance repair audit trail",2026-08-28
+01_L1_EVIDENCE/FOREIGN_TOURIST_SURVEY/FOREIGN_TOURIST_SURVEY_CANONICAL_AUTHORITY_INDEX_2026-08-28.md,CANONICAL,"survey authority router",2026-08-28
+01_L1_EVIDENCE/FOREIGN_TOURIST_SURVEY/FOREIGN_TOURIST_SURVEY_CANONICAL_MANIFEST_2007_2025_V1.csv,CANONICAL,"single current artifact/access/regime manifest for survey waves",2026-08-28
+02_L2_OBSERVATION/,ACTIVE,"canonical L2 namespace",2026-08-28
+02_L2_OBSERVATIONS/,SUPERSEDED,"legacy split namespace; must be empty/removed after migration",2026-08-28
+03_L3_GRAPH/,ACTIVE,"graph contracts and populated artifacts must follow graph semantics",2026-08-28
+04_DATA/PUBLIC_MAX/,ACTIVE,"public-source normalized/materialized data area; status is file-specific",2026-08-28
+.k전통플랫폼/,ARCHIVE,"historical/prototype subtree; do not use as current state without canonical crosscheck",2026-08-28
+.k전통플랫폼/00_SYSTEM/SOURCE_ROUTING_AND_EVIDENCE_STANDARD_V1.md,SUPERSEDED,"O/E/S/R-only legacy source router",2026-08-28
+.k전통플랫폼/00_SYSTEM/KTOF_OPPORTUNITY_ENGINE_V1.md,SUPERSEDED,"early fixed/equal-weight KTOF hypothesis only",2026-08-28
+README.md,ACTIVE,"repository entry point; routes readers to canonical index",2026-08-28
