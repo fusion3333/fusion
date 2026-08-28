@@ -1,0 +1,15 @@
+concept,do_not_equate_with,reason,required_control
+card_spend,total_tourism_spend,"cash,bank transfer,wallets,other cards/networks and unobserved payments exist",coverage_scope
+network_spend,total_card_market,"Visa/Mastercard/NCCC/processor data cover a defined portfolio",network_or_processor
+issuing_country,nationality_or_residence,"issuer market does not prove passport or residence",origin_definition
+foreign_issued_card,foreign_tourist,"expats/business/non-tourism users may hold foreign cards",traveler_definition
+transaction_count,tourists_or_trips,"one person/trip creates many transactions",denominator
+merchant_country,physical_destination,"online/card-not-present merchant location may differ from traveler location",channel
+cross_border_spend,travel_spend,"foreign ecommerce/subscriptions/ATM/remittance-like activity can be included",channel_and_category
+card_present,tourism,"local non-tourism expenditure is possible",tourism_category_filter
+authorization_amount,net_settled_sales,"refunds,reversals,chargebacks and settlement differences",settlement_status
+nominal_spend,real_volume,"FX and inflation alter nominal values",fx_cpi_adjustment
+survey_spend,card_spend,"self-reported expenditure and observed transactions have different universes",source_method
+room_or_booking_payment,consumption_location,"prepayment may occur before travel or via foreign OTA",merchant_and_service_location
+zero,MISSING,"no observation is not evidence of no transaction",missing_code
+pre_2022_russia,post_2022_russia,"international card usability regime changed structurally",REGIME_BREAK
