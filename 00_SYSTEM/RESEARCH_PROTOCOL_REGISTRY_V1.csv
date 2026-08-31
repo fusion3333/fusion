@@ -1,0 +1,21 @@
+protocol_id,name_ko,purpose,required_source_classes,required_checks,output_contract,status
+P01,공식근거 탐색,공공기관·공식통계·제도 근거 수집,O,"정의;분모;기간;방법론;체제변화;반증",TEMPORAL_EVIDENCE_OBJECT,ACTIVE
+P02,기업·시장근거 탐색,기업 운영·거래·가격·공급 관련 근거 수집,E,"사업자 직접생산 여부;기간;범위;표본편향;반증",TEMPORAL_EVIDENCE_OBJECT,ACTIVE
+P03,소셜·검색 수요 탐색,검색·SNS·리뷰·커뮤니티 수요신호 수집,S,"플랫폼편향;봇/중복;기간;세그먼트;반증",TEMPORAL_EVIDENCE_OBJECT,ACTIVE
+P04,연구·학술 검증,방법론·관계·메커니즘·비교가능성 검증,R,"연구설계;표본;외적타당성;기간;반증",TEMPORAL_EVIDENCE_OBJECT,ACTIVE
+P05,경쟁목적지 조사,대체목적지의 상품·가격·마찰·성과 비교,"O;E;S;R","동일정의;환율;시점;상품동등성",COMPETITOR_STATE_OBJECT,ACTIVE
+P06,실제 공급 탐색,등록공급과 실제 영업·판매가능 공급 구분,"O;E;G","영업상태;가격;언어;예약;재고;결제",SELLABILITY_OBJECT,ACTIVE
+P07,판매가능성 감사,외국인이 실제 발견·예약·결제 가능한지 검증,"E;G;N","검색;언어;가격;날짜;재고;결제;취소",SELLABILITY_AUDIT_OBJECT,ACTIVE
+P08,가격·WTP 조사,가격과 실제 지불의사 근거 구축,"E;S;R;G;N","관측가격;선택행동;실결제;세그먼트;기간",WTP_EVIDENCE_OBJECT,ACTIVE
+P09,예약·결제 마찰 조사,예약·결제 실패와 마찰요인 측정,"E;G;N","분모;단계;실패코드;해외결제;환불",FUNNEL_FRICTION_OBJECT,ACTIVE
+P10,고객 고통·실패여정 조사,잠재·보고·실제 실패를 구분,"S;G;N","분모;채널편향;여정단계;해결여부",FAILURE_JOURNEY_OBJECT,ACTIVE
+P11,반대증거·반증 탐색,우세 가설을 깨는 독립 근거 탐색,"O;E;S;R;G;N","독립출처;대안설명;반례;체제차이",CONTRADICTION_OBJECT,ACTIVE
+P12,결측증거 탐색,의사결정에 중요한 미관측 변수를 찾음,"O;E;S;R;G;N","결측유형;획득비용;민감도;대체측정",EVIDENCE_GAP_OBJECT,ACTIVE
+P13,과거상태 복원,특정 시점의 시장 상태벡터 재구성,"O;E;S;R","당시사용가능정보;개정치;시점누수;체제",HISTORICAL_STATE_OBJECT,ACTIVE
+P14,체제변화 탐지,정의·방법론·정책·시장구조 변경 탐지,"O;E;R","단절시점;전후정의;교차보정;비교가능성",REGIME_BREAK_OBJECT,ACTIVE
+P15,사업기회 가설 생성,증거기반 기회후보 생성,"O;E;S;R;G;N","근거링크;반대근거;필요추가측정;금지추정",OPPORTUNITY_HYPOTHESIS_OBJECT,ACTIVE
+P16,대안설명 생성,관측 패턴의 경쟁 설명 생성,"O;E;S;R;G;N","교란;대체원인;측정오류;선택편향",ALTERNATIVE_EXPLANATION_OBJECT,ACTIVE
+P17,인과가설 생성,개입가능 원인과 검증설계 후보 생성,"R;G;N","처치;대조;반사실;교란;측정결과",CAUSAL_HYPOTHESIS_OBJECT,ACTIVE
+P18,복합패턴 설명,다변량·비선형·시차 패턴의 해석 생성,"O;E;S;R;G;N","상호작용;시차;체제;불확실성;대안설명",PATTERN_EXPLANATION_OBJECT,ACTIVE
+P19,패턴 반증계획 생성,후보 패턴을 깨기 위한 검증계획 생성,"O;E;S;R;G;N","out-of-time;out-of-segment;ablation;regime",FALSIFICATION_PLAN_OBJECT,ACTIVE
+P20,다음 현장·자체 측정 우선순위,Ground/Native 수집의 경제적 우선순위 결정,"G;N","의사결정민감도;획득비용;예상정보가치",MEASUREMENT_PRIORITY_OBJECT,ACTIVE
